@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="preview-ready-after-ms" content="5000"/>
+<title>Luminous - Automação Social com IA</title>
+
+<!-- fonts -->
+<link rel="stylesheet" href="assets/css2_19fd9cc6b396.css"/>
+<link rel="stylesheet" href="assets/css2_a7b22b336fe1.css" id="all-fonts-link-font-bricolage"/>
+
+<!-- css -->
+<!-- base styles, body, electric-card, stars, grid, font-bricolage and border-gradient utility used site-wide -->
+<link rel="stylesheet" href="assets/css/base.css"/>
+<!-- entry/scroll keyframes (fadeInUpBlur, animationIn, flow) and animate-on-scroll states -->
+<link rel="stylesheet" href="assets/css/animations.css"/>
+
+<!-- head js: tailwind runtime, must remain in head -->
+<!-- Tailwind utility runtime -->
+<script src="assets/resource_3fa48481346f.js"></script>
+<!-- Lucide icon runtime — provides lucide.createIcons() used at end of body -->
+<script src="assets/lucide_latest_2eebd0ebe8c2.js"></script>
+</head>
+
+<body class="min-h-screen overflow-x-hidden selection:bg-orange-500/30 text-white bg-[#050505] relative">
+
+<!-- background-gradients -->
+<div class="fixed z-0 pointer-events-none top-0 right-0 bottom-0 left-0">
+<div class="stars absolute inset-0"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-orange-900/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-orange-950/20 blur-[100px] rounded-full"></div>
+</div>
+
+<!-- navigation -->
+<nav class="relative z-50 flex items-center justify-between px-6 py-6 max-w-7xl mx-auto border-b border-white/5 animate-entry delay-75">
+<div class="flex gap-2 items-center">
+<div class="relative flex items-center justify-center w-8 h-8">
+<i data-lucide="asterisk" class="text-white w-8 h-8 absolute rotate-45"></i>
+<i data-lucide="asterisk" class="text-orange-500 w-8 h-8 absolute"></i>
+</div>
+<span class="text-xl text-white font-sans">Luminous</span>
+</div>
+<div class="hidden md:flex items-center bg-white/5 border border-white/10 rounded-full px-1 py-1 backdrop-blur-md">
+<a class="px-4 py-1.5 bg-neutral-800/80 rounded-full text-xs text-white flex items-center gap-2 border border-white/5 shadow-inner font-sans" href="#">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+Início
+</a>
+<a class="px-4 py-1.5 text-xs text-neutral-400 hover:text-white transition-colors font-sans" href="#">Sobre Nós</a>
+<a class="px-4 py-1.5 text-xs text-neutral-400 hover:text-white transition-colors font-sans" href="#">Preços</a>
+<button class="px-4 py-1.5 text-xs text-neutral-400 hover:text-white transition-colors flex items-center gap-1 font-sans">
+Funcionalidades
+<i data-lucide="chevron-down" class="w-3 h-3"></i>
+</button>
+<a class="px-4 py-1.5 text-xs text-neutral-400 hover:text-white transition-colors font-sans" href="#">Recursos</a>
+</div>
+<a class="hidden md:block hover:brightness-110 transition-all text-sm text-white bg-gradient-to-b from-orange-400 to-orange-600 border-white/20 rounded-full border-t pt-2 pr-5 pb-2 pl-5 shadow-[0_0_15px_-3px_rgba(249,115,22,0.4)] font-sans" href="#">Começar</a>
+</nav>
+
+<!-- hero -->
+<main class="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:pt-24 max-w-7xl mr-auto ml-auto pt-16 pr-6 pb-20 pl-6 relative items-center">
+<div class="absolute top-0 right-0 bottom-0 left-0" data-container-bg="true">
+<div class="absolute w-full h-full left-0 top-0 -z-10" data-us-project="AhqzKk9mZE0EnlENMQDi"></div>
+</div>
+
+<div class="lg:col-span-7 flex flex-col relative items-start z-10">
+<div class="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm text-xs text-neutral-300 animate-entry delay-100">
+<i data-lucide="sparkles" class="w-3 h-3 text-orange-400"></i>
+<span class="font-sans">Crescimento Social, Modo Piloto Automático</span>
+</div>
+<h1 class="text-5xl lg:text-[76px] leading-[1.05] text-white mb-6 font-bricolage font-light tracking-tight animate-entry delay-150">
+ALCANCE SOCIAL
+<span class="inline-flex align-middle mx-1"></span>
+AUTOMATIZADO
+<br/>
+CRESCIMENTO VIRAL
+<br/>
+RESULTADOS
+</h1>
+<p class="text-lg text-neutral-400 max-w-xl mb-10 leading-relaxed font-sans animate-entry delay-200">
+Pare de adivinhar o que funciona. Luminous analisa tendências e automatiza sua estratégia de conteúdo para o máximo engajamento em todas as plataformas.
+</p>
+<div class="flex flex-wrap gap-4 mb-20 items-center animate-entry delay-300">
+<button class="group relative flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-t from-yellow-200 via-orange-400 to-orange-500 px-8 py-3 text-lg font-medium text-[#2c1306] shadow-[0_0_40px_-5px_rgba(249,115,22,0.6)] ring-1 ring-inset ring-white/40 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-5px_rgba(249,115,22,0.8)] font-sans">
+<span class="font-sans">Explorar Design</span>
+</button>
+<button class="px-8 py-3 rounded-full bg-white text-black text-lg hover:bg-neutral-200 transition-colors font-sans">Ver Funcionalidades</button>
+</div>
+</div>
+
+<!-- hero-card -->
+<div class="lg:col-span-5 flex lg:justify-end lg:mt-0 mt-0 relative justify-center z-10 animate-entry delay-500">
+<div class="relative w-[360px] bg-neutral-900 rounded-[32px] p-[2px] electric-card overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-yellow-300 via-orange-500 to-transparent opacity-80 z-0"></div>
+<div class="relative z-10 bg-[#0A0A0A] rounded-[30px] h-full p-8 flex flex-col items-start overflow-hidden">
+<div class="absolute top-0 right-0 w-full h-40 bg-gradient-to-b from-orange-500/10 to-transparent"></div>
+<div class="flex justify-between w-full items-start mb-6 relative">
+<span class="text-[10px] uppercase text-neutral-400 border border-white/10 px-2 py-1 rounded bg-white/5 flex items-center gap-1.5 font-sans">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+</span>
+Resultado Viral
+</span>
+</div>
+<h3 class="text-xl text-white mb-2 font-sans">Velocidade de Crescimento</h3>
+<p class="text-xs text-neutral-400 mb-6 leading-relaxed font-sans">Engajamento automatizado atingindo picos virais.</p>
+<div class="w-full mb-8">
+<div class="flex items-baseline gap-2 mb-2">
+<span class="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-200 to-orange-400 font-bricolage font-light tracking-tight">+842%</span>
+<span class="text-xs text-orange-500 flex items-center bg-orange-500/10 px-1.5 py-0.5 rounded font-sans">
+<i data-lucide="arrow-up" class="mr-0.5 w-3 h-3" stroke-width="3"></i>
+vs. semana passada
+</span>
+</div>
+<div class="w-full h-16 relative mt-4">
+<img src="assets/images/svg/sparkline.svg" class="w-full h-full overflow-visible" alt="Sparkline chart"/>
+</div>
+</div>
+<button class="hover:brightness-110 transition-all text-sm text-white bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 w-full border-white/20 rounded-full border-t mb-8 pt-3 pb-3 shadow-[0_4px_15px_rgba(249,115,22,0.4)] font-sans">Analisar Tendências</button>
+<div class="space-y-4 w-full mb-8">
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-3 text-neutral-300">
+<i data-lucide="eye" class="w-4 h-4 text-orange-500"></i>
+<span class="font-sans">Impressões Totais</span>
+</div>
+<span class="text-white font-sans">2.4M</span>
+</div>
+</div>
+<div class="relative w-full h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent mb-6 flex items-center justify-center">
+<span class="bg-[#0A0A0A] px-2 text-[10px] text-neutral-400 uppercase font-sans">Escala com IA</span>
+</div>
+<div class="flex gap-4 w-full">
+<div class="flex items-center gap-1.5 text-[10px] text-neutral-400 font-sans">
+<i data-lucide="sparkles" class="w-3.5 h-3.5 text-white fill-white"></i>
+Auto-Otimização
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<!-- desktop-app-showcase -->
+<section class="-mt-4 lg:-mt-8 animate-entry delay-700 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll max-w-7xl mx-auto pt-0 px-2.5 lg:px-0 pb-24 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[300px] bg-orange-600/20 blur-[100px] rounded-full z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+<div class="overflow-hidden md:col-span-2 lg:col-span-3 lg:bg-black/80 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.6s_both] bg-neutral-900/80 rounded-2xl ring-white/10 ring-1 relative shadow-[0_0_40px_-10px_rgba(249,115,22,0.15)] backdrop-blur-sm">
+<div class="-top-10 -right-10 bg-orange-500/10 w-56 h-56 rounded-full absolute blur-3xl"></div>
+<div class="flex sm:px-6 bg-white/5 border-white/5 border-b pt-3 pr-4 pb-3 pl-4 backdrop-blur-md items-center justify-between">
+<div class="flex items-center gap-3 text-sm text-neutral-400">
+<a class="inline-flex items-center gap-2 text-white hover:text-orange-400 transition-colors font-sans" href="#">
+<i data-lucide="zap" class="text-orange-500 w-4 h-4"></i>
+Luminous OS
+</a>
+<span class="opacity-40 font-sans">/</span>
+<span class="text-white font-sans">Crescimento</span>
+<span class="inline-flex items-center gap-1.5 rounded-full bg-orange-500/10 text-orange-400 ring-1 ring-orange-500/20 px-2 py-0.5 text-[11px] font-sans">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>
+Ao Vivo
+</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden sm:flex items-center gap-2 bg-black/40 ring-1 ring-white/10 rounded-lg pl-2.5 pr-2.5 h-8">
+<i data-lucide="search" class="text-neutral-500 w-3.5 h-3.5"></i>
+<input class="bg-transparent text-sm text-zinc-300 placeholder-zinc-600 focus:outline-none w-48" placeholder="Buscar tendências..." type="text"/>
+</div>
+<button class="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-white/5 text-white text-xs ring-1 ring-white/10 px-3 py-1.5 hover:bg-white/10 transition font-sans">
+<i data-lucide="download" class="w-3.5 h-3.5"></i>
+Exportar
+</button>
+</div>
+</div>
+<div class="grid grid-cols-12">
+<aside class="hidden md:flex md:col-span-3 lg:col-span-2 flex-col min-h-[520px] bg-white/5 border-white/5 border-r">
+<div class="px-4 py-4">
+<button class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-900/20 text-sm hover:brightness-110 transition-all px-3 py-2 border border-white/10 font-sans">
+<i data-lucide="plus" class="w-4 h-4"></i>
+Nova Campanha
+</button>
+</div>
+<nav class="px-3 pb-4 space-y-6 overflow-y-auto">
+<div>
+<div class="px-2 mb-2 text-[10px] uppercase text-neutral-500 font-sans">Plataforma</div>
+<ul class="space-y-1">
+<li><a class="flex items-center gap-2 px-2 py-2 rounded-md text-sm text-neutral-400 hover:text-white hover:bg-white/5 transition-colors font-sans" href="#">
+<i data-lucide="layout-grid" class="w-4 h-4"></i>
+Painel
+</a></li>
+<li><a class="flex items-center gap-2 px-2 py-2 rounded-md text-sm text-white bg-white/5 ring-1 ring-white/10 shadow-inner font-sans" href="#">
+<i data-lucide="trending-up" class="text-orange-400 w-4 h-4"></i>
+Velocidade de Crescimento
+</a></li>
+<li><a class="flex items-center gap-2 px-2 py-2 rounded-md text-sm text-neutral-400 hover:text-white hover:bg-white/5 transition-colors font-sans" href="#">
+<i data-lucide="users" class="w-4 h-4"></i>
+Audiência
+</a></li>
+</ul>
+</div>
+<div>
+<div class="px-2 mb-2 text-[10px] uppercase text-neutral-500 font-sans">IA de Conteúdo</div>
+<ul class="space-y-1">
+<li><a class="flex items-center gap-2 px-2 py-2 rounded-md text-sm text-neutral-400 hover:text-white hover:bg-white/5 transition-colors font-sans" href="#">
+<i data-lucide="sparkles" class="w-4 h-4"></i>
+Geração
+</a></li>
+<li><a class="flex items-center gap-2 px-2 py-2 rounded-md text-sm text-neutral-400 hover:text-white hover:bg-white/5 transition-colors font-sans" href="#">
+<i data-lucide="calendar-clock" class="w-4 h-4"></i>
+Agendador
+</a></li>
+</ul>
+</div>
+</nav>
+</aside>
+<main class="col-span-12 md:col-span-6 lg:col-span-7 min-h-[520px] bg-black/20">
+<div class="px-4 sm:px-6 py-3 border-b border-white/5 overflow-x-auto">
+<div class="flex items-center gap-6 min-w-max">
+<button class="text-sm text-white border-b-2 border-orange-500 pb-3 -mb-3.5 font-sans">Visão Geral</button>
+<button class="text-sm text-neutral-500 hover:text-white transition pb-3 -mb-3.5 border-b-2 border-transparent hover:border-white/10 font-sans">Tempo Real</button>
+<button class="text-sm text-neutral-500 hover:text-white transition pb-3 -mb-3.5 border-b-2 border-transparent hover:border-white/10 font-sans">Concorrentes</button>
+<button class="text-sm text-neutral-500 hover:text-white transition pb-3 -mb-3.5 border-b-2 border-transparent hover:border-white/10 font-sans">Alertas</button>
+</div>
+</div>
+<div class="px-4 sm:px-6 py-6 border-b border-white/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<h3 class="text-white text-2xl font-bricolage font-light tracking-tight">Velocidade Viral</h3>
+<span class="text-[11px] rounded-md bg-orange-500/10 text-orange-400 ring-1 ring-orange-500/20 px-2 py-0.5 uppercase font-sans">Em Alta</span>
+</div>
+<div class="text-xs text-neutral-500 flex items-center gap-1.5 font-sans">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+</span>
+Atualizando ao vivo
+</div>
+</div>
+<div class="mt-2 text-sm text-neutral-400 font-sans">
+Engajamento multiplataforma está escalando •
+<a class="text-orange-400 hover:text-orange-300 transition-colors font-sans" href="#">Ver relatório detalhado</a>
+</div>
+</div>
+<div class="px-4 sm:px-6 py-6 space-y-4">
+<div class="rounded-xl ring-1 ring-white/10 bg-white/[0.02] p-4 hover:bg-white/[0.04] transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div>
+<div class="text-sm text-white font-sans">Pico de Engajamento Detectado</div>
+<div class="text-xs text-neutral-500 mt-0.5 font-sans">Alcance médio 245k • +42% vs. semana passada • 98% de sentimento</div>
+</div>
+</div>
+<span class="text-[10px] rounded-md bg-orange-500/10 text-orange-400 ring-1 ring-orange-500/20 px-2 py-0.5 font-sans">VIRAL</span>
+</div>
+<div class="mt-4 bg-black/40 rounded-lg ring-1 ring-white/5 p-3 font-mono text-xs">
+<div class="grid grid-cols-2 gap-y-2">
+<div class="text-neutral-500 font-sans">→ Impressões: <span class="text-orange-400 ml-1 font-sans">2.4M</span></div>
+<div class="text-neutral-500 font-sans">→ Compartilhamentos: <span class="text-orange-400 ml-1 font-sans">14.2K</span></div>
+<div class="text-neutral-500 font-sans">→ Taxa de Salvamento: <span class="text-orange-400 ml-1 font-sans">8.4%</span></div>
+<div class="text-neutral-500 font-sans">→ Velocidade: <span class="text-orange-400 ml-1 font-sans">Alta</span></div>
+</div>
+</div>
+</div>
+<div class="rounded-xl ring-1 ring-orange-500/20 bg-gradient-to-b from-orange-500/5 to-transparent p-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div>
+<div class="text-sm text-white font-sans">Gerando Variações de Conteúdo</div>
+<div class="text-xs text-neutral-500 mt-0.5 font-sans">Lote #847 • 3 Plataformas • Tempo est. 45s</div>
+</div>
+</div>
+<div class="text-[11px] text-orange-400 font-sans">00:45</div>
+</div>
+<div class="mt-4 flex items-center gap-3">
+<span class="text-xs text-neutral-500 font-sans">Processando</span>
+<div class="flex-1 h-1.5 rounded-full bg-white/5 ring-1 ring-white/10 overflow-hidden">
+<div class="h-full w-[67%] rounded-full bg-gradient-to-r from-orange-500 to-amber-500 shadow-[0_0_10px_rgba(249,115,22,0.5)]"></div>
+</div>
+<span class="text-xs text-white font-sans">67%</span>
+<button class="text-[10px] rounded hover:bg-white/10 text-neutral-400 px-2 py-1 transition-colors font-sans">PARAR</button>
+</div>
+</div>
+<div class="rounded-xl ring-1 ring-white/10 bg-white/[0.02] p-4 hover:bg-white/[0.04] transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div>
+<div class="text-sm text-white font-sans">Alerta de Tendência de Concorrente</div>
+<div class="text-xs text-neutral-500 mt-0.5 font-sans">Tópico: "Agentes IA" • Subindo rápido • há 28min</div>
+</div>
+</div>
+<span class="text-[10px] rounded-md bg-white/5 text-neutral-300 ring-1 ring-white/10 px-2 py-0.5 font-sans">OPORTUNIDADE</span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<button class="text-xs rounded-md bg-white/5 text-white ring-1 ring-white/10 px-3 py-1.5 hover:bg-white/10 transition-colors font-sans">Gerar Resposta</button>
+<button class="text-xs rounded-md text-neutral-400 hover:text-white px-3 py-1.5 transition-colors font-sans">Dispensar</button>
+</div>
+</div>
+</div>
+</main>
+<aside class="hidden md:block md:col-span-3 lg:col-span-3 bg-white/5 border-l border-white/5 min-h-[520px]">
+<div class="px-4 sm:px-5 py-4 space-y-4">
+<div class="rounded-xl ring-1 ring-white/10 bg-black/20 p-4">
+<div class="text-xs text-neutral-500 mb-3 uppercase font-sans">Métricas ao Vivo</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white/5 rounded-lg p-3 ring-1 ring-white/5">
+<div class="text-[10px] text-neutral-400 mb-1 font-sans">Alcance/h</div>
+<div class="text-lg text-white font-sans">84.3K</div>
+</div>
+<div class="bg-white/5 rounded-lg p-3 ring-1 ring-white/5">
+<div class="text-[10px] text-neutral-400 mb-1 font-sans">Retenção Média</div>
+<div class="text-lg text-white font-sans">12s</div>
+</div>
+<div class="bg-white/5 rounded-lg p-3 ring-1 ring-white/5">
+<div class="text-[10px] text-neutral-400 mb-1 font-sans">Taxa de Conv.</div>
+<div class="text-lg text-white font-sans">3.4%</div>
+</div>
+<div class="bg-white/5 rounded-lg p-3 ring-1 ring-white/5">
+<div class="text-[10px] text-neutral-400 mb-1 font-sans">Score Viral</div>
+<div class="text-lg text-orange-400 font-sans">9.2</div>
+</div>
+</div>
+</div>
+<div class="rounded-xl ring-1 ring-white/10 bg-black/20 p-4">
+<div class="text-xs text-neutral-500 mb-2 uppercase font-sans">Contas Conectadas</div>
+<p class="text-sm text-neutral-300 leading-relaxed font-sans">Ativo em 4 plataformas. Todas as filas de agendamento estão saudáveis.</p>
+<div class="mt-3 text-xs text-neutral-500 mb-2 font-sans">Plataformas</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 text-white/80 hover:bg-white/10 hover:text-white transition-colors">
+<i data-lucide="twitter" class="w-3.5 h-3.5"></i>
+</span>
+<span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 text-white/80 hover:bg-white/10 hover:text-white transition-colors">
+<i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+</span>
+<span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 text-white/80 hover:bg-white/10 hover:text-white transition-colors">
+<i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+</span>
+</div>
+</div>
+<div class="rounded-xl ring-1 ring-white/10 bg-black/20 p-4">
+<div class="text-xs text-neutral-500 mb-3 uppercase font-sans">Piloto Automático</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-sm text-neutral-300 font-sans">Auto-repostagem</span>
+<button aria-pressed="true" class="relative inline-flex h-5 w-9 items-center rounded-full bg-orange-500/20 ring-1 ring-orange-500/30">
+<span class="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-orange-400 translate-x-4 transition-transform shadow-sm"></span>
+<span class="sr-only font-sans">alternar</span>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm text-neutral-300 font-sans">Resposta Inteligente</span>
+<button aria-pressed="true" class="relative inline-flex h-5 w-9 items-center rounded-full bg-orange-500/20 ring-1 ring-orange-500/30">
+<span class="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-orange-400 translate-x-4 transition-transform shadow-sm"></span>
+<span class="sr-only font-sans">alternar</span>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm text-neutral-300 font-sans">Monitor de Tendências</span>
+<button aria-pressed="false" class="relative inline-flex h-5 w-9 items-center rounded-full bg-white/10 ring-1 ring-white/10">
+<span class="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-neutral-400 translate-x-0 transition-transform shadow-sm"></span>
+<span class="sr-only font-sans">alternar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+</section>
+
+<!-- features -->
+<section class="animate-entry delay-200 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-gray-500/0 via-gray-500/10 to-gray-500/0 from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mt-24 mr-auto mb-24 ml-auto pt-10 pr-10 pb-10 pl-10 relative mx-2.5 lg:mx-auto" style="position: relative; --border-gradient: linear-gradient(45deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); --border-radius-before: 24px">
+<div class="flex mb-0 items-center justify-between">
+<div class="flex flex-col text-left">
+<div class="flex flex-col lg:flex-row gap-4 mb-3 items-start lg:items-center">
+<span class="text-8xl text-white/5 font-bricolage font-light tracking-tight">01.</span>
+<div class="space-y-2">
+<h2 class="md:text-5xl text-4xl text-white font-bricolage font-light tracking-tight">Escale seu alcance instantaneamente</h2>
+<p class="leading-relaxed text-lg text-neutral-400 max-w-2xl font-sans">Luminous analisa milhões de dados para prever tendências, automatizar engajamento e agendar conteúdo nos horários em que sua audiência está mais ativa.</p>
+<button class="lg:hidden mt-6 w-full sm:w-auto px-6 py-3 bg-orange-600 text-white rounded-lg shadow-lg hover:bg-orange-500 transition-colors whitespace-nowrap font-sans">Comece a Crescer Agora</button>
+</div>
+</div>
+</div>
+<div class="hidden lg:block">
+<button class="px-6 py-3 bg-orange-600 text-white rounded-lg shadow-lg hover:bg-orange-500 transition-colors whitespace-nowrap font-sans">Comece a Crescer Agora</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 mt-12 mb-12 gap-8">
+<div class="md:p-10 flex flex-col overflow-hidden group/card hover:border-white/20 transition-colors duration-500 bg-[#0A0A0A] border-white/10 border rounded-3xl pt-8 pr-8 pb-8 pl-8 relative justify-between">
+<div class="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 blur-[100px] rounded-full pointer-events-none transition-opacity duration-500 opacity-50 group-hover/card:opacity-100"></div>
+<div class="grid grid-cols-3 gap-4 mb-12 relative z-10">
+<div class="flex flex-col items-center text-center gap-4 group cursor-pointer">
+<div class="w-14 h-14 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-neutral-400 group-hover:text-white group-hover:border-orange-500/30 group-hover:bg-orange-500/10 transition-all duration-300">
+<i data-lucide="sparkles" class="w-5 h-5" stroke-width="1.5"></i>
+</div>
+<span class="text-xs text-neutral-500 leading-tight group-hover:text-neutral-300 transition-colors font-sans">Gerar Conteúdo</span>
+</div>
+<div class="flex flex-col items-center text-center gap-4 group cursor-pointer">
+<div class="w-14 h-14 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-neutral-400 group-hover:text-white group-hover:border-orange-500/30 group-hover:bg-orange-500/10 transition-all duration-300">
+<i data-lucide="message-circle" class="w-5 h-5" stroke-width="1.5"></i>
+</div>
+<span class="text-xs text-neutral-500 leading-tight group-hover:text-neutral-300 transition-colors font-sans">Auto-Engajar</span>
+</div>
+<div class="flex flex-col items-center text-center gap-4 group cursor-pointer">
+<div class="w-14 h-14 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-neutral-400 group-hover:text-white group-hover:border-orange-500/30 group-hover:bg-orange-500/10 transition-all duration-300">
+<i data-lucide="trending-up" class="w-5 h-5" stroke-width="1.5"></i>
+</div>
+<span class="text-xs text-neutral-500 leading-tight group-hover:text-neutral-300 transition-colors font-sans">Prever Tendências</span>
+</div>
+</div>
+<div class="mb-10 relative z-10">
+<div class="grid grid-cols-4 text-sm font-medium text-white mb-4 px-2">
+<div class="col-span-2 font-sans">Tópico em Alta</div>
+<div class="text-right text-neutral-400 font-sans">Alcance</div>
+<div class="text-right text-neutral-400 font-sans">Velocidade</div>
+</div>
+<div class="grid grid-cols-4 text-sm text-neutral-400 py-4 border-t border-white/5 px-2 hover:bg-white/[0.02] transition-colors rounded-lg">
+<div class="col-span-2 text-neutral-300 flex items-center gap-2 font-sans">
+<span class="w-1.5 h-1.5 rounded-full bg-neutral-600"></span>
+#GenerativeAI
+</div>
+<div class="text-right font-sans">842k</div>
+<div class="text-right text-neutral-500 font-sans">Médio</div>
+</div>
+<div class="grid grid-cols-4 text-sm text-neutral-400 py-4 border-t border-white/5 px-2 relative overflow-hidden rounded-lg group">
+<div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-transparent pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="col-span-2 text-white flex items-center gap-2 relative z-10 font-sans">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+</span>
+#FutureTech
+</div>
+<div class="text-right text-white relative z-10 font-sans">2.1M</div>
+<div class="text-right text-orange-400 relative z-10 font-sans">Viral</div>
+</div>
+</div>
+<div class="bg-neutral-900/40 border border-white/10 rounded-xl p-2 pl-4 flex justify-between items-center relative z-10 backdrop-blur-sm group hover:border-orange-500/30 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded flex items-center justify-center bg-[#1877F2]/20 text-[#1877F2]">
+<svg fill="currentColor" height="12" stroke="none" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+</div>
+<span class="text-neutral-300 text-sm font-sans">Conectar Facebook Ads</span>
+</div>
+<div class="px-3 py-1.5 rounded-lg bg-white/5 group-hover:bg-orange-500 group-hover:text-white border border-white/5 flex items-center justify-center text-neutral-400 transition-colors text-xs font-sans">Conectar</div>
+</div>
+</div>
+
+<!-- orbit-card -->
+<div class="overflow-hidden min-h-[450px] flex items-center justify-center bg-[#0A0A0A] border-white/10 border rounded-3xl relative group/orbit">
+<div class="opacity-80 absolute top-0 right-0 bottom-0 left-0 bg-[radial-gradient(circle_at_center,_rgba(249,115,22,0.15)_0%,_rgba(0,0,0,0)_70%)]"></div>
+<div class="flex md:scale-100 transition-transform duration-500 w-full h-full relative scale-[0.65] items-center justify-center">
+<div class="absolute flex items-center justify-center pointer-events-none opacity-20"><div class="w-[180px] h-[180px] rounded-full border border-orange-500/30"></div></div>
+<div class="absolute flex items-center justify-center pointer-events-none opacity-20"><div class="w-[340px] h-[340px] rounded-full border border-orange-500/20"></div></div>
+<div class="absolute flex items-center justify-center pointer-events-none opacity-10"><div class="w-[500px] h-[500px] rounded-full border border-orange-500/10"></div></div>
+<div class="relative w-24 h-24 rounded-full bg-[#120a05] border border-orange-500/50 flex items-center justify-center shadow-[0_0_50px_-5px_rgba(249,115,22,0.5)] z-20">
+<div class="animate-ping opacity-20 border-orange-500 border rounded-full absolute top-0 right-0 bottom-0 left-0"></div>
+<i data-lucide="asterisk" class="text-orange-500 w-9 h-9"></i>
+</div>
+<div class="absolute inset-0 flex items-center justify-center animate-[spin_60s_linear_infinite]">
+<div class="absolute top-1/2 left-1/2 z-10" style="transform: translate(-50%, -50%) rotate(0deg) translateY(-170px) rotate(0deg);">
+<div class="w-12 h-12 rounded-2xl bg-black border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-all hover:scale-110 shadow-lg cursor-pointer animate-[spin_60s_linear_infinite_reverse]">
+<i data-lucide="twitter" class="w-5 h-5" stroke-width="1.5"></i>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 z-10" style="transform: translate(-50%, -50%) rotate(60deg) translateY(-170px) rotate(-60deg);">
+<div class="w-12 h-12 rounded-2xl bg-black border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-all hover:scale-110 shadow-lg cursor-pointer animate-[spin_60s_linear_infinite_reverse]">
+<i data-lucide="facebook" class="w-5 h-5" stroke-width="1.5"></i>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 z-10" style="transform: translate(-50%, -50%) rotate(120deg) translateY(-170px) rotate(-120deg);">
+<div class="w-12 h-12 rounded-2xl bg-black border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-all hover:scale-110 shadow-lg cursor-pointer animate-[spin_60s_linear_infinite_reverse]">
+<i data-lucide="instagram" class="w-5 h-5" stroke-width="1.5"></i>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 z-10" style="transform: translate(-50%, -50%) rotate(180deg) translateY(-170px) rotate(-180deg);">
+<div class="w-12 h-12 rounded-2xl bg-black border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-all hover:scale-110 shadow-lg cursor-pointer animate-[spin_60s_linear_infinite_reverse]">
+<svg class="text-white w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.46a6.33 6.33 0 0 0 10.86 3.1 5.6 5.6 0 0 0 1.06-2.7V10.4a8.36 8.36 0 0 0 4.69 1.48V8.35a4.86 4.86 0 0 1-2.02-1.66z"/></svg>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 z-10" style="transform: translate(-50%, -50%) rotate(240deg) translateY(-170px) rotate(-240deg);">
+<div class="w-12 h-12 rounded-2xl bg-black border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-all hover:scale-110 shadow-lg cursor-pointer animate-[spin_60s_linear_infinite_reverse]">
+<i data-lucide="youtube" class="w-5 h-5" stroke-width="1.5"></i>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 z-10" style="transform: translate(-50%, -50%) rotate(300deg) translateY(-170px) rotate(-300deg);">
+<div class="w-12 h-12 rounded-2xl bg-black border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-all hover:scale-110 shadow-lg cursor-pointer animate-[spin_60s_linear_infinite_reverse]">
+<i data-lucide="linkedin" class="w-5 h-5" stroke-width="1.5"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-12">
+<div class="flex flex-col items-start group">
+<div class="w-8 h-px bg-neutral-700 mb-6 group-hover:bg-orange-500 transition-colors duration-300"></div>
+<i data-lucide="target" class="text-neutral-400 mb-5 group-hover:text-orange-500 transition-colors duration-300 w-6 h-6" stroke-width="1.5"></i>
+<h3 class="text-xl text-white mb-3 font-sans">Segmentação Precisa</h3>
+<p class="text-sm text-neutral-400 leading-relaxed group-hover:text-neutral-300 transition-colors font-sans">Identifique e engaje seus segmentos de audiência ideais com análise comportamental orientada por IA e modelagem lookalike.</p>
+</div>
+<div class="flex flex-col items-start group">
+<div class="w-8 h-px bg-neutral-700 mb-6 group-hover:bg-orange-500 transition-colors duration-300"></div>
+<i data-lucide="refresh-cw" class="text-neutral-400 mb-5 group-hover:text-orange-500 transition-colors duration-300 w-6 h-6" stroke-width="1.5"></i>
+<h3 class="text-xl text-white mb-3 font-sans">Fluxos Automatizados</h3>
+<p class="text-sm text-neutral-400 leading-relaxed group-hover:text-neutral-300 transition-colors font-sans">Configure gatilhos complexos de engajamento e sequências de resposta que rodam no piloto automático enquanto você dorme.</p>
+</div>
+<div class="flex flex-col group items-start">
+<div class="w-8 h-px bg-neutral-700 mb-6 group-hover:bg-orange-500 transition-colors duration-300"></div>
+<i data-lucide="shield-check" class="text-neutral-400 mb-5 group-hover:text-orange-500 transition-colors duration-300 w-6 h-6" stroke-width="1.5"></i>
+<h3 class="text-xl text-white mb-3 font-sans">Segurança de Marca</h3>
+<p class="text-sm text-neutral-400 leading-relaxed group-hover:text-neutral-300 transition-colors font-sans">Análise avançada de sentimento garante que suas interações automatizadas sempre estejam alinhadas à voz e aos valores da sua marca.</p>
+</div>
+</div>
+</section>
+
+<!-- testimonials -->
+<section class="animate-entry delay-200 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-gray-500/0 via-gray-500/10 to-gray-500/0 from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mt-24 mr-auto mb-24 ml-auto pt-10 pr-10 pb-10 pl-10 relative mx-2.5 lg:mx-auto" style="position: relative; --border-gradient: linear-gradient(45deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); --border-radius-before: 24px">
+<div class="flex flex-col mb-16">
+<div class="flex mb-0 items-center justify-between">
+<div class="flex flex-col text-left">
+<div class="flex gap-4 mb-3 flex-col lg:flex-row items-start lg:items-center">
+<span class="text-8xl text-white/5 font-bricolage font-light tracking-tight">02.</span>
+<div class="space-y-2">
+<h2 class="md:text-5xl text-4xl text-white font-bricolage font-light tracking-tight">Resultados Reais. Crescimento Real.</h2>
+<p class="leading-relaxed text-lg text-neutral-400 max-w-2xl font-sans">Ouça diretamente de criadores e marcas que usaram o Luminous para aumentar drasticamente seu engajamento e alcance.</p>
+<button class="lg:hidden mt-6 w-full sm:w-auto px-6 py-3 bg-orange-600 text-white rounded-lg shadow-lg hover:bg-orange-500 transition-colors whitespace-nowrap font-sans">Comece a Crescer Agora</button>
+</div>
+</div>
+</div>
+<div class="hidden lg:block">
+<button class="px-6 py-3 bg-orange-600 text-white rounded-lg shadow-lg hover:bg-orange-500 transition-colors whitespace-nowrap font-sans">Comece a Crescer Agora</button>
+</div>
+</div>
+</div>
+<div class="flex gap-4 md:gap-8 relative items-center justify-between">
+<button class="hidden md:flex w-12 h-12 rounded-xl border border-white/10 bg-[#0F0F0F] text-neutral-400 items-center justify-center hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300 z-30 group shrink-0 shadow-lg cursor-pointer" onclick="window.prevTestimonial()">
+<i data-lucide="arrow-left" class="group-hover:-translate-x-0.5 transition-transform w-5 h-5"></i>
+</button>
+<div class="relative w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 items-center gap-8 group/carousel">
+<div class="lg:col-span-6 lg:col-start-1 relative z-20">
+<div class="overflow-hidden group/card hover:border-white/20 transition-colors duration-300 md:p-12 bg-[#0A0A0A]/50 w-full lg:w-[620px] border-white/10 border rounded-[24px] pt-8 pr-8 pb-8 pl-8 relative shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+<div class="absolute top-0 right-0 w-64 h-64 bg-orange-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+<div class="mb-8 text-orange-500 relative z-10">
+<svg fill="currentColor" height="40" stroke="none" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"/></svg>
+</div>
+<blockquote class="text-xl md:text-2xl leading-relaxed text-neutral-200 mb-10 relative z-10 font-bricolage font-light tracking-tight transition-opacity duration-300" id="t-quote">
+"Já assisti a 36 MasterClasses sintonizando enquanto como e faço tarefas pela casa. Aprendi a viver com paixão, garra, humildade e um processo que torna minha jornada de vida algo para saborear."
+</blockquote>
+<div class="flex items-center gap-4 relative z-10">
+<div class="flex flex-col">
+<span class="text-white text-lg font-sans transition-opacity duration-300" id="t-author">Clarissa</span>
+<span class="text-neutral-500 text-xs uppercase flex items-center gap-2 mt-1 font-sans transition-opacity duration-300" id="t-role">
+Fundadora e Professora
+<span class="inline-block w-4 h-3 rounded-[1px] bg-gradient-to-r from-blue-600 via-white to-red-600 shadow-sm opacity-80" title="França"></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6 lg:col-start-7 relative h-[400px] md:h-[600px] rounded-[32px] overflow-hidden border border-white/5 ring-1 ring-white/5 shadow-2xl transition-transform duration-500 group-hover/carousel:scale-[1.01]">
+<div class="bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 absolute top-0 right-0 bottom-0 left-0"></div>
+<img alt="Membro" class="w-full h-full object-cover transition-opacity duration-300" id="t-image" src="assets/649a17f7-ce90-412e-bc8c-622795_e6837615b7ae.webp"/>
+<div class="absolute top-6 right-6 z-20 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-xs text-white flex items-center gap-2 font-sans">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+Criador Ativo
+</div>
+</div>
+</div>
+<button class="hidden md:flex w-12 h-12 rounded-xl border border-white/10 bg-[#0F0F0F] text-neutral-400 items-center justify-center hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300 z-30 group shrink-0 shadow-lg cursor-pointer" onclick="window.nextTestimonial()">
+<i data-lucide="arrow-right" class="group-hover:translate-x-0.5 transition-transform w-5 h-5"></i>
+</button>
+</div>
+</section>
+
+<!-- pricing -->
+<section class="animate-entry delay-200 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-gray-500/0 via-gray-500/10 to-gray-500/0 from-white/0 via-white/10 to-white/0 max-w-7xl rounded-3xl mt-24 mr-auto mb-24 ml-auto pt-12 pr-10 pb-12 pl-10 relative mx-2.5 lg:mx-auto" style="position: relative; --border-gradient: linear-gradient(45deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); --border-radius-before: 24px">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 z-10 relative items-center">
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="flex gap-4 mb-3 items-center">
+<span class="text-6xl text-white/5 font-bricolage font-light tracking-tight">03.</span>
+<div class="space-y-2">
+<h2 class="md:text-4xl text-4xl text-white font-bricolage font-light tracking-tight">Libere o Crescimento Viral</h2>
+</div>
+</div>
+<p class="text-neutral-400 text-lg leading-relaxed mb-12 max-w-lg font-sans">Escolha o plano perfeito para automatizar sua presença social, analisar tendências em tempo real e crescer sua audiência no piloto automático.</p>
+<div class="flex flex-col gap-4 w-full relative z-10 max-w-md">
+<button class="relative w-full flex items-center justify-between p-5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-[0_0_40px_-10px_rgba(249,115,22,0.4)] transition-transform hover:scale-[1.02] group border-t border-white/20" id="btn-creator" onclick="selectPlan('creator')">
+<span class="text-xl font-sans">Creator</span>
+<i data-lucide="zap" class="w-6 h-6 fill-white/20"></i>
+<div class="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 w-3 h-3 bg-orange-500 rounded-full translate-x-1/2 ring-4 ring-[#050505]" id="active-dot"></div>
+</button>
+<button class="w-full flex items-center justify-between p-5 rounded-xl bg-[#181824] border border-white/5 text-neutral-200 hover:bg-[#20202e] hover:border-white/10 transition-all group text-left" id="btn-pro" onclick="selectPlan('pro')">
+<span class="text-xl group-hover:text-white font-sans">Pro Growth</span>
+<i data-lucide="rocket" class="w-6 h-6 text-neutral-500 group-hover:text-white transition-colors"></i>
+</button>
+<button class="w-full flex items-center justify-between p-5 rounded-xl bg-[#181824] border border-white/5 text-neutral-200 hover:bg-[#20202e] hover:border-white/10 transition-all group text-left" id="btn-agency" onclick="selectPlan('agency')">
+<span class="text-xl group-hover:text-white font-sans">Agência</span>
+<i data-lucide="globe" class="w-6 h-6 text-neutral-500 group-hover:text-white transition-colors"></i>
+</button>
+</div>
+</div>
+
+<div class="hidden lg:block lg:col-span-2 h-[400px] z-10 relative translate-y-16">
+<svg class="w-full h-full absolute inset-0 overflow-visible" preserveAspectRatio="none" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg"><path class="animate-flow shadow-[0_0_15px_rgba(249,115,22,0.5)]" d="M-50 160 C 80 160, 80 200, 180 200 L 240 200" fill="none" id="path-creator" stroke="#f97316" stroke-dasharray="8 8" stroke-width="2"/><path class="opacity-20" d="M-50 250 C 80 250, 80 200, 180 200 L 240 200" fill="none" id="path-pro" stroke="#525252" stroke-dasharray="6 6" stroke-width="2"/><path class="opacity-20" d="M-50 340 C 80 340, 80 200, 180 200 L 240 200" fill="none" id="path-agency" stroke="#525252" stroke-dasharray="6 6" stroke-width="2"/><path d="M230 195 L 240 200 L 230 205" fill="none" stroke="#f97316" stroke-width="2"/><circle cx="240" cy="200" fill="#f97316" r="2"/></svg>
+</div>
+
+<div class="lg:col-span-5 relative h-full">
+<div class="relative w-full h-full bg-neutral-900 rounded-[32px] p-[2px] electric-card overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-b from-yellow-300 via-orange-500 to-transparent opacity-80 z-0"></div>
+<div class="relative z-10 bg-[#0A0A0A] rounded-[30px] h-full p-8 lg:p-10 flex flex-col overflow-hidden">
+<div class="absolute top-0 right-0 w-full h-40 bg-gradient-to-b from-orange-500/10 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2 relative z-10">
+<h3 class="text-3xl text-white font-bricolage font-light tracking-tight" id="plan-title">Creator</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-200 to-orange-400 font-bricolage font-light tracking-tight" id="plan-price">R$ 29,00</span>
+<span class="text-sm text-orange-500/80 font-sans">/mês</span>
+</div>
+</div>
+<p class="text-neutral-400 mt-6 mb-8 text-sm leading-relaxed border-b border-white/10 pb-8 relative z-10 font-sans" id="plan-desc">Ideal para criadores solo que querem automatizar postagens e engajamento diários.</p>
+<div class="space-y-6 mb-10 relative z-10 flex-grow font-sans" id="plan-features">
+<div class="flex items-center gap-4 group/item">
+<div class="flex-none transition-transform group-hover/item:translate-x-1"><img src="assets/images/svg/triangle.svg" class="text-orange-500" alt=""/></div>
+<span class="text-white text-sm font-sans">Análise de Tendências com IA</span>
+</div>
+<div class="flex items-center gap-4 group/item">
+<div class="flex-none transition-transform group-hover/item:translate-x-1"><img src="assets/images/svg/triangle.svg" class="text-orange-500" alt=""/></div>
+<span class="text-white text-sm font-sans">Bot de Auto-Resposta</span>
+</div>
+<div class="flex items-center gap-4 group/item">
+<div class="flex-none transition-transform group-hover/item:translate-x-1"><img src="assets/images/svg/triangle.svg" class="text-orange-500" alt=""/></div>
+<span class="text-white text-sm font-sans">3 Conexões de Plataforma</span>
+</div>
+<div class="flex items-center gap-4 group/item">
+<div class="flex-none transition-transform group-hover/item:translate-x-1"><img src="assets/images/svg/triangle.svg" class="text-orange-500" alt=""/></div>
+<span class="text-white text-sm font-sans">Relatório Semanal de Desempenho</span>
+</div>
+<div class="flex items-center gap-4 group/item">
+<div class="flex-none transition-transform group-hover/item:translate-x-1"><img src="assets/images/svg/triangle.svg" class="text-orange-500" alt=""/></div>
+<span class="text-white text-sm font-sans">Preditor de Score Viral</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-full bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 hover:brightness-110 text-white transition-all shadow-[0_8px_30px_-5px_rgba(249,115,22,0.4)] flex items-center justify-center gap-2 group/btn relative z-10 hover:shadow-[0_8px_40px_-5px_rgba(249,115,22,0.6)] border-t border-white/20 font-sans" id="plan-cta">
+Começar a Crescer
+<i data-lucide="arrow-right-circle" class="w-5 h-5 text-white/80 transition-transform group-hover/btn:translate-x-1"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- footer -->
+<footer class="bg-center animate-entry delay-200 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll bg-gradient-to-tr from-gray-500/0 via-gray-500/10 to-gray-500/0 from-white/0 via-white/10 to-white/0 bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f5347579-34d0-43b9-99d3-126f6193d19d_1600w.jpg)] max-w-7xl bg-cover rounded-3xl mt-24 mr-auto mb-12 ml-auto pt-24 pr-6 pb-6 pl-6 relative" style="position: relative; --border-gradient: linear-gradient(45deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); --border-radius-before: 24px">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-orange-500/5 blur-[120px] rounded-full pointer-events-none opacity-50"></div>
+<div class="z-10 text-center max-w-4xl mr-auto mb-24 ml-auto pr-6 pl-6 relative">
+<h2 class="text-2xl md:text-3xl text-white mb-3 font-bricolage font-light tracking-tight">Assine nossa newsletter</h2>
+<p class="text-neutral-400 max-w-lg mx-auto mb-8 text-base leading-relaxed font-sans">Assine nossa newsletter para insights exclusivos, anúncios e ofertas especiais entregues diretamente na sua caixa de entrada.</p>
+<div class="relative max-w-xs mx-auto">
+<form class="flex items-center rounded-lg bg-[#050505] border border-white/10 focus-within:border-white/20 transition-all">
+<input class="w-full bg-transparent border-none text-sm text-white pl-4 pr-1 py-3 focus:outline-none placeholder:text-neutral-600 font-sans h-10 rounded-l-lg" placeholder="Digite seu e-mail" type="email"/>
+<button class="bg-white hover:bg-neutral-200 text-black px-4 py-2 rounded-r-lg text-sm transition-colors h-10 shadow-lg flex items-center gap-2 flex-shrink-0 font-sans">Assinar</button>
+</form>
+</div>
+</div>
+<div class="max-w-7xl mr-auto ml-auto pr-6 pl-6">
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-16"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-12 max-w-7xl mx-auto px-6">
+<div class="lg:col-span-2 col-span-full">
+<div class="flex flex-col items-start gap-4">
+<div class="flex gap-2 items-center">
+<div class="relative flex items-center justify-center w-8 h-8">
+<i data-lucide="asterisk" class="text-white w-8 h-8 absolute rotate-45"></i>
+<i data-lucide="asterisk" class="text-orange-500 w-8 h-8 absolute"></i>
+</div>
+<span class="text-xl text-white font-sans">Luminous</span>
+</div>
+<div class="flex gap-4">
+<a class="text-neutral-500 hover:text-white transition-colors" href="#"><img src="assets/images/svg/logo-twitter.svg" class="w-[18px] h-[18px]" alt="Twitter"/></a>
+<a class="text-neutral-500 hover:text-white transition-colors" href="#"><img src="assets/images/svg/logo-instagram.svg" class="w-[18px] h-[18px]" alt="Instagram"/></a>
+<a class="text-neutral-500 hover:text-white transition-colors" href="#"><img src="assets/images/svg/logo-linkedin.svg" class="w-[18px] h-[18px]" alt="LinkedIn"/></a>
+</div>
+</div>
+</div>
+<div class="lg:col-span-2">
+<h4 class="text-white mb-4 text-sm font-sans">Produto</h4>
+<ul class="space-y-3 text-sm text-neutral-500">
+<li><a class="hover:text-white transition-colors font-sans" href="#">Produto</a></li>
+<li><a class="hover:text-white transition-colors font-sans" href="#">Integrações</a></li>
+<li><a class="hover:text-white transition-colors font-sans" href="#">Preços</a></li>
+</ul>
+</div>
+<div class="lg:col-span-2">
+<h4 class="text-white mb-4 text-sm font-sans">Desenvolvedores</h4>
+<ul class="space-y-3 text-sm text-neutral-500">
+<li><a class="hover:text-white transition-colors font-sans" href="#">Docs</a></li>
+<li><a class="hover:text-white transition-colors font-sans" href="#">Servidor Discord</a></li>
+<li><a class="hover:text-white transition-colors font-sans" href="#">Changelog</a></li>
+</ul>
+</div>
+<div class="lg:col-span-2">
+<h4 class="text-white mb-4 text-sm font-sans">Empresa</h4>
+<ul class="space-y-3 text-sm text-neutral-500">
+<li><a class="hover:text-white transition-colors font-sans" href="#">Sobre</a></li>
+<li><a class="hover:text-white transition-colors font-sans" href="#">Artigos</a></li>
+<li><a class="hover:text-white transition-colors font-sans" href="#">Contato</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-16 flex flex-col items-start gap-4 text-xs text-neutral-600 font-sans">
+<p class="font-sans">© 2025 AINest INC. Todos os direitos reservados.</p>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-16 bg-[#f97316]/20 blur-3xl opacity-50 pointer-events-none"></div>
+</footer>
+
+<!-- js -->
+<!-- IntersectionObserver to start [animation:animationIn] sections when they enter the viewport -->
+<script src="assets/js/scroll-reveal.js"></script>
+<!-- Loads UnicornStudio CDN runtime which renders the hero background project AhqzKk9mZE0EnlENMQDi -->
+<script src="assets/js/unicorn-studio.js"></script>
+<!-- Drives the testimonial slider with prev/next handlers attached to the arrow buttons -->
+<script src="assets/js/testimonial-carousel.js"></script>
+<!-- Switches between Creator/Pro/Agency cards in the pricing section and animates the connector path -->
+<script src="assets/js/plan-selector.js"></script>
+<!-- Walks the DOM after content loads and replaces every <i data-lucide> with its rendered SVG icon -->
+<script src="assets/js/lucide-init.js"></script>
+<!-- Catches broken <img> elements and swaps src with a deterministic placeholder from the supabase pool -->
+<script src="assets/js/img-fallback.js"></script>
+</body>
+</html>

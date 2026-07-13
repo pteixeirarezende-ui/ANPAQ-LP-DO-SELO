@@ -1,0 +1,39 @@
+/* Page-level overrides for the standalone design-system build.
+   The original page revealed several elements through scroll-driven JS
+   (Angular animations / SplitType). Without that runtime they would stay
+   hidden, so the parked 'before' states are forced to their final values. */
+
+html, body { margin: 0; opacity: 1; visibility: visible; }
+*, *::before, *::after { box-sizing: border-box; }
+
+/* reveal elements the original animated in on scroll */
+.list-item-content { opacity: 1 !important; width: auto !important; }
+typed-header, .typed-content, .heading-3, .heading-4, .landing-main-header,
+.feature-description, .feature-title { opacity: 1 !important; }
+
+/* the blinking-cursor / typed-letter animation is replaced by static text */
+.cursor-container { display: none !important; }
+
+/* keep the WebGL canvases behind their section content */
+landing-main-particles-component canvas,
+landing-morphing-particles-component canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+
+/* sliders: visible overflow clipping so off-track items are hidden */
+.slider-container, .slider-wrapper { overflow: hidden; }
+.slider-track, .slider-inner { transition: transform .5s cubic-bezier(.16,1,.3,1); }
+
+/* use-case slider copy: only the active block is shown */
+.slider-copy-wrapper .slider-copy { grid-area: 1 / 1; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
+.slider-copy-wrapper .slider-copy.is-active { opacity: 1; pointer-events: auto; }
+.slider-copy-wrapper .slider-controls { grid-area: 2 / 1; justify-self: start; margin-top: var(--space-lg); }
+
+/* footer wordmark image keeps its intrinsic ratio */
+.footer-antigravity { display: block; width: 100%; height: auto; }
+#antigravity-footer-wrapper { height: auto; }
+
+/* logo images */
+antigravity-logo .logo, antigravity-logo img { display: block; }
+.welcome-section .logo-container img { height: 30px; width: auto; }
+.header .logo img { height: 21px; width: auto; }

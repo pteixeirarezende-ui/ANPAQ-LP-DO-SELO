@@ -1,0 +1,8 @@
+- **Tailwind CSS (CDN runtime, v3.4.17)** — utility-first CSS framework providing all layout, spacing, color and responsive styling; loaded as a browser runtime build (`assets/176e894661aa9cdc_3.4.17`).
+- **Tailwind config (inline)** — extends the theme with the `Inter` font family and the brand color tokens (`background`, `foreground`, `muted`, `muted-foreground`, `border`, `accent`).
+- **Precompiled Tailwind stylesheet** — the generated utility classes extracted to `assets/css/tailwind-generated.css`.
+- **iconify-icon web component** — custom element (`assets/851bed7af266f96a_iconify-icon.min.js`) that renders every `<iconify-icon>` in the page.
+- **Solar icon set (via Iconify)** — the icon pack used for all interface icons (hexagon, arrows, camera, play, like, hamburger menu, add-circle).
+- **Inter** — Google Font loaded via `@font-face` declarations in `assets/74b6d68958a54de6_css2.css`; primary typeface for the whole interface.
+- **HTML5 video** — the hero section plays a background MP4 (autoplay, muted, looped) hosted on `cdn.midjourney.com`.
+- **CSS transitions / transforms** — used for hover effects: image scale-up, grayscale-to-color logo reveals, arrow slide-ins, opacity fades.

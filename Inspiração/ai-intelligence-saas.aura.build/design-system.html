@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- preview: aguarda o globo (Canvas) compor antes do screenshot -->
+<meta content="5000" name="preview-ready-after-ms"/>
+<title>Omi — Plataforma de Inteligência</title>
+<!-- fontes: Outfit (display) e Inter (corpo) -->
+<link rel="stylesheet" href="assets/cf88d856aba005b1_css2.css"/>
+<!-- css -->
+<!-- design-system.css: variaveis de tema, base, botoes, header, hero, secoes platform/security, cards, painel neural, timeline, precos, footer e media queries -->
+<link rel="stylesheet" href="assets/css/design-system.css"/>
+<!-- header.css: overrides do header premium e animacoes do menu mobile -->
+<link rel="stylesheet" href="assets/css/header.css"/>
+<!-- testimonials.css: cards empilhados e layout da secao de depoimentos -->
+<link rel="stylesheet" href="assets/css/testimonials.css"/>
+<!-- offline-visibility.css: garante visibilidade do conteudo independente do estado de inicializacao do JS -->
+<link rel="stylesheet" href="assets/css/offline-visibility.css"/>
+<!-- runtime do Tailwind CSS (CDN) — precisa ficar no head para gerar as classes utilitarias -->
+<script src="assets/176e894661aa9cdc_3.4.17"></script>
+</head>
+<body>
+<div class="ambient-glow"></div>
+<div class="grid-layer"></div>
+<div class="noise-layer"></div>
+
+<!-- header -->
+<header class="fixed z-[1000] flex transition-all duration-500 h-[90px] top-0 right-0 left-0 items-center" id="header">
+<div class="absolute inset-0 bg-[#050507]/80 backdrop-blur-xl border-b border-white/[0.04] opacity-0 transition-opacity duration-500 pointer-events-none" id="header-bg">
+<div class="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#33D2FF]/25 to-transparent"></div>
+<div class="absolute inset-x-0 top-0 h-full bg-[radial-gradient(ellipse_at_top,rgba(51,210,255,0.06)_0%,transparent_70%)]"></div>
+</div>
+<div class="container relative z-10 flex justify-between items-center w-full">
+<a class="block w-[110px] h-[36px] bg-left bg-no-repeat bg-contain bg-[url('https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d29ebd67-b00e-4ac9-9354-280fd04105d3_1600w.png')] hover:opacity-80 transition-opacity duration-300" href="/home"></a>
+<nav class="hidden md:flex items-center gap-10">
+<a class="group text-[13px] hover:text-white transition-colors duration-300 uppercase font-semibold text-[#888894] tracking-wide relative" href="/platform" style="font-family: var(--font-display)">Plataforma<span class="absolute -bottom-2 left-0 w-0 h-[1.5px] bg-[#33D2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(51,210,255,0.6)]"></span></a>
+<a class="group text-[13px] hover:text-white transition-colors duration-300 uppercase font-semibold text-[#888894] tracking-wide relative" href="/features" style="font-family: var(--font-display)">Recursos<span class="absolute -bottom-2 left-0 w-0 h-[1.5px] bg-[#33D2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(51,210,255,0.6)]"></span></a>
+<a class="group text-[13px] hover:text-white transition-colors duration-300 uppercase font-semibold text-[#888894] tracking-wide relative" href="/pricing" style="font-family: var(--font-display)">Preços<span class="absolute -bottom-2 left-0 w-0 h-[1.5px] bg-[#33D2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(51,210,255,0.6)]"></span></a>
+<a class="group relative text-[13px] font-semibold text-[#888894] hover:text-white transition-colors duration-300 tracking-wide uppercase" href="/blog" style="font-family: var(--font-display);">Blog<span class="absolute -bottom-2 left-0 w-0 h-[1.5px] bg-[#33D2FF] transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(51,210,255,0.6)]"></span></a>
+</nav>
+<div class="hidden md:flex items-center">
+<a class="group inline-flex items-center justify-center border-white/[0.08] text-[13px] transition-all duration-500 hover:bg-[#33D2FF]/10 hover:border-[#33D2FF]/40 hover:shadow-[0_0_20px_rgba(51,210,255,0.2)] hover:-translate-y-[1px] font-semibold text-white tracking-wide h-10 border rounded-full pr-6 pl-6 relative" href="/request-access" style="font-family: var(--font-body)">
+<span class="z-10 relative drop-shadow-md cursor-pointer" onclick="window.location.href='/request-access'" role="button">Solicitar Acesso</span>
+<div class="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-[#33D2FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+</a>
+</div>
+<button class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-full bg-white/[0.02] border border-white/[0.06] relative z-[1001] transition-all duration-300 hover:bg-white/[0.06]" id="mobile-menu-btn">
+<span class="absolute w-[16px] h-[1.5px] bg-white rounded-full transition-transform duration-300 -translate-y-[6px]"></span>
+<span class="absolute w-[16px] h-[1.5px] bg-white rounded-full transition-opacity duration-300"></span>
+<span class="absolute w-[16px] h-[1.5px] bg-white rounded-full transition-transform duration-300 translate-y-[6px]"></span>
+</button>
+</div>
+</header>
+
+<!-- mobile-menu -->
+<div class="fixed inset-0 z-[999] bg-[#030304]/95 backdrop-blur-3xl opacity-0 pointer-events-none transition-opacity duration-500 flex flex-col pt-28 px-8 pb-12 overflow-hidden border-t border-[#33D2FF]/10" id="mobile-menu">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(51,210,255,0.1)_0%,transparent_60%)] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#33D2FF]/20 to-transparent"></div>
+<nav class="flex flex-col gap-8 relative z-10 mt-8">
+<a class="mobile-link text-3xl font-normal text-white/70 hover:text-white hover:pl-2 transition-all duration-300 tracking-tight transform translate-y-4 opacity-0 border-b border-white/[0.04] pb-4" href="/platform" style="font-family: var(--font-display);">Plataforma</a>
+<a class="mobile-link text-3xl font-normal text-white/70 hover:text-white hover:pl-2 transition-all duration-300 tracking-tight transform translate-y-4 opacity-0 border-b border-white/[0.04] pb-4" href="/features" style="font-family: var(--font-display);">Recursos</a>
+<a class="mobile-link text-3xl font-normal text-white/70 hover:text-white hover:pl-2 transition-all duration-300 tracking-tight transform translate-y-4 opacity-0 border-b border-white/[0.04] pb-4" href="/pricing" style="font-family: var(--font-display);">Preços</a>
+<a class="mobile-link text-3xl font-normal text-white/70 hover:text-white hover:pl-2 transition-all duration-300 tracking-tight transform translate-y-4 opacity-0 border-b border-white/[0.04] pb-4" href="/blog" style="font-family: var(--font-display);">Blog</a>
+</nav>
+<div class="mt-auto relative z-10 transform translate-y-4 opacity-0 mobile-cta">
+<a class="flex items-center justify-center w-full h-14 rounded-xl bg-white/[0.05] border border-[#33D2FF]/30 text-white text-[15px] font-medium tracking-wide shadow-[0_0_20px_rgba(51,210,255,0.1)] hover:bg-[#33D2FF]/10 hover:shadow-[0_0_30px_rgba(51,210,255,0.2)] transition-all duration-300" href="/request-access">Solicitar Acesso</a>
+</div>
+</div>
+
+<!-- hero -->
+<section class="hero">
+<div class="container hero-grid">
+<div class="hero-content reveal visible">
+<div class="tagline">Plataforma de Inteligência</div>
+<h1>Arquitete o Invisível.</h1>
+<p>A Omi é a camada unificada de inteligência para computação espacial e fluxos de trabalho corporativos autônomos. Construa sistemas que antecipam a intenção e executam com precisão determinística.</p>
+<div class="hero-actions">
+<a class="group relative inline-flex h-[52px] rounded-full no-underline cursor-pointer outline-none text-[14px] font-medium" href="/request-access" style="font-family: var(--font-body); -webkit-tap-highlight-color: transparent;">
+<div class="absolute inset-[-4px] bg-[rgba(74,140,255,0)] blur-[16px] opacity-0 rounded-full transition-all duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 translate-y-[2px] scale-95 pointer-events-none group-hover:opacity-100 group-hover:bg-[rgba(51,210,255,0.35)] group-hover:translate-y-[4px] group-hover:scale-[1.02] group-hover:blur-[20px]"></div>
+<div class="relative z-10 flex h-full rounded-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[0_10px_24px_rgba(0,0,0,0.6),inset_0_0_0_1px_rgba(255,255,255,0.02)] group-hover:-translate-y-[2px] group-hover:shadow-[0_14px_32px_rgba(0,0,0,0.8),inset_0_0_0_1px_rgba(255,255,255,0.05)]">
+<div class="w-[48px] h-full rounded-l-full relative border border-white/[0.08] border-r-black overflow-hidden z-20 bg-[linear-gradient(180deg,#42424a_0%,#202025_35%,#0f0f13_100%)] shadow-[inset_4px_0_8px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.12),inset_0_-3px_6px_rgba(0,0,0,0.9)]">
+<div class="absolute top-[2px] left-[6px] right-[2px] h-[16px] rounded-full pointer-events-none mix-blend-overlay bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0)_70%)]"></div>
+</div>
+<div class="flex items-center pl-[8px] pr-[32px] h-full backdrop-blur-[12px] border border-[#33D2FF]/15 border-l-0 rounded-r-full relative z-10 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-[#33D2FF]/40 bg-[linear-gradient(90deg,rgba(20,24,32,0.7)_0%,rgba(10,14,20,0.5)_100%)] group-hover:bg-[linear-gradient(90deg,rgba(20,28,40,0.85)_0%,rgba(10,16,26,0.6)_100%)] shadow-[inset_0_0_20px_rgba(51,210,255,0.05),inset_0_1px_1px_rgba(255,255,255,0.15)] group-hover:shadow-[inset_0_0_30px_rgba(51,210,255,0.15),inset_0_1px_1px_rgba(255,255,255,0.25)]">
+<div class="absolute top-[1px] left-0 right-[2px] h-[40%] rounded-tr-full pointer-events-none bg-[linear-gradient(180deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0)_100%)]"></div>
+<div class="absolute -left-[10px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] opacity-60 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none mix-blend-screen bg-[radial-gradient(circle,rgba(51,210,255,0.4)_0%,transparent_70%)] group-hover:opacity-100 group-hover:w-[60px] group-hover:h-[60px] group-hover:bg-[radial-gradient(circle,rgba(51,210,255,0.7)_0%,transparent_70%)]"></div>
+<div class="flex items-center relative z-30 gap-[10px]">
+<div class="w-[24px] h-[24px] -ml-[20px] text-white/50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center drop-shadow-[0_0_4px_rgba(51,210,255,0)] group-hover:text-white/90 group-hover:drop-shadow-[0_0_8px_rgba(51,210,255,0.8)]">
+<svg fill="none" height="24" stroke-width="2" viewBox="0 0 28 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M-4 12 h 12 c 3 0, 3 -4.5, 6 -4.5 c 3 0, 3 9, 0 9 c -3 0, -3 -4.5, 0 -4.5 h 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<span class="text-white/80 tracking-[0.5px] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] [text-shadow:0_0_10px_rgba(51,210,255,0)] group-hover:text-white group-hover:[text-shadow:0_0_12px_rgba(51,210,255,0.6)]">Explorar Mais</span>
+</div>
+</div>
+</div>
+</a>
+<a class="btn btn-secondary rounded-full text-center" href="/request-access">Documentação</a>
+</div>
+</div>
+<div class="hero-visual reveal delay-2 visible overflow-visible">
+<canvas height="600" id="hero-globe" style="width: 698px; height: 600px;" width="698"></canvas>
+</div>
+</div>
+</section>
+
+<!-- platform -->
+<section class="section-padding" id="platform">
+<div class="container split-section">
+<div class="section-info reveal visible">
+<div class="tagline">Interface Espacial</div>
+<h2>Simulação de Profundidade Contextual.</h2>
+<p>Interfaces que entendem prioridade. Os dados são dispostos em camadas dinamicamente, com base no peso operacional, imitando a tensão física para atrair o foco naturalmente para anomalias críticas.</p>
+<ul class="feature-list">
+<li>
+<div class="feature-icon">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+</div>
+<span>Arquitetura de z-index variável em tempo real.</span>
+</li>
+<li>
+<div class="feature-icon">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><path d="M3 9h18M9 21V9"></path></svg>
+</div>
+<span>Interpolação elástica de inércia para uma UX fluida.</span>
+</li>
+</ul>
+</div>
+<div class="section-visual reveal delay-2 visible">
+<div class="g-container" id="g-container">
+<div class="g-stack" id="g-stack" style="transform: rotateX(0deg) rotateY(0deg);">
+<div class="g-layer g-layer-3" style="transform: translate3d(0px, 0px, -40px) scale(0.9);"></div>
+<div class="g-layer g-layer-2" style="transform: translate3d(0px, 0px, -20px) scale(0.95);"></div>
+<div class="g-layer g-layer-1" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+<div class="g-header">
+<span>SETOR 04</span>
+<div class="g-icon">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+</div>
+</div>
+<div class="g-body">
+<div class="g-title">Subsistema Central</div>
+<div class="g-desc">Simulação de profundidade espacial ativa.</div>
+<div class="g-graph"></div>
+</div>
+<div class="g-details">
+<div class="g-details-row"><span>LATÊNCIA</span></div>
+<div class="g-details-row"><span>PERDA DE PACOTES</span></div>
+<div class="g-details-row"><span>UPLINK</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- orchestration -->
+<section class="section-padding" id="orchestration">
+<div class="container split-section reverse">
+<div class="section-info reveal visible">
+<div class="tagline">Lógica Neural</div>
+<h2>Roteamento Autônomo.</h2>
+<p>Balanceamento de carga sináptico em toda a sua infraestrutura. Nós visuais representam microsserviços ativos que reagem instantaneamente a mudanças de parâmetros.</p>
+<a class="btn btn-secondary" href="#">Ver Arquitetura</a>
+</div>
+<div class="section-visual reveal delay-2 visible">
+<div class="neural-panel">
+<div class="np-header">
+<div class="np-title">Rede de Malha Ativa</div>
+<div class="np-live">Monitoramento Ativo</div>
+</div>
+<div class="np-row">
+<div class="np-control">
+<div class="np-label">
+<span>Fluxo de Pacotes</span>
+<span class="np-val" id="val-flux">50%</span>
+</div>
+<input class="np-slider" id="inp-flux" max="100" min="0" type="range" value="50"/>
+</div>
+<div class="np-connector">
+<div class="np-pulse blue" id="pulse-flux"></div>
+</div>
+<div class="np-module" id="mod-flux">
+<div class="np-status-light"></div>
+<div>
+<div class="np-mod-text">Camada de Ingestão</div>
+<div class="np-mod-sub" id="sub-flux">Aguardando substituição manual...</div>
+</div>
+</div>
+</div>
+<div class="np-row">
+<div class="np-control">
+<div class="np-label">
+<span>Protocolo de Desvio</span>
+<span class="np-val" id="val-relay">OFF</span>
+</div>
+<div class="np-toggle" id="inp-relay">
+<div class="np-toggle-thumb"></div>
+</div>
+</div>
+<div class="np-connector">
+<div class="np-pulse cyan" id="pulse-relay"></div>
+</div>
+<div class="np-module" id="mod-relay">
+<div class="np-status-light"></div>
+<div>
+<div class="np-mod-text">Daemon de Segurança</div>
+<div class="np-mod-sub" id="sub-relay">Protocolo bloqueado.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- pipeline -->
+<section class="section-padding">
+<div class="container split-section" style="align-items: flex-start;">
+<div class="section-info sticky top-32 reveal visible">
+<div class="tagline">Implantação</div>
+<h2>Pipelines Determinísticos.</h2>
+<p>Processos operacionais fragmentados se encaixam em uma narrativa estrutural contínua à medida que a execução ocorre. Transparência total da origem à implantação.</p>
+</div>
+<div class="section-visual flex justify-center w-full relative">
+<div class="relative w-full flex flex-col gap-24 py-16 md:py-24 max-w-2xl mx-auto" id="pipeline-stack">
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible" id="pipeline-svg">
+<defs>
+<filter height="200%" id="glow-line" width="200%" x="-50%" y="-50%">
+<feGaussianBlur result="blur" stdDeviation="5"></feGaussianBlur>
+<feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+</filter>
+<linearGradient id="glow-grad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="rgba(51, 210, 255, 0.2)"></stop>
+<stop offset="50%" stop-color="rgba(51, 210, 255, 1)"></stop>
+<stop offset="100%" stop-color="rgba(51, 210, 255, 0.2)"></stop>
+</linearGradient>
+</defs>
+<path d="M 308.390625 183 C 416.390625 183, 255.609375 453, 363.609375 453 C 255.609375 453, 416.390625 723, 308.390625 723 C 407.740625 723, 264.259375 971.375, 363.609375 971.375 C 259.709375 971.375, 412.290625 1231.125, 308.390625 1231.125 " fill="none" id="pipeline-path-base" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"></path>
+<path d="M 308.390625 183 C 416.390625 183, 255.609375 453, 363.609375 453 C 255.609375 453, 416.390625 723, 308.390625 723 C 407.740625 723, 264.259375 971.375, 363.609375 971.375 C 259.709375 971.375, 412.290625 1231.125, 308.390625 1231.125 " fill="none" filter="url(#glow-line)" id="pipeline-path-glow" stroke="url(#glow-grad)" stroke-width="2" style="transition: stroke-dashoffset 0.1s ease-out; stroke-dasharray: 1232.87; stroke-dashoffset: 1232.87;"></path>
+</svg>
+<div class="pipeline-card self-start w-[85%] md:w-[45%] max-w-[340px] ml-4 md:ml-0 mr-auto relative bg-[#111116]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 transition-all duration-700 ease-out hover:bg-[#111116] hover:-translate-y-1 hover:border-[#33D2FF]/30 hover:shadow-[0_15px_40px_-10px_rgba(51,210,255,0.15)] cursor-pointer z-10 opacity-100 translate-y-0 scale-100" data-index="0">
+<div class="pipeline-side-node absolute top-1/2 -translate-y-1/2 -right-[6px] w-3 h-3 rounded-full border z-20 transition-all duration-700 border-[#33D2FF]/60 bg-[#33D2FF] shadow-[0_0_14px_rgba(51,210,255,0.6)]"></div>
+<div class="text-[#33D2FF] text-[11px] uppercase tracking-[2px] mb-2" style="font-family: var(--font-display);">Etapa 01 // Provisionamento</div>
+<div class="text-[20px] text-white tracking-tight mb-2" style="font-family: var(--font-display);">Síntese de Ambiente</div>
+<div class="text-[14px] text-[#888894] leading-relaxed">Criação automatizada de sandbox e geração isolada de chaves.</div>
+</div>
+<div class="pipeline-card self-end w-[85%] md:w-[45%] max-w-[340px] mr-4 md:mr-0 ml-auto relative bg-[#111116]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 transition-all duration-700 ease-out hover:bg-[#111116] hover:-translate-y-1 hover:border-[#33D2FF]/30 hover:shadow-[0_15px_40px_-10px_rgba(51,210,255,0.15)] cursor-pointer z-10 opacity-100 translate-y-0 scale-100" data-index="1">
+<div class="pipeline-side-node absolute top-1/2 -translate-y-1/2 -left-[6px] w-3 h-3 rounded-full border z-20 transition-all duration-700 border-[#33D2FF]/60 bg-[#33D2FF] shadow-[0_0_14px_rgba(51,210,255,0.6)]"></div>
+<div class="text-[#33D2FF] text-[11px] uppercase tracking-[2px] mb-2" style="font-family: var(--font-display);">Etapa 02 // Vinculação</div>
+<div class="text-[20px] text-white tracking-tight mb-2" style="font-family: var(--font-display);">Alinhamento da Matriz Lógica</div>
+<div class="text-[14px] text-[#888894] leading-relaxed">Loops de eventos sincronizados com webhooks corporativos.</div>
+</div>
+<div class="pipeline-card self-start w-[85%] md:w-[45%] max-w-[340px] ml-4 md:ml-0 mr-auto relative bg-[#111116]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 transition-all duration-700 ease-out hover:bg-[#111116] hover:-translate-y-1 hover:border-[#33D2FF]/30 hover:shadow-[0_15px_40px_-10px_rgba(51,210,255,0.15)] cursor-pointer z-10 opacity-100 translate-y-0 scale-100" data-index="2">
+<div class="pipeline-side-node absolute top-1/2 -translate-y-1/2 -right-[6px] w-3 h-3 rounded-full border z-20 transition-all duration-700 border-[#33D2FF]/60 bg-[#33D2FF] shadow-[0_0_14px_rgba(51,210,255,0.6)]"></div>
+<div class="text-[#33D2FF] text-[11px] uppercase tracking-[2px] mb-2" style="font-family: var(--font-display);">Etapa 03 // Ativa</div>
+<div class="text-[20px] text-white tracking-tight mb-2" style="font-family: var(--font-display);">Propagação Global</div>
+<div class="text-[14px] text-[#888894] leading-relaxed">Redes de borda totalmente populadas e atendendo tráfego.</div>
+</div>
+<div class="pipeline-card self-end w-[85%] md:w-[45%] max-w-[340px] mr-4 md:mr-0 ml-auto relative bg-[#111116]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 transition-all duration-700 ease-out hover:bg-[#111116] hover:-translate-y-1 hover:border-[#33D2FF]/30 hover:shadow-[0_15px_40px_-10px_rgba(51,210,255,0.15)] cursor-pointer z-10 opacity-100 translate-y-0 scale-100" data-index="3">
+<div class="pipeline-side-node absolute top-1/2 -translate-y-1/2 -left-[6px] w-3 h-3 rounded-full border z-20 transition-all duration-700 border-[#33D2FF]/60 bg-[#33D2FF] shadow-[0_0_14px_rgba(51,210,255,0.6)]"></div>
+<div class="text-[#33D2FF] text-[11px] uppercase tracking-[2px] mb-2" style="font-family: var(--font-display);">Etapa 04 // Validação</div>
+<div class="text-[20px] text-white tracking-tight mb-2" style="font-family: var(--font-display);">Verificação de Integridade</div>
+<div class="text-[14px] text-[#888894] leading-relaxed">Dependências de runtime, checagens de política e estados de configuração são validados antes da publicação.</div>
+</div>
+<div class="pipeline-card self-start w-[85%] md:w-[45%] max-w-[340px] ml-4 md:ml-0 mr-auto relative bg-[#111116]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 transition-all duration-700 ease-out hover:bg-[#111116] hover:-translate-y-1 hover:border-[#33D2FF]/30 hover:shadow-[0_15px_40px_-10px_rgba(51,210,255,0.15)] cursor-pointer z-10 opacity-100 translate-y-0 scale-100" data-index="4">
+<div class="pipeline-side-node absolute top-1/2 -translate-y-1/2 -right-[6px] w-3 h-3 rounded-full border z-20 transition-all duration-700 border-[#33D2FF]/60 bg-[#33D2FF] shadow-[0_0_14px_rgba(51,210,255,0.6)]"></div>
+<div class="text-[#33D2FF] text-[11px] uppercase tracking-[2px] mb-2" style="font-family: var(--font-display);">Etapa 05 // Otimização</div>
+<div class="text-[20px] text-white tracking-tight mb-2" style="font-family: var(--font-display);">Ajuste Adaptativo de Carga</div>
+<div class="text-[14px] text-[#888894] leading-relaxed">A distribuição de tráfego e a alocação de processamento são refinadas continuamente para eficiência máxima.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- security -->
+<section class="overflow-hidden border-y border-white/[0.04] bg-[#040507] pt-32 pb-32 relative">
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute inset-0 opacity-70" style="background-image:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4='); mask-image:linear-gradient(to bottom,white,transparent); -webkit-mask-image:linear-gradient(to bottom,white,transparent);"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full blur-[120px] animate-[subtleDrift_15s_ease-in-out_infinite]" style="background:radial-gradient(circle, rgba(34,211,238,0.12) 0%, rgba(59,130,246,0.08) 35%, transparent 72%);"></div>
+<div class="absolute top-[20%] right-[12%] w-[380px] h-[380px] rounded-full blur-[100px]" style="background:radial-gradient(circle, rgba(34,211,238,0.10) 0%, transparent 70%);"></div>
+</div>
+<div class="container mx-auto px-6 lg:px-12 relative z-10 max-w-7xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+<div class="flex flex-col items-start">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] mb-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+<span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-[pulseRing_2s_infinite]"></span>
+<span class="text-xs font-medium tracking-wide uppercase text-zinc-300">Protocolo de Segurança</span>
+</div>
+<h2 class="text-5xl lg:text-6xl font-medium text-white tracking-tight mb-6 leading-tight">Execução sem concessões.</h2>
+<p class="text-lg text-zinc-300 leading-relaxed mb-12 max-w-lg">Ambientes de execução criptograficamente protegidos. Validados por consenso restringido por hardware, eliminando completamente vetores de risco ambiental.</p>
+<div class="flex flex-col gap-8 w-full">
+<div class="group flex items-start gap-5">
+<div class="w-10 h-10 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center flex-shrink-0 text-zinc-300 group-hover:text-cyan-400 group-hover:border-cyan-400/30 transition-colors shadow-sm">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<div>
+<h4 class="text-white text-base font-medium mb-1.5 tracking-tight">Verificação Criptográfica</h4>
+<p class="text-sm text-zinc-400 leading-relaxed">Hashes de payload e assinaturas de confiança são validados de forma imutável antes da alocação de memória.</p>
+</div>
+</div>
+<div class="group flex items-start gap-5">
+<div class="w-10 h-10 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center flex-shrink-0 text-zinc-300 group-hover:text-cyan-400 group-hover:border-cyan-400/30 transition-colors shadow-sm">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+</div>
+<div>
+<h4 class="text-white text-base font-medium mb-1.5 tracking-tight">Consenso Biométrico</h4>
+<p class="text-sm text-zinc-400 leading-relaxed">A execução final exige verificação física por meio de autorização de hardware com múltiplos atores.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square xl:aspect-[4/3] max-w-2xl mx-auto">
+<div class="border-white/[0.08] flex flex-col border rounded-[32px] pt-[7px] pr-[7px] pb-[8px] pl-[7px] absolute top-0 right-0 bottom-0 left-0 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-3xl">
+<div class="flex-1 rounded-[26px] bg-[radial-gradient(circle_at_top,rgba(26,36,48,0.95),rgba(7,10,14,0.98)_45%,rgba(4,6,9,1)_100%)] border border-white/[0.08] relative overflow-hidden flex flex-col shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+<div class="absolute inset-0 pointer-events-none bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_30%,transparent_70%,rgba(34,211,238,0.04))]"></div>
+<div class="h-12 flex items-center justify-between px-5 border-b border-white/[0.06] bg-white/[0.03]">
+<div class="flex items-center gap-2">
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-red-400/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-yellow-400/30"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-400/30"></div>
+</div>
+<div class="ml-4 text-[10px] uppercase tracking-widest text-zinc-400 font-mono">Kernel.sys</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+</span>
+<span class="text-[10px] text-cyan-300 font-mono uppercase tracking-widest">Ativo</span>
+</div>
+</div>
+<div class="flex-1 p-6 relative flex flex-col lg:flex-row gap-6">
+<div class="flex-1 flex flex-col items-center justify-center relative">
+<div class="relative w-44 h-44 flex items-center justify-center mb-6">
+<div class="absolute inset-0 rounded-full bg-cyan-400/10 blur-2xl"></div>
+<div class="absolute inset-0 border border-white/[0.10] rounded-full"></div>
+<div class="absolute inset-2 border border-dashed border-cyan-300/[0.18] rounded-full animate-[spin_20s_linear_infinite]"></div>
+<div class="absolute inset-6 border border-white/[0.08] rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+<div class="absolute inset-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),rgba(255,255,255,0.02)_35%,rgba(14,21,29,0.88)_100%)] rounded-full flex items-center justify-center border border-white/[0.10] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_30px_rgba(34,211,238,0.08)]">
+<svg class="text-cyan-200" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+</div>
+<div class="absolute inset-4 overflow-hidden rounded-full pointer-events-none">
+<div class="w-full h-1/2 bg-gradient-to-b from-cyan-500/0 via-cyan-400/20 to-cyan-400/10 blur-md animate-[secScan_3s_ease-in-out_infinite]"></div>
+</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-white tracking-wider font-mono mb-1">ESTADO: SEGURO</div>
+<div class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono">Aguardando Entrada</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center border-l border-white/[0.06] pl-8 data-stream relative h-full overflow-hidden">
+<div class="space-y-5 font-mono text-[11px] w-full">
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-zinc-300">
+<span>&gt; root_hash</span>
+<span class="text-zinc-100">0x9f...a12</span>
+</div>
+<div class="h-px w-full bg-white/[0.05] overflow-hidden rounded-full">
+<div class="h-full w-full bg-zinc-400/60"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-zinc-300">
+<span>&gt; dep_tree</span>
+<span class="text-cyan-300">SINCRONIZADO</span>
+</div>
+<div class="h-px w-full bg-white/[0.05] overflow-hidden rounded-full">
+<div class="h-full w-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-zinc-300">
+<span>&gt; policy_engine</span>
+<span class="text-zinc-100">APLICADO</span>
+</div>
+<div class="h-px w-full bg-white/[0.05] overflow-hidden rounded-full">
+<div class="h-full w-full bg-zinc-400/60"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 opacity-80">
+<div class="flex justify-between items-center text-zinc-400">
+<span>&gt; awaiting_signature</span>
+<span class="animate-pulse text-cyan-300">_</span>
+</div>
+<div class="h-px w-full bg-white/[0.05] overflow-hidden rounded-full">
+<div class="h-full w-[35%] bg-gradient-to-r from-cyan-400/70 to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-white/[0.06] border-t mt-auto mb-2 px-4 py-4">
+<div class="text-[9px] uppercase tracking-[3px] text-zinc-500 mb-3 text-center font-mono">Substituição Manual Necessária</div>
+<div class="border-white/[0.08] overflow-hidden bg-[#030406] w-full h-14 border rounded-full mb-6 relative shadow-[inset_0_2px_12px_rgba(0,0,0,0.55)]" id="sec-slider-shell">
+<div class="absolute left-0 top-0 bottom-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.08),rgba(34,211,238,0.10))] border-r border-white/[0.10]" id="sec-slider-progress" style="width: 56px;"></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-[11px] font-medium tracking-[2px] text-zinc-400 uppercase transition-colors duration-300" id="sec-slider-label" style="color: rgb(161, 161, 170);">Deslize para Executar</span>
+</div>
+<button aria-label="Deslize para executar" class="absolute left-1 top-1 bottom-1 w-12 rounded-full bg-white flex items-center justify-center shadow-[0_4px_20px_rgba(255,255,255,0.16)] transition-transform duration-300 z-10 cursor-grab active:scale-95 border border-white/[0.15]" id="sec-slider-thumb" style="transform: translateX(0px);" type="button">
+<img src="assets/images/svg/slider-arrow.svg" width="16" height="10" alt="Seta"/>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -right-8 top-12 p-3 bg-[#0D1015]/88 backdrop-blur-xl border border-white/[0.08] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] flex items-center gap-3 animate-[subtleDrift_8s_ease-in-out_infinite] hidden md:flex">
+<div class="w-8 h-8 rounded-full bg-cyan-500/12 flex items-center justify-center text-cyan-300 border border-cyan-400/20">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<div class="pr-2">
+<div class="text-[9px] text-zinc-500 uppercase tracking-widest font-mono">Política de Nó</div>
+<div class="text-xs text-zinc-100 font-medium tracking-tight">Aplicada</div>
+</div>
+</div>
+<div class="absolute -left-6 bottom-24 p-3 bg-[#0D1015]/88 backdrop-blur-xl border border-white/[0.08] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] flex items-center gap-3 animate-[subtleDrift_10s_ease-in-out_infinite_reverse] hidden md:flex">
+<div class="w-8 h-8 rounded-full bg-white/[0.05] flex items-center justify-center text-zinc-200 border border-white/[0.08]">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+</div>
+<div class="pr-2">
+<div class="text-[9px] text-zinc-500 uppercase tracking-widest font-mono">Fluxo de Dados</div>
+<div class="text-xs text-zinc-100 font-medium tracking-tight">Ótimo</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- pricing -->
+<section class="pricing-section bg-alt" id="pricing">
+<div class="container reveal visible">
+<div class="pricing-header">
+<div class="tagline">Arquitetura Escalável</div>
+<h2>Implante no seu ritmo.</h2>
+<p>Infraestrutura elástica que cresce de forma fluida junto às suas demandas operacionais.</p>
+</div>
+<div class="pricing-accordion">
+<div class="pricing-card">
+<div class="pc-top">
+<h3 class="pc-title">Nó de Desenvolvedor</h3>
+<div class="pc-price">R$0<span>/mês</span></div>
+<div class="pc-desc">Ideal para testes isolados, experimentação individual e validação de pipelines.</div>
+</div>
+<div class="pc-hidden-content">
+<ul class="pc-features">
+<li>Síntese de ambiente local</li>
+<li>Fórum de suporte da comunidade</li>
+</ul>
+<a class="pc-btn" href="#">Começar a Construir</a>
+</div>
+</div>
+<div class="pricing-card">
+<div class="pc-top">
+<h3 class="pc-title">Cluster Empresarial</h3>
+<div class="pc-price">R$499<span>/mês</span></div>
+<div class="pc-desc">Projetado para equipes em crescimento que exigem roteamento de alta disponibilidade e orquestração lógica avançada.</div>
+</div>
+<div class="pc-hidden-content">
+<ul class="pc-features">
+<li>Roteamento autônomo multirregião</li>
+<li>Resposta prioritária a incidentes (SLA)</li>
+</ul>
+<a class="pc-btn" href="#" style="background: var(--text-main); color: var(--bg-base); border-color: transparent;">Implantar Cluster</a>
+</div>
+</div>
+<div class="pricing-card">
+<div class="pc-top">
+<h3 class="pc-title">Rede Global</h3>
+<div class="pc-price">Sob consulta</div>
+<div class="pc-desc">Arquitetura sob medida para concorrência massiva e modelos de inteligência implantados na borda.</div>
+</div>
+<div class="pc-hidden-content">
+<ul class="pc-features">
+<li>Distribuição de borda com latência zero</li>
+<li>Engenheiros estruturais dedicados</li>
+</ul>
+<a class="pc-btn" href="#">Falar com a Equipe de Arquitetura</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- testimonials -->
+<section class="testimonial-section overflow-hidden sm:py-32 bg-[#030304] pt-24 pb-24 relative" id="testimonials" style="border-top: 1px solid rgba(255,255,255,0.02)">
+<div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at center, rgba(51, 210, 255, 0.03) 0%, transparent 60%);"></div>
+<div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 44px 44px;"></div>
+<div class="absolute inset-0 pointer-events-none" id="webgl-wave-container" style="z-index: 0; opacity: 0.35; mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);"></div>
+<div class="container relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center mb-20">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.02] border border-white/[0.04] mb-6">
+<span class="w-1.5 h-1.5 rounded-full bg-[#33D2FF] shadow-[0_0_8px_rgba(51,210,255,0.45)]"></span>
+<span class="text-xs font-medium tracking-widest text-zinc-400 uppercase">Consenso</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-normal tracking-tight text-white mb-6">Aprovado por Visionários.</h2>
+<p class="text-lg text-zinc-400 max-w-2xl mx-auto font-light leading-relaxed">Líderes do setor confiam na Omi para orquestrar sua infraestrutura espacial mais crítica com precisão absoluta.</p>
+</div>
+<div class="testimonial-stack-wrap">
+<div class="testimonial-stack-card card-back-left">
+<div class="testimonial-premium-card testimonial-float rounded-[28px] border border-white/[0.05] bg-white/[0.015] p-7 md:p-8 flex flex-col justify-between min-h-[250px]">
+<div class="testimonial-scan"></div>
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="flex gap-1.5">
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+<svg class="testimonial-quote-icon w-8 h-8 text-white/10 opacity-70" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.17 6A5.001 5.001 0 0 0 3 11v7h7v-7H6.09A3.001 3.001 0 0 1 9 8V6H7.17zm10 0A5.001 5.001 0 0 0 13 11v7h7v-7h-3.91A3.001 3.001 0 0 1 19 8V6h-1.83z"></path></svg>
+</div>
+<p class="text-zinc-300 text-[15px] sm:text-base leading-relaxed font-light">"As interfaces de lógica espacial são revolucionárias. Nossos engenheiros orquestram visualmente redes de malha complexas em minutos, e não em dias."</p>
+</div>
+<div class="flex items-center gap-4 mt-10">
+<div class="relative">
+<div class="testimonial-avatar-glow absolute inset-0 rounded-full bg-[#33D2FF]/12 blur-md"></div>
+<img alt="David Chen" class="relative w-12 h-12 rounded-full object-cover border border-white/10 grayscale-[15%]" src="assets/6514e225802b1024_998a3ed3-8477-4804-81d2-52d524.jpg"/>
+</div>
+<div>
+<h4 class="text-white text-sm font-medium tracking-tight">David Chen</h4>
+<p class="text-zinc-500 text-xs tracking-wide uppercase mt-0.5">Arquiteto-Chefe, Synthetix</p>
+</div>
+</div>
+</div>
+</div>
+<div class="testimonial-stack-card card-back-right">
+<div class="testimonial-premium-card testimonial-float rounded-[28px] border border-white/[0.05] bg-white/[0.015] p-7 md:p-8 flex flex-col justify-between min-h-[250px]" style="animation-delay: -2.2s;">
+<div class="testimonial-scan"></div>
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="flex gap-1.5">
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<svg class="w-4 h-4 text-[#33D2FF]/75" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+<svg class="testimonial-quote-icon w-8 h-8 text-white/10 opacity-70" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.17 6A5.001 5.001 0 0 0 3 11v7h7v-7H6.09A3.001 3.001 0 0 1 9 8V6H7.17zm10 0A5.001 5.001 0 0 0 13 11v7h7v-7h-3.91A3.001 3.001 0 0 1 19 8V6h-1.83z"></path></svg>
+</div>
+<p class="text-zinc-300 text-[15px] sm:text-base leading-relaxed font-light">"Implantações determinísticas com um único comando inicial. A Omi representa o ápice absoluto das ferramentas corporativas modernas."</p>
+</div>
+<div class="flex items-center gap-4 mt-10">
+<div class="relative">
+<div class="testimonial-avatar-glow absolute inset-0 rounded-full bg-[#33D2FF]/12 blur-md"></div>
+<img alt="Marcus Cole" class="relative w-12 h-12 rounded-full object-cover border border-white/10 grayscale-[15%]" src="assets/6c21614aeeee8fbe_c4ee565a-2084-483b-8358-9fc06d.jpg"/>
+</div>
+<div>
+<h4 class="text-white text-sm font-medium tracking-tight">Marcus Cole</h4>
+<p class="text-zinc-500 text-xs tracking-wide uppercase mt-0.5">Líder de DevOps, Omni</p>
+</div>
+</div>
+</div>
+</div>
+<div class="testimonial-stack-card card-front">
+<div class="testimonial-premium-card md:p-10 lg:p-12 flex flex-col min-h-[320px] border-[#33D2FF]/10 border rounded-[34px] pt-8 pr-8 pb-8 pl-8 relative justify-between">
+<div class="testimonial-scan"></div>
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-[70%] h-24 bg-[#33D2FF]/10 blur-3xl pointer-events-none"></div>
+<div class="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[#33D2FF]/40 to-transparent"></div>
+<div class="flex items-center justify-between mb-10 relative z-10">
+<svg class="testimonial-quote-icon w-10 h-10 text-[#33D2FF]/20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.17 6A5.001 5.001 0 0 0 3 11v7h7v-7H6.09A3.001 3.001 0 0 1 9 8V6H7.17zm10 0A5.001 5.001 0 0 0 13 11v7h7v-7h-3.91A3.001 3.001 0 0 1 19 8V6h-1.83z"></path></svg>
+</div>
+<div class="relative z-10">
+<p class="text-zinc-300 text-[15px] sm:text-base leading-relaxed font-light">"A Omi eliminou completamente a latência de implantação. Parece que a plataforma prevê nossas necessidades de escala antes mesmo de as métricas dispararem. Uma ferramenta verdadeiramente transformadora para infraestrutura de missão crítica."</p>
+</div>
+<div class="relative z-10 mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="testimonial-avatar-glow absolute inset-0 rounded-full bg-[#33D2FF]/18 blur-lg"></div>
+<img alt="Sarah Jenkins" class="relative w-14 h-14 rounded-full object-cover border border-white/10" src="assets/f86e52b6d8a4b0d5_90ec73f0-6fd3-4d0c-922c-fcc592.webp"/>
+</div>
+<div>
+<h4 class="text-white text-base font-medium tracking-tight">Sarah Jenkins</h4>
+<p class="text-zinc-500 text-xs tracking-[0.18em] uppercase mt-1">CTO, Nexus Corp</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- cta -->
+<section class="cta-section">
+<div class="container reveal visible">
+<h2>Pronto para transcender?</h2>
+<p>Junte-se ao grupo de elite de equipes de engenharia que constroem a próxima geração de software espacial.</p>
+<div class="hero-actions text-center justify-center">
+<a class="group relative inline-flex h-[52px] rounded-full no-underline cursor-pointer outline-none text-[14px] font-medium" href="#platform" style="font-family: var(--font-body); -webkit-tap-highlight-color: transparent;">
+<div class="absolute inset-[-4px] bg-[rgba(74,140,255,0)] blur-[16px] opacity-0 rounded-full transition-all duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 translate-y-[2px] scale-95 pointer-events-none group-hover:opacity-100 group-hover:bg-[rgba(51,210,255,0.35)] group-hover:translate-y-[4px] group-hover:scale-[1.02] group-hover:blur-[20px]"></div>
+<div class="relative z-10 flex h-full rounded-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[0_10px_24px_rgba(0,0,0,0.6),inset_0_0_0_1px_rgba(255,255,255,0.02)] group-hover:-translate-y-[2px] group-hover:shadow-[0_14px_32px_rgba(0,0,0,0.8),inset_0_0_0_1px_rgba(255,255,255,0.05)]">
+<div class="w-[48px] h-full rounded-l-full relative border border-white/[0.08] border-r-black overflow-hidden z-20 bg-[linear-gradient(180deg,#42424a_0%,#202025_35%,#0f0f13_100%)] shadow-[inset_4px_0_8px_rgba(0,0,0,0.4),inset_0_2px_4px_rgba(255,255,255,0.12),inset_0_-3px_6px_rgba(0,0,0,0.9)]">
+<div class="absolute top-[2px] left-[6px] right-[2px] h-[16px] rounded-full pointer-events-none mix-blend-overlay bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0)_70%)]"></div>
+</div>
+<div class="flex items-center pl-[8px] pr-[32px] h-full backdrop-blur-[12px] border border-[#33D2FF]/15 border-l-0 rounded-r-full relative z-10 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:border-[#33D2FF]/40 bg-[linear-gradient(90deg,rgba(20,24,32,0.7)_0%,rgba(10,14,20,0.5)_100%)] group-hover:bg-[linear-gradient(90deg,rgba(20,28,40,0.85)_0%,rgba(10,16,26,0.6)_100%)] shadow-[inset_0_0_20px_rgba(51,210,255,0.05),inset_0_1px_1px_rgba(255,255,255,0.15)] group-hover:shadow-[inset_0_0_30px_rgba(51,210,255,0.15),inset_0_1px_1px_rgba(255,255,255,0.25)]">
+<div class="absolute top-[1px] left-0 right-[2px] h-[40%] rounded-tr-full pointer-events-none bg-[linear-gradient(180deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0)_100%)]"></div>
+<div class="absolute -left-[10px] top-1/2 -translate-y-1/2 w-[40px] h-[40px] opacity-60 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none mix-blend-screen bg-[radial-gradient(circle,rgba(51,210,255,0.4)_0%,transparent_70%)] group-hover:opacity-100 group-hover:w-[60px] group-hover:h-[60px] group-hover:bg-[radial-gradient(circle,rgba(51,210,255,0.7)_0%,transparent_70%)]"></div>
+<div class="flex items-center relative z-30 gap-[10px]">
+<div class="w-[24px] h-[24px] -ml-[20px] text-white/50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center drop-shadow-[0_0_4px_rgba(51,210,255,0)] group-hover:text-white/90 group-hover:drop-shadow-[0_0_8px_rgba(51,210,255,0.8)]">
+<svg fill="none" height="24" stroke-width="2" viewBox="0 0 28 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M-4 12 h 12 c 3 0, 3 -4.5, 6 -4.5 c 3 0, 3 9, 0 9 c -3 0, -3 -4.5, 0 -4.5 h 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</div>
+<span class="transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] [text-shadow:0_0_10px_rgba(51,210,255,0)] group-hover:text-white group-hover:[text-shadow:0_0_12px_rgba(51,210,255,0.6)] text-white/80 tracking-[0.5px]">Iniciar Teste Grátis</span>
+</div>
+</div>
+</div>
+</a>
+<a class="btn btn-secondary rounded-full" href="#docs">Falar com Vendas</a>
+</div>
+</div>
+</section>
+
+<!-- footer -->
+<footer class="relative overflow-hidden border-t border-white/[0.04] bg-[#030304] pt-24 pb-12 z-10" id="contact">
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-[100px] opacity-20" style="background: radial-gradient(ellipse at top, rgba(51, 210, 255, 0.15) 0%, transparent 70%);"></div>
+</div>
+<div class="container relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-20">
+<div class="lg:col-span-2">
+<a class="block w-[110px] h-[36px] bg-left bg-no-repeat bg-contain bg-[url('https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d29ebd67-b00e-4ac9-9354-280fd04105d3_1600w.png')] mb-6" href="#"></a>
+<p class="text-[#888894] text-sm leading-relaxed max-w-xs mb-8">A camada unificada de inteligência para computação espacial e fluxos de trabalho corporativos autônomos.</p>
+<div class="flex items-center gap-4">
+<a class="w-10 h-10 rounded-full border border-white/[0.08] flex items-center justify-center text-[#888894] hover:text-[#33D2FF] hover:border-[#33D2FF]/30 hover:bg-[#33D2FF]/5 transition-all duration-300" href="#">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/[0.08] flex items-center justify-center text-[#888894] hover:text-[#33D2FF] hover:border-[#33D2FF]/30 hover:bg-[#33D2FF]/5 transition-all duration-300" href="#">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/[0.08] flex items-center justify-center text-[#888894] hover:text-[#33D2FF] hover:border-[#33D2FF]/30 hover:bg-[#33D2FF]/5 transition-all duration-300" href="#">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+</div>
+</div>
+<div class="lg:col-span-1">
+<h4 class="text-white text-sm font-semibold tracking-wide uppercase mb-6" style="font-family: var(--font-display);">Plataforma</h4>
+<ul class="space-y-4">
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Arquitetura</a></li>
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Orquestração</a></li>
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Segurança</a></li>
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Preços</a></li>
+</ul>
+</div>
+<div class="lg:col-span-1">
+<h4 class="text-white text-sm font-semibold tracking-wide uppercase mb-6" style="font-family: var(--font-display);">Recursos</h4>
+<ul class="space-y-4">
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Documentação</a></li>
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Referência da API</a></li>
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Status</a></li>
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Blog</a></li>
+</ul>
+</div>
+<div class="lg:col-span-1">
+<h4 class="text-white text-sm font-semibold tracking-wide uppercase mb-6" style="font-family: var(--font-display);">Empresa</h4>
+<ul class="space-y-4">
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Sobre</a></li>
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Carreiras</a></li>
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Contato</a></li>
+<li><a class="text-[#888894] hover:text-[#33D2FF] text-sm transition-colors duration-300" href="#">Parceiros</a></li>
+</ul>
+</div>
+<div class="lg:col-span-1">
+<h4 class="text-white text-sm font-semibold tracking-wide uppercase mb-6" style="font-family: var(--font-display);">Fique por Dentro</h4>
+<p class="text-[#888894] text-sm mb-4">Assine nosso log de engenharia.</p>
+<form class="relative">
+<input class="w-full bg-white/[0.03] border border-white/[0.08] rounded-lg px-4 py-2.5 text-sm text-white placeholder-[#555562] focus:outline-none focus:border-[#33D2FF]/50 transition-colors duration-300" placeholder="Endereço de e-mail" type="email"/>
+<button class="absolute right-1 top-1 bottom-1 px-3 bg-[#33D2FF]/10 text-[#33D2FF] rounded hover:bg-[#33D2FF]/20 transition-colors duration-300 flex items-center justify-center" type="submit">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+</button>
+</form>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/[0.06] gap-4">
+<div class="text-[#555562] text-sm">© 2026 Omi Systems Inc. Todos os direitos reservados.</div>
+<div class="flex items-center gap-6">
+<a class="text-[#555562] hover:text-[#888894] text-sm transition-colors duration-300" href="#">Política de Privacidade</a>
+<a class="text-[#555562] hover:text-[#888894] text-sm transition-colors duration-300" href="#">Termos de Serviço</a>
+<a class="text-[#555562] hover:text-[#888894] text-sm transition-colors duration-300" href="#">Configurações de Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- js -->
+<!-- analytics.js: inicializacao da configuracao do Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
+<script src="assets/js/analytics.js"></script>
+<!-- platform-cards.js: cards 3D em camadas (gravity fold) da secao Plataforma -->
+<script src="assets/js/platform-cards.js"></script>
+<!-- pipeline.js: linha curva animada por scroll e revelacao dos cards do pipeline -->
+<script src="assets/js/pipeline.js"></script>
+<!-- security-slider.js: controle "deslize para executar" da secao de seguranca -->
+<script src="assets/js/security-slider.js"></script>
+<!-- interactions.js: header com scroll, scroll-reveal, globo do hero, cards gravity, painel neural, timeline, botao de sinal, orbita de depoimentos e menu mobile -->
+<script src="assets/js/interactions.js"></script>
+<!-- testimonials.js: cards de depoimento empilhados com arraste/troca -->
+<script src="assets/js/testimonials.js"></script>
+<!-- webgl-wave.js: onda de particulas em WebGL (Three.js) ao fundo da secao de depoimentos -->
+<script src="assets/js/webgl-wave.js"></script>
+</body>
+</html>

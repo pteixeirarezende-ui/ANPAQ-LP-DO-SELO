@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>faux.moni — Portfólio</title>
+<meta content="Página de portfólio de designer." name="description"/>
+<!-- fonts (Geist + Geist Mono via Google Fonts CSS, served from local assets) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="assets/css2_19fd9cc6b396.css" rel="stylesheet"/>
+<link href="assets/css2_62759cd015bd.css" rel="stylesheet"/>
+<link href="assets/css2_86e10c4bcbd4.css" rel="stylesheet"/>
+<!-- css -->
+<!-- base styles: typography, font-family vars, scroll behavior, custom scrollbar, 3D canvas container -->
+<link rel="stylesheet" href="assets/css/base.css"/>
+<!-- head-only js -->
+<!-- Tailwind CSS runtime — must stay in head to process utility classes before paint -->
+<script src="assets/resource_3fa48481346f.es"></script>
+<!-- Three.js library — used by the hero 3D background -->
+<script src="assets/three_1aecfa5aa56f.js"></script>
+<!-- Lucide icon runtime — replaces <i data-lucide> tags with SVG icons -->
+<script src="assets/lucide_latest_2eebd0ebe8c2.es"></script>
+</head>
+<body class="bg-white text-neutral-900 antialiased selection:bg-neutral-200 selection:text-black">
+<!-- hero -->
+<header class="relative w-full h-screen flex flex-col justify-between p-6 sm:p-12 z-10 pointer-events-none overflow-hidden bg-white">
+<div id="canvas-container"></div>
+<div class="flex justify-between items-start pointer-events-auto w-full max-w-[1400px] mx-auto z-10">
+<div class="text-lg font-bold tracking-tight text-black">ux.jonny</div>
+<nav class="hidden sm:flex gap-8 text-xs font-medium text-neutral-500 uppercase tracking-wide">
+<a class="hover:text-black transition-colors" href="#main-content">sobre</a>
+<a class="hover:text-black transition-colors" href="#work">projetos</a>
+<a class="hover:text-black transition-colors" href="https://www.linkedin.com/in/jonathan-fernandes-a8208410a/">Linkedin</a>
+<a class="hover:text-black transition-colors" href="https://api.whatsapp.com/send/?phone=5521972139499&amp;text=Preciso+de+ajuda+com+a+plataforma+Gamble+Sports&amp;type=phone_number&amp;app_absent=0">contato</a>
+</nav>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-end gap-12 pointer-events-auto w-full max-w-[1400px] mx-auto mb-4 z-10">
+<div class="max-w-xs space-y-8">
+<p class="text-sm leading-relaxed text-neutral-600 font-medium">Senior Product Designer na Allos. Construo Design Systems e experiências de produto escaláveis, aplicando IA para criar, acelerar consistência, documentação e entrega.</p>
+<button class="group flex items-center gap-2 text-xs font-bold tracking-widest uppercase border-b border-black pb-1 hover:text-neutral-600 hover:border-neutral-400 transition-all cursor-pointer" onclick="document.getElementById('main-content').scrollIntoView()">Explorar <span class="group-hover:translate-y-0.5 transition-transform duration-300">↓</span></button>
+</div>
+<div class="text-right">
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[0.85] text-black">
+<span class="block">Product Designer</span>
+<span class="block">&amp; Design System</span>
+</h1>
+<p class="text-2xl md:text-4xl text-neutral-400 font-normal mt-3 tracking-tight">desde 2018</p>
+</div>
+</div>
+</header>
+<!-- side-rail-nav -->
+<aside class="hidden lg:block fixed left-6 top-1/2 -translate-y-1/2 z-30">
+<div class="flex flex-col gap-2 bg-white border-neutral-200 border rounded-full p-2 shadow-lg items-center">
+<button class="group grid place-items-center hover:text-black hover:bg-neutral-100 transition relative text-neutral-400 w-10 h-10 rounded-full cursor-pointer" onclick="window.scrollTo(0,0)" role="button">
+<i class="w-4 h-4" data-lucide="home"></i>
+<span class="absolute left-12 bg-neutral-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-geist-mono">Início</span>
+</button>
+<button class="group grid place-items-center hover:text-black hover:bg-neutral-100 transition relative text-neutral-400 w-10 h-10 rounded-full cursor-pointer" onclick="window.location.href='#work'" role="button">
+<i class="w-4 h-4" data-lucide="briefcase"></i>
+<span class="absolute left-12 bg-neutral-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-geist-mono">Projetos</span>
+</button>
+<button class="group grid place-items-center hover:text-black hover:bg-neutral-100 transition relative text-neutral-400 w-10 h-10 rounded-full cursor-pointer" onclick="window.location.href='#about'" role="button">
+<i class="w-4 h-4" data-lucide="user"></i>
+<span class="absolute left-12 bg-neutral-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-geist-mono">Sobre</span>
+</button>
+<button class="group grid place-items-center hover:text-black hover:bg-neutral-100 transition relative text-neutral-400 w-10 h-10 rounded-full cursor-pointer" onclick="window.location.href='#contact'" role="button">
+<i class="w-4 h-4" data-lucide="mail"></i>
+<span class="absolute left-12 bg-neutral-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-geist-mono">Contato</span>
+</button>
+</div>
+</aside>
+<main class="relative z-20 bg-white" id="main-content">
+<!-- profile-intro -->
+<section class="sm:px-8 px-6 pt-20 pb-16 border-t border-neutral-100">
+<div class="max-w-6xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<div class="lg:col-span-5">
+<div class="relative overflow-hidden bg-neutral-100 rounded-2xl aspect-[4/5]">
+<img alt="Retrato" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="assets/27df3787-21a9-4fa7-b980-f3d42a_2f7357724dba.png"/>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="flex flex-col justify-center h-full">
+<div class="flex items-center gap-3 mb-6">
+<i class="w-4 h-4 text-neutral-400" data-lucide="arrow-down-right"></i>
+<div class="h-px flex-1 bg-neutral-200"></div>
+</div>
+<h2 class="text-3xl font-semibold text-neutral-900 mb-6 tracking-tight">Product Designer</h2>
+<p class="text-lg leading-relaxed text-neutral-600 mb-8 font-geist-mono">Sou Product Designer com 9 anos de experiência e atualmente atuo como Senior Product Designer na Allos. Crio interfaces escaláveis com Design Systems sólidos — de tokens a componentes — garantindo consistência, eficiência e experiências digitais de alta qualidade para times de produto e tecnologia.</p>
+<div class="grid grid-cols-2 gap-4 mb-10">
+<div class="space-y-3">
+<h3 class="text-sm font-semibold text-neutral-900 font-geist-mono uppercase tracking-wide">HABILIDADES</h3>
+<ul class="text-sm text-neutral-500 space-y-2">
+<li class="font-geist-mono">• UI/UX Design</li>
+<li class="font-geist-mono">• UX/AI Design</li>
+<li class="font-geist-mono">• Design Systems</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h3 class="text-sm font-semibold text-neutral-900 font-geist-mono uppercase tracking-wide">INDÚSTRIAS</h3>
+<ul class="text-sm text-neutral-500 space-y-2">
+<li class="font-geist-mono">• Seguros</li>
+<li class="font-geist-mono">• Shopping Centers</li>
+<li class="font-geist-mono">• Soluções Enterprise</li>
+</ul>
+</div>
+</div>
+<div class="flex gap-4">
+<a class="px-6 py-3 rounded-lg bg-neutral-900 text-white font-medium hover:bg-neutral-800 transition-colors font-geist-mono text-sm" href="#work">Ver portfólio</a>
+<a class="px-6 py-3 rounded-lg border border-neutral-200 text-neutral-900 font-medium hover:bg-neutral-50 transition-colors font-geist-mono text-sm" href="https://api.whatsapp.com/send/?phone=5521972139499&amp;text=Preciso+de+ajuda+com+a+plataforma+Gamble+Sports&amp;type=phone_number&amp;app_absent=0">Falar no WhatsApp</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- services -->
+<section class="sm:px-8 px-6 bg-neutral-50 border-t border-neutral-200">
+<div class="py-24 max-w-6xl mx-auto">
+<div class="mb-16">
+<div class="flex items-center gap-3 mb-6">
+<span class="text-xs font-bold text-neutral-400 uppercase tracking-widest font-geist-mono">Serviços</span>
+<div class="h-px flex-1 bg-neutral-200"></div>
+</div>
+<h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-neutral-900 mb-4">Habilidades</h2>
+<p class="text-lg text-neutral-500 font-geist-mono max-w-2xl">Design, identidade, desenvolvimento e crescimento — entregues como experiências polidas e coesas.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="group bg-white border border-neutral-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+<div class="h-48 mb-6 bg-neutral-100 rounded-xl overflow-hidden relative border border-neutral-100">
+<div class="absolute inset-4 bg-white shadow-sm rounded-lg border border-neutral-200 p-3">
+<div class="flex gap-1.5 mb-3">
+<div class="w-2 h-2 rounded-full bg-red-400/80"></div>
+<div class="w-2 h-2 rounded-full bg-amber-400/80"></div>
+<div class="w-2 h-2 rounded-full bg-green-400/80"></div>
+</div>
+<div class="space-y-2">
+<div class="h-2 w-1/3 bg-neutral-200 rounded-full"></div>
+<div class="grid grid-cols-2 gap-2">
+<div class="h-16 bg-neutral-50 rounded border border-neutral-100"></div>
+<div class="h-16 bg-neutral-50 rounded border border-neutral-100"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="inline-flex gap-2 bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-xs font-medium font-geist-mono mb-4 border border-blue-100">
+<i class="w-3 h-3" data-lucide="paintbrush"></i> Design
+</div>
+<h3 class="text-xl font-semibold text-neutral-900 mb-3">UX/UI Design</h3>
+<p class="text-neutral-500 text-sm leading-relaxed font-geist-mono">Crio interfaces intuitivas que oferecem uma experiência sem fricção. Combinamos criatividade com usabilidade.</p>
+</div>
+<div class="group bg-white border border-neutral-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+<div class="h-48 mb-6 bg-neutral-900 rounded-xl overflow-hidden relative border border-neutral-800 flex flex-col">
+<div class="flex items-center px-3 py-2 border-b border-neutral-800 bg-neutral-900/50">
+<div class="flex gap-1.5">
+<div class="w-2 h-2 rounded-full bg-red-500"></div>
+<div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+</div>
+</div>
+<div class="p-3 font-geist-mono text-[10px] text-neutral-400 leading-relaxed">
+<span class="text-purple-400">const</span> <span class="text-blue-400">App</span> = () =&gt; {<br/>
+&nbsp;&nbsp;<span class="text-purple-400">return</span> (<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="text-red-400">div</span> <span class="text-amber-400">className</span>=<span class="text-green-400">"hero"</span>&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="text-red-400">h1</span>&gt;Olá&lt;/<span class="text-red-400">h1</span>&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="text-red-400">div</span>&gt;<br/>
+&nbsp;&nbsp;)<br/>
+}
+</div>
+</div>
+<div class="inline-flex gap-2 bg-purple-50 text-purple-600 px-3 py-1 rounded-full text-xs font-medium font-geist-mono mb-4 border border-purple-100">
+<i class="w-3 h-3" data-lucide="code-2"></i> Desenvolvimento
+</div>
+<h3 class="text-xl font-semibold text-neutral-900 mb-3">Desenvolvimento Web</h3>
+<p class="text-neutral-500 text-sm leading-relaxed font-geist-mono">Sites bonitos e performáticos sob medida para a sua marca. Experiências de uso fluidas que engajam visitantes.</p>
+</div>
+<div class="group bg-white border border-neutral-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+<div class="h-48 mb-6 bg-neutral-100 rounded-xl overflow-hidden relative border border-neutral-100 flex items-center justify-center p-4">
+<div class="grid grid-cols-3 gap-3 w-full max-w-[200px]">
+<div class="aspect-square rounded-full bg-neutral-900 shadow-lg"></div>
+<div class="aspect-square rounded-full bg-neutral-400 shadow-lg"></div>
+<div class="aspect-square rounded-full bg-neutral-200 shadow-lg"></div>
+<div class="col-span-3 h-2 rounded-full bg-gradient-to-r from-neutral-900 via-neutral-500 to-neutral-200 mt-2"></div>
+</div>
+</div>
+<div class="inline-flex gap-2 bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full text-xs font-medium font-geist-mono mb-4 border border-emerald-100">
+<i class="w-3 h-3" data-lucide="layout"></i> Branding
+</div>
+<h3 class="text-xl font-semibold text-neutral-900 mb-3">Identidade de Marca</h3>
+<p class="text-neutral-500 text-sm leading-relaxed font-geist-mono">Sistemas de marca coesos com paletas de cores, tipografia e elementos visuais cuidadosamente construídos.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- selected-work -->
+<section class="px-6 sm:px-8 bg-white border-t border-neutral-200" id="work">
+<div class="mx-auto max-w-6xl py-24">
+<div class="mb-16">
+<div class="flex items-center gap-3 mb-6">
+<span class="text-xs font-bold text-neutral-400 uppercase tracking-widest font-geist-mono">Trabalhos Selecionados</span>
+<div class="h-px flex-1 bg-neutral-200"></div>
+</div>
+<h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-neutral-900 mb-4">Projetos</h2>
+<p class="text-lg text-neutral-500 max-w-2xl font-geist-mono">Uma seleção dos meus trabalhos mais recentes em design e desenvolvimento.</p>
+</div>
+<div class="space-y-12">
+<div class="group grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="order-2 lg:order-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs text-neutral-500 font-geist-mono font-medium">2024</span>
+<div class="h-1 w-1 rounded-full bg-neutral-300"></div>
+<span class="text-xs text-neutral-500 font-geist-mono font-medium">Fintech</span>
+</div>
+<h3 class="text-2xl font-bold text-neutral-900 mb-4">Dashboard SaaS</h3>
+<p class="text-neutral-600 mb-6 leading-relaxed font-geist-mono">Design completo de dashboard para uma startup de fintech, com analytics em tempo real, gestão de usuários e insights financeiros.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 text-xs bg-neutral-100 text-neutral-600 border border-neutral-200 rounded-full font-geist-mono">React</span>
+<span class="px-3 py-1 text-xs bg-neutral-100 text-neutral-600 border border-neutral-200 rounded-full font-geist-mono">TypeScript</span>
+<span class="px-3 py-1 text-xs bg-neutral-100 text-neutral-600 border border-neutral-200 rounded-full font-geist-mono">D3.js</span>
+</div>
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 hover:text-blue-600 transition-colors border-b border-transparent hover:border-blue-600 pb-0.5" href="#">Ver projeto <i class="w-4 h-4" data-lucide="arrow-right"></i></a>
+</div>
+<div class="order-1 lg:order-2">
+<div class="rounded-xl overflow-hidden border border-neutral-200 shadow-xl bg-neutral-50 group-hover:-translate-y-2 transition-transform duration-500">
+<img alt="Projeto" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" src="assets/photo-1551288049-bebda4e38f71_0d47be812145.jpg"/>
+</div>
+</div>
+</div>
+<div class="group grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="order-2">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-xs text-neutral-500 font-geist-mono font-medium">2024</span>
+<div class="h-1 w-1 rounded-full bg-neutral-300"></div>
+<span class="text-xs text-neutral-500 font-geist-mono font-medium">E-commerce</span>
+</div>
+<h3 class="text-2xl font-bold text-neutral-900 mb-4">Plataforma de Moda</h3>
+<p class="text-neutral-600 mb-6 leading-relaxed font-geist-mono">Plataforma de e-commerce moderna para uma marca de moda de luxo, com filtros avançados e recursos de prova virtual em AR.</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 text-xs bg-neutral-100 text-neutral-600 border border-neutral-200 rounded-full font-geist-mono">Next.js</span>
+<span class="px-3 py-1 text-xs bg-neutral-100 text-neutral-600 border border-neutral-200 rounded-full font-geist-mono">Shopify</span>
+<span class="px-3 py-1 text-xs bg-neutral-100 text-neutral-600 border border-neutral-200 rounded-full font-geist-mono">Framer Motion</span>
+</div>
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 hover:text-blue-600 transition-colors border-b border-transparent hover:border-blue-600 pb-0.5" href="#">Ver projeto <i class="w-4 h-4" data-lucide="arrow-right"></i></a>
+</div>
+<div class="order-1">
+<div class="rounded-xl overflow-hidden border border-neutral-200 shadow-xl bg-neutral-50 group-hover:-translate-y-2 transition-transform duration-500">
+<img alt="Projeto" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" src="assets/photo-1556742049-0cfed4f6a45d_baedb1ba7cb5.jpg"/>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-20">
+<a class="inline-flex items-center gap-2 px-8 py-4 bg-white border border-neutral-200 rounded-full text-neutral-900 hover:bg-neutral-50 transition-all font-geist-mono text-sm shadow-sm hover:shadow-md" href="#">Ver todos os projetos <i class="w-4 h-4" data-lucide="plus"></i></a>
+</div>
+</div>
+</section>
+<!-- testimonial -->
+<section class="bg-neutral-50 border-t border-neutral-200 px-6 sm:px-8">
+<div class="max-w-4xl mx-auto py-24 text-center">
+<div class="mb-10">
+<i class="w-8 h-8 mx-auto text-neutral-300 mb-6" data-lucide="quote"></i>
+<h3 class="text-3xl md:text-4xl font-medium text-neutral-900 leading-tight mb-8">"Jonathan é um dos melhores profissionais com quem tive a oportunidade de trabalhar, principalmente por sua capacidade de superar expectativas observando detalhes que poucos se atentam. Seu olhar do todo agrega resultados efetivos ao negócio. Além de ser um ser humano íntegro e que veste a camisa do time em que atua."</h3>
+<div class="flex items-center justify-center gap-4">
+<div class="w-12 h-12 rounded-full bg-neutral-200 overflow-hidden">
+<img alt="Cliente" class="w-full h-full object-cover" src="assets/cf795bec-e9bc-4ecf-9989-d83620_ccbbbebd346b.jpg"/>
+</div>
+<div class="text-left">
+<div class="font-bold text-neutral-900 text-sm">Victor Gonçalves</div>
+<div class="text-neutral-500 text-xs font-geist-mono">Chief Digital Officer @Verity</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- footer -->
+<footer class="bg-white border-t border-neutral-200 px-6 sm:px-8">
+<div class="mx-auto max-w-6xl py-12 md:py-20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 justify-between items-center">
+<div>
+<div class="font-bold text-lg tracking-tight mb-2">ux.jonny</div>
+<p class="text-neutral-500 text-sm font-geist-mono">© 2026 Todos os direitos reservados.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-6 md:justify-end items-start md:items-center text-sm font-medium text-neutral-600">
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-geist-mono">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+Disponível para oportunidades
+</div>
+<nav class="flex gap-6">
+<a class="hover:text-black transition" href="https://www.instagram.com/ux.jonny/">Instagram</a>
+<a class="hover:text-black transition" href="https://www.linkedin.com/in/jonathan-fernandes-a8208410a/">Linkedin</a>
+</nav>
+</div>
+</div>
+</div>
+</footer>
+</main>
+<!-- js -->
+<!-- initializes Lucide icons and the hero Three.js torus knot scene with golden sparks -->
+<script src="assets/js/three-hero.js"></script>
+</body>
+</html>

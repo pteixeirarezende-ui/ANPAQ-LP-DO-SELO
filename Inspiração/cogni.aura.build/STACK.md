@@ -1,0 +1,7 @@
+- **Tailwind CSS** — framework CSS utilitário (via CDN) usado para todo o layout, espaçamento, cores e efeitos da interface
+- **Iconify** — runtime do web component `<iconify-icon>` que renderiza os ícones das coleções Solar e Lucide
+- **Inter** — família tipográfica do Google Fonts usada em toda a página
+- **WebGL** — API gráfica nativa do navegador usada no fundo animado, com um shader customizado que desenha feixes de luz e fumaça volumétrica
+- **IntersectionObserver** — API nativa do navegador usada para revelar as seções ao entrarem na viewport (scroll reveal)
+- **CSS Keyframe Animations** — animações declaradas em `assets/css/animations.css` (flutuação de mockups, fade-in, glow pulsante)
+- **JavaScript (vanilla)** — lógica de interação reescrita a partir dos componentes React originais: estado da navbar, menu mobile, parallax do mouse, trocador de módulos e spotlight cards

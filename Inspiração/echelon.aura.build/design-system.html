@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Echelon Atelier — Planejamento de Eventos de Alto Padrão</title>
+<!-- fonts: família Inter usada em toda a interface -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="assets/74b6d68958a54de6_css2.css" rel="stylesheet"/>
+<!-- css -->
+<!-- tailwind.css: utilitários Tailwind 3.4.17 pré-gerados usados em todo o layout -->
+<link rel="stylesheet" href="assets/css/tailwind.css"/>
+<!-- theme.css: variáveis de cor, sombras, painéis de foto, animações de revelação e marquee -->
+<link rel="stylesheet" href="assets/css/theme.css"/>
+<!-- head js: runtime Tailwind (precisa carregar antes do body), web component iconify-icon, GSAP + ScrollTrigger -->
+<script src="assets/176e894661aa9cdc_3.4.17"></script>
+<script src="assets/851bed7af266f96a_iconify-icon.min.js"></script>
+<script src="assets/28033e449a31ebcc_gsap.min.js"></script>
+<script src="assets/ad33c2df9ada8a66_ScrollTrigger.min.js"></script>
+</head>
+<body>
+<div class="noise"></div>
+<canvas height="1080" id="bg-canvas" width="1920"></canvas>
+<main class="w-full max-w-[1480px] mx-auto my-4 md:my-8 bg-white soft-shadow min-h-screen relative z-10">
+
+<!-- top-utility-bar -->
+<div class="hidden lg:block border-b border-[#E7D8C8] bg-[#FBF4EC]">
+<div class="px-6 lg:px-12 h-10 flex items-center justify-between text-[10px] uppercase tracking-[.22em] text-[#7B6A5F]">
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B78A56]"></span>Montreal · Paris · Nova York</span>
+<span>Eventos privados · momentos de marca · encontros executivos</span>
+</div>
+<div class="flex items-center gap-6">
+<span>Agenda 2026 já aberta</span>
+<a class="text-[#B78A56] hover:text-[#946D40] transition-colors" href="#contact">Solicitar disponibilidade privada</a>
+</div>
+</div>
+</div>
+
+<!-- header -->
+<header class="sticky top-0 z-50 bg-[#FFFCF7]/88 backdrop-blur-xl border-b border-[#E7D8C8]">
+<div class="px-6 lg:px-12 h-20 flex items-center justify-between gap-8">
+<a class="flex items-center gap-2 bg-[#FCF7F1] rounded-sm pr-5 pl-1 py-1 border border-[#EADFD3] w-max hover:border-[#B78A56]/60 transition-colors" href="#">
+<div class="w-8 h-8 rounded-sm bg-[#B78A56] flex items-center justify-center text-white soft-shadow">
+<iconify-icon icon="solar:star-shine-linear" width="1.2em"></iconify-icon>
+</div>
+<span class="text-xs font-medium tracking-[.18em] uppercase text-[#5D473F]">Echelon Atelier</span>
+</a>
+<nav class="hidden xl:flex items-center gap-3">
+<a class="flex items-center gap-1.5 border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-5 py-2 text-xs font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#services">Capacidades<iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon></a>
+<a class="flex items-center gap-1.5 border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-5 py-2 text-xs font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#projects">Produções<iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon></a>
+<a class="flex items-center gap-1.5 border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-5 py-2 text-xs font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#process">Método<iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon></a>
+<a class="flex items-center gap-1.5 border border-[#E7D8C8] bg-[#FFFCF7]/50 rounded-sm px-5 py-2 text-xs font-light text-[#5D473F] hover:border-[#B78A56] hover:text-[#B78A56] hover:bg-[#FBF4EC] transition-colors" href="#journal">Notas<iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon></a>
+</nav>
+<a class="bg-[#B78A56] text-white rounded-sm px-1 pl-5 py-1 flex items-center gap-4 text-xs font-light hover:bg-[#946D40] transition-colors group soft-shadow" href="#contact">
+Iniciar um Briefing Privado
+<span class="w-8 h-8 rounded-sm bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-[#B78A56] transition-colors">
+<iconify-icon icon="solar:calendar-add-linear" width="1.2em"></iconify-icon>
+</span>
+</a>
+</div>
+</header>
+
+<!-- hero -->
+<section class="px-6 lg:px-12 py-12 lg:py-20 relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 min-h-[680px] relative z-10">
+<div class="lg:col-span-7 flex flex-col">
+<div class="mb-8 flex items-center gap-4 text-[10px] uppercase tracking-[.28em] text-[#7B6A5F]">
+<span class="w-2 h-2 bg-[#B78A56]"></span>Direção de eventos de alto padrão
+<span class="hidden md:block h-[1px] bg-[#E7D8C8] flex-1"></span>
+</div>
+<h1 class="gsap-title text-4xl md:text-6xl lg:text-[4.55rem] xl:text-[5.05rem] leading-[1.02] tracking-tight font-extralight uppercase text-[#241A16] mb-8 max-w-[920px]">
+<span class="block whitespace-nowrap">
+<span class="reveal-line"><span class="reveal-word">Eventos</span></span>
+<span class="reveal-line"><span class="reveal-word">curados</span></span>
+</span>
+<span class="block whitespace-nowrap">
+<span class="reveal-line"><span class="reveal-word">para</span></span>
+<span class="reveal-line"><span class="reveal-word">marcas,</span></span>
+<span class="reveal-line"><span class="reveal-word">líderes</span></span>
+</span>
+<span class="block whitespace-nowrap">
+<span class="reveal-line"><span class="reveal-word">e</span></span>
+<span class="reveal-line"><span class="reveal-word">círculos</span></span>
+<span class="reveal-line"><span class="reveal-word">privados</span></span>
+</span>
+<span class="block overflow-hidden mt-5">
+<span class="reveal-word inline-flex items-center gap-4">
+<span class="w-11 h-11 md:w-14 md:h-14 bg-[#B78A56] text-white flex items-center justify-center rounded-sm soft-shadow">
+<iconify-icon icon="solar:magic-stick-3-linear" width="1.35em"></iconify-icon>
+</span>
+<span class="text-[#B78A56] font-medium tracking-[.34em] text-xs md:text-sm">ATELIÊ DE PRODUÇÃO COMPLETA</span>
+</span>
+</span>
+</h1>
+<div class="fade-in-up mb-10 max-w-xl">
+<p class="text-sm md:text-base text-[#7B6A5F] leading-relaxed font-light">
+Projetamos, planejamos e produzimos encontros elevados com a precisão de uma central de comando e a atmosfera de um ateliê privado.
+</p>
+</div>
+<div class="fade-in-up flex flex-wrap items-center gap-5 md:gap-10 mb-10">
+<a class="bg-[#241A16] text-white rounded-sm px-1 pl-6 py-1 flex items-center gap-8 text-xs font-light hover:bg-[#B78A56] transition-colors group soft-shadow" href="#contact">
+Planejar o Momento
+<span class="w-9 h-9 rounded-sm bg-white/10 flex items-center justify-center">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</a>
+<div class="flex flex-wrap items-center gap-5 text-[10px] font-medium tracking-[.22em] uppercase text-[#7B6A5F]">
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#B78A56]"></span>Estratégia</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#B78A56]"></span>Design</span>
+<span class="flex items-center gap-2"><span class="w-1 h-1 bg-[#B78A56]"></span>Produção</span>
+</div>
+</div>
+<div class="fade-in-up grid grid-cols-3 max-w-xl border-y border-[#E7D8C8] divide-x divide-[#E7D8C8] mb-14">
+<div class="py-4 pr-5">
+<div class="text-2xl md:text-3xl font-extralight tracking-tight text-[#241A16]">120+</div>
+<p class="text-[9px] uppercase tracking-[.22em] text-[#7B6A5F] mt-1">Eventos dirigidos</p>
+</div>
+<div class="py-4 px-5">
+<div class="text-2xl md:text-3xl font-extralight tracking-tight text-[#241A16]">14</div>
+<p class="text-[9px] uppercase tracking-[.22em] text-[#7B6A5F] mt-1">Cidades ativadas</p>
+</div>
+<div class="py-4 pl-5">
+<div class="text-2xl md:text-3xl font-extralight tracking-tight text-[#241A16]">3</div>
+<p class="text-[9px] uppercase tracking-[.22em] text-[#7B6A5F] mt-1">Universos de evento</p>
+</div>
+</div>
+<div class="fade-in-up grid grid-cols-1 md:grid-cols-3 gap-4 mt-auto">
+<div class="relative p-[1px] rounded-sm overflow-hidden bg-gradient-to-br from-[#B78A56]/25 via-[#E7D8C8] to-transparent group">
+<div class="bg-[#FBF4EC] p-5 min-h-[132px] relative border border-transparent group-hover:border-[#B78A56]/25 transition-colors">
+<div class="mb-5"><span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">01 / Briefing</span></div>
+<h3 class="text-sm font-medium tracking-tight text-[#241A16] mb-2">Briefing Estratégico</h3>
+<p class="text-xs text-[#5D473F] leading-relaxed font-light pr-5">Propósito, público, jornada do convidado e conceito do evento.</p>
+<span class="absolute -right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 bg-[#F6F0E8] text-[#B78A56] border border-[#E7D8C8] flex items-center justify-center group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+<div class="relative p-[1px] rounded-sm overflow-hidden bg-gradient-to-br from-[#B78A56]/25 via-[#E7D8C8] to-transparent group">
+<div class="bg-[#FBF4EC] p-5 min-h-[132px] relative border border-transparent group-hover:border-[#B78A56]/25 transition-colors">
+<div class="mb-5"><span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">02 / Atmosfera</span></div>
+<h3 class="text-sm font-medium tracking-tight text-[#241A16] mb-2">Direção de Atmosfera</h3>
+<p class="text-xs text-[#5D473F] leading-relaxed font-light pr-5">Linguagem visual, ritmo do ambiente, sinais de serviço e detalhes sensoriais.</p>
+<span class="absolute -right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 bg-[#F6F0E8] text-[#B78A56] border border-[#E7D8C8] flex items-center justify-center group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+<div class="relative p-[1px] rounded-sm overflow-hidden bg-gradient-to-br from-[#B78A56]/25 via-[#E7D8C8] to-transparent group">
+<div class="bg-[#FBF4EC] p-5 min-h-[132px] relative border border-transparent group-hover:border-[#B78A56]/25 transition-colors">
+<div class="mb-5"><span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">03 / Comando</span></div>
+<h3 class="text-sm font-medium tracking-tight text-[#241A16] mb-2">Produção ao Vivo</h3>
+<p class="text-xs text-[#5D473F] leading-relaxed font-light pr-5">Fornecedores, logística, timing, equipe e comando no local.</p>
+<span class="absolute -right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 bg-[#F6F0E8] text-[#B78A56] border border-[#E7D8C8] flex items-center justify-center group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative min-h-[560px]">
+<div class="absolute top-0 right-0 w-64 text-right z-20 hidden md:block">
+<div class="flex justify-end gap-1.5 mb-4">
+<span class="hero-dot w-1.5 h-1.5 bg-[#E7D8C8]"></span>
+<span class="hero-dot w-1.5 h-1.5 bg-[#E7D8C8]"></span>
+<span class="hero-dot w-1.5 h-1.5 bg-[#B78A56]"></span>
+</div>
+<p class="text-xs text-[#7B6A5F] leading-relaxed font-light transition-opacity duration-500" id="hero-rotating-copy" style="opacity:1">A produção permanece invisível, para que o momento pareça natural da chegada até a despedida final.</p>
+</div>
+<div class="flex items-end gap-3 h-full pt-24">
+<div class="fade-in-up photo-panel hero-img-private w-1/3 h-[55%] mb-20 soft-shadow">
+<div class="flex flex-col z-10 pt-4 pr-4 pb-4 pl-4 absolute top-0 right-0 bottom-0 left-0 justify-end">
+<span class="text-[9px] uppercase tracking-[.22em] text-[#E7D8C8] mb-2">01 / Privado</span>
+<h3 class="text-white text-sm font-light tracking-wide mb-1">Salão Privado</h3>
+</div>
+</div>
+<div class="fade-in-up photo-panel hero-img-gala w-1/3 h-[92%] deep-shadow">
+<div class="absolute inset-0 p-5 flex flex-col justify-end z-10">
+<span class="text-[9px] uppercase tracking-[.22em] text-[#E7D8C8] mb-2">02 / Gala</span>
+<h3 class="text-white text-base font-medium tracking-wide mb-3">Gala Exclusiva</h3>
+<p class="text-[#E7D8C8] text-[10px] leading-relaxed mb-6 font-light opacity-90">Produção multiambiente, mesas editoriais e transições de convidados controladas.</p>
+<button class="w-full bg-black/30 backdrop-blur-sm border border-white/30 rounded-sm py-2 px-3 flex justify-between items-center text-white text-xs hover:bg-white hover:text-[#241A16] transition-colors font-light">
+Ver Direção
+<iconify-icon class="text-[#B78A56]" icon="solar:arrow-right-up-linear"></iconify-icon>
+</button>
+</div>
+</div>
+<div class="fade-in-up photo-panel hero-img-brand w-1/3 h-[66%] mb-8 soft-shadow">
+<div class="absolute inset-0 p-4 flex flex-col justify-end z-10">
+<span class="text-[9px] uppercase tracking-[.22em] text-[#E7D8C8] mb-2">03 / Marca</span>
+<h3 class="text-white text-sm font-light tracking-wide mb-1 leading-snug">Lançamento de Marca</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- marquee -->
+<section class="py-10 md:py-12 bg-white">
+<div class="border-y border-[#E7D8C8] bg-[#FCF7F1] overflow-hidden">
+<div class="marquee flex w-max py-4 text-[10px] uppercase tracking-[.28em] text-[#7B6A5F]">
+<span class="px-8">Mapeamento da Jornada do Convidado</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Transformação de Espaço</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Direção Gastronômica</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Comando de Produção</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Design de Atmosfera</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Mapeamento da Jornada do Convidado</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Transformação de Espaço</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Direção Gastronômica</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Comando de Produção</span><span class="text-[#B78A56]">◆</span>
+<span class="px-8">Design de Atmosfera</span><span class="text-[#B78A56]">◆</span>
+</div>
+</div>
+</section>
+
+<!-- services -->
+<section class="px-6 lg:px-12 py-24 bg-white" id="services">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-4 uppercase tracking-[.3em]">/ Capacidades /</p>
+<h2 class="section-title text-4xl md:text-6xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+<span class="block">
+<span class="section-reveal-line">
+<span class="section-reveal-word">Planejamento</span>
+<span class="section-reveal-word">completo</span>
+<span class="section-reveal-word">para</span>
+</span>
+</span>
+<span class="block text-[#B78A56]">
+<span class="section-reveal-line">
+<span class="section-reveal-word">momentos</span>
+<span class="section-reveal-word">decisivos</span>
+</span>
+</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+<article class="fade-section grid-paper bg-[#FFFCF7] border border-[#E7D8C8] p-8 md:p-10 relative overflow-hidden shadow-[0_18px_45px_rgba(36,26,22,.08),0_4px_14px_rgba(36,26,22,.05)]">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/45 to-transparent"></div>
+<div class="flex items-start justify-between gap-8 mb-14">
+<span class="text-[10px] tracking-[.26em] uppercase text-[#B78A56]">01 / Privado</span>
+<span class="text-[10px] tracking-[.22em] uppercase text-[#A99683]">Escala íntima</span>
+</div>
+<h3 class="text-3xl md:text-4xl font-light tracking-tight text-[#241A16] mb-5">Celebrações Privadas</h3>
+<p class="text-sm text-[#7B6A5F] leading-relaxed mb-9 max-w-xl font-light">
+Encontros íntimos concebidos com a precisão de um plano de produção e o calor de uma residência privada. Cada detalhe é moldado em torno do fluxo de convidados, da atmosfera, do timing do serviço e da memória emocional.
+</p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#5D473F]">
+<li class="flex gap-2"><span class="text-[#B78A56]">■</span>Jantares e salões privados</li>
+<li class="flex gap-2"><span class="text-[#B78A56]">■</span>Celebrações de marco</li>
+<li class="flex gap-2"><span class="text-[#B78A56]">■</span>Fins de semana em destino</li>
+<li class="flex gap-2"><span class="text-[#B78A56]">■</span>Hospitalidade sob medida</li>
+</ul>
+</article>
+<article class="fade-section bg-[#241A16] text-white p-8 md:p-10 relative overflow-hidden shadow-[0_22px_55px_rgba(36,26,22,.16),0_5px_16px_rgba(36,26,22,.10)]">
+<div class="absolute inset-0 grid-paper opacity-10"></div>
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/60 to-transparent"></div>
+<div class="relative z-10">
+<div class="flex items-start justify-between gap-8 mb-14">
+<span class="text-[10px] tracking-[.26em] uppercase text-[#B78A56]">02 / Marca</span>
+<span class="text-[10px] tracking-[.22em] uppercase text-[#A99683]">Momentos públicos</span>
+</div>
+<h3 class="text-3xl md:text-4xl font-light tracking-tight mb-5">Momentos de Marca &amp; Cultura</h3>
+<p class="text-sm text-[#E7D8C8] leading-relaxed mb-9 max-w-xl font-light">
+Lançamentos, prévias de imprensa e experiências culturais criados para parecerem cinematográficos, controlados e memoráveis. Traduzimos a estratégia da marca em ambientes, rituais, ritmo e momentos sobre os quais as pessoas querem comentar.
+</p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#F6F0E8]">
+<li class="flex gap-2"><span class="text-[#B78A56]">■</span>Lançamentos de produto</li>
+<li class="flex gap-2"><span class="text-[#B78A56]">■</span>Prévias de imprensa e VIP</li>
+<li class="flex gap-2"><span class="text-[#B78A56]">■</span>Salões culturais</li>
+<li class="flex gap-2"><span class="text-[#B78A56]">■</span>Programas premium de hospitalidade</li>
+</ul>
+</div>
+</article>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="fade-section photo-panel cap-img-summit min-h-[360px] shadow-[0_12px_32px_rgba(36,26,22,.07),0_2px_8px_rgba(36,26,22,.04)]">
+<div class="absolute inset-0 z-10 p-6 flex flex-col justify-end">
+<span class="text-[10px] uppercase tracking-[.22em] text-[#E7D8C8] mb-3">Executivo</span>
+<h3 class="text-white text-2xl font-light leading-tight">Cúpulas de Liderança</h3>
+<p class="text-[#E7D8C8] text-xs leading-relaxed mt-4 max-w-xs font-light opacity-90">Retiros, sessões de conselho e encontros de fundadores concebidos para melhores conversas.</p>
+</div>
+</div>
+<div class="fade-section photo-panel cap-img-hospitality min-h-[360px] shadow-[0_12px_32px_rgba(36,26,22,.07),0_2px_8px_rgba(36,26,22,.04)]">
+<div class="absolute inset-0 z-10 p-6 flex flex-col justify-end">
+<span class="text-[10px] uppercase tracking-[.22em] text-[#E7D8C8] mb-3">Hospitalidade</span>
+<h3 class="text-white text-2xl font-light leading-tight">Sistemas de Experiência do Convidado</h3>
+<p class="text-[#E7D8C8] text-xs leading-relaxed mt-4 max-w-xs font-light opacity-90">Chegada, serviço, transições e impressões finais moldadas como uma jornada contínua.</p>
+</div>
+</div>
+<div class="fade-section photo-panel cap-img-dining min-h-[360px] shadow-[0_12px_32px_rgba(36,26,22,.07),0_2px_8px_rgba(36,26,22,.04)]">
+<div class="absolute inset-0 z-10 p-6 flex flex-col justify-end">
+<span class="text-[10px] uppercase tracking-[.22em] text-[#E7D8C8] mb-3">Gastronomia</span>
+<h3 class="text-white text-2xl font-light leading-tight">Design de Mesa &amp; Serviço</h3>
+<p class="text-[#E7D8C8] text-xs leading-relaxed mt-4 max-w-xs font-light opacity-90">Ambientes de jantar onde menu, mesa, iluminação e ritmo parecem intencionalmente conectados.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- feature-bar -->
+<div class="bg-[#1D1714] border-t border-white/10">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-6 grid grid-cols-1 md:grid-cols-4 gap-4 text-xs text-[#E7D8C8]">
+<div class="flex items-center gap-3"><iconify-icon class="text-[#B78A56]" icon="solar:clipboard-list-linear"></iconify-icon>Estratégia de Conceito</div>
+<div class="flex items-center gap-3"><iconify-icon class="text-[#B78A56]" icon="solar:buildings-3-linear"></iconify-icon>Transformação de Espaço</div>
+<div class="flex items-center gap-3"><iconify-icon class="text-[#B78A56]" icon="solar:soundwave-linear"></iconify-icon>Direção Sensorial</div>
+<div class="flex items-center gap-3"><iconify-icon class="text-[#B78A56]" icon="solar:user-check-linear"></iconify-icon>Experiência do Convidado</div>
+</div>
+</div>
+
+<!-- projects -->
+<section class="px-6 lg:px-12 py-24 bg-[#FBF4EC]" id="projects">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-4 uppercase tracking-[.3em]">/ Produções recentes /</p>
+<h2 class="section-title text-4xl md:text-6xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+<span class="block">
+<span class="section-reveal-line">
+<span class="section-reveal-word">Produções</span>
+<span class="section-reveal-word">curadas</span>
+</span>
+</span>
+<span class="block text-[#B78A56]">
+<span class="section-reveal-line">
+<span class="section-reveal-word">universos</span>
+<span class="section-reveal-word">de evento</span>
+</span>
+</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class="fade-section">
+<article class="bg-[#FFFCF7] p-4 border border-[#E7D8C8] shadow-[0_14px_36px_rgba(36,26,22,.07),0_3px_10px_rgba(36,26,22,.04)] group transition-transform duration-500 hover:-translate-y-1">
+<div class="photo-panel prod-img-maison h-56 mb-5">
+<span class="absolute top-4 right-4 z-10 text-[10px] bg-[#FFFCF7] px-3 py-1 text-[#7B6A5F] border border-[#E7D8C8]">01 / 04</span>
+</div>
+<div class="mb-5">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">Lançamento de marca</span>
+<h3 class="text-xl font-light text-[#241A16] mt-2">Maison Launch</h3>
+<p class="text-xs text-[#7B6A5F] mt-1">Jantar de casa de moda · Paris</p>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t border-[#E7D8C8] pt-4 text-[10px]">
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Convidados</p><p class="text-[#241A16]">180</p></div>
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Ambientes</p><p class="text-[#241A16]">04</p></div>
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Prazo</p><p class="text-[#241A16]">10 sem</p></div>
+</div>
+<div class="border-t border-[#E7D8C8] mt-4 pt-4 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F]">Prévia de imprensa</span>
+<span class="w-8 h-8 border border-[#E7D8C8] flex items-center justify-center text-[#B78A56] group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</article>
+</div>
+<div class="fade-section">
+<article class="bg-[#241A16] p-4 border border-[#241A16] shadow-[0_22px_55px_rgba(36,26,22,.18),0_6px_18px_rgba(36,26,22,.10)] group text-white lg:-translate-y-4 transition-transform duration-500 hover:-translate-y-6">
+<div class="photo-panel prod-img-patron h-56 mb-5">
+<span class="absolute top-4 right-4 z-10 text-[10px] bg-[#FFFCF7] px-3 py-1 text-[#7B6A5F] border border-[#E7D8C8]">02 / 04</span>
+</div>
+<div class="mb-5">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">Gala exclusiva</span>
+<h3 class="text-xl font-light mt-2">Patron Gala</h3>
+<p class="text-xs text-[#A99683] mt-1">Benefício de museu · Nova York</p>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-[10px]">
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Convidados</p><p>420</p></div>
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Atos</p><p>03</p></div>
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Prazo</p><p>16 sem</p></div>
+</div>
+<div class="border-t border-white/10 mt-4 pt-4 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#A99683]">Noite de arrecadação</span>
+<span class="w-8 h-8 border border-white/15 flex items-center justify-center text-[#B78A56] group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</article>
+</div>
+<div class="fade-section">
+<article class="bg-[#241A16] p-4 border border-[#241A16] shadow-[0_22px_55px_rgba(36,26,22,.18),0_6px_18px_rgba(36,26,22,.10)] group text-white lg:-translate-y-4 transition-transform duration-500 hover:-translate-y-6">
+<div class="photo-panel prod-img-lake h-56 mb-5">
+<span class="absolute top-4 right-4 z-10 text-[10px] bg-[#FFFCF7] px-3 py-1 text-[#7B6A5F] border border-[#E7D8C8]">03 / 04</span>
+</div>
+<div class="mb-5">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">Salão privado</span>
+<h3 class="text-xl font-light mt-2">Lake House Salon</h3>
+<p class="text-xs text-[#A99683] mt-1">Fim de semana privado · Como</p>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-[10px]">
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Convidados</p><p>64</p></div>
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Dias</p><p>03</p></div>
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Prazo</p><p>12 sem</p></div>
+</div>
+<div class="border-t border-white/10 mt-4 pt-4 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#A99683]">Fim de semana em destino</span>
+<span class="w-8 h-8 border border-white/15 flex items-center justify-center text-[#B78A56] group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</article>
+</div>
+<div class="fade-section">
+<article class="bg-[#FFFCF7] p-4 border border-[#E7D8C8] shadow-[0_14px_36px_rgba(36,26,22,.07),0_3px_10px_rgba(36,26,22,.04)] group transition-transform duration-500 hover:-translate-y-1">
+<div class="photo-panel prod-img-founders h-56 mb-5">
+<span class="absolute top-4 right-4 z-10 text-[10px] bg-[#FFFCF7] px-3 py-1 text-[#7B6A5F] border border-[#E7D8C8]">04 / 04</span>
+</div>
+<div class="mb-5">
+<span class="text-[9px] uppercase tracking-[.24em] text-[#B78A56]">Retiro executivo</span>
+<h3 class="text-xl font-light text-[#241A16] mt-2">Founders Summit</h3>
+<p class="text-xs text-[#7B6A5F] mt-1">Retiro de liderança · Aspen</p>
+</div>
+<div class="grid grid-cols-3 gap-2 border-t border-[#E7D8C8] pt-4 text-[10px]">
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Convidados</p><p class="text-[#241A16]">96</p></div>
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Trilhas</p><p class="text-[#241A16]">05</p></div>
+<div><p class="text-[#A99683] uppercase tracking-[.18em] mb-1">Prazo</p><p class="text-[#241A16]">8 sem</p></div>
+</div>
+<div class="border-t border-[#E7D8C8] mt-4 pt-4 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F]">Programa de liderança</span>
+<span class="w-8 h-8 border border-[#E7D8C8] flex items-center justify-center text-[#B78A56] group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</article>
+</div>
+</div>
+<div class="mt-14 flex justify-center">
+<a class="inline-flex items-center gap-4 bg-[#241A16] text-white px-1 pl-6 py-1 rounded-sm text-xs font-light hover:bg-[#B78A56] transition-colors group shadow-[0_14px_34px_rgba(36,26,22,.12)]" href="#contact">
+Ver Todas as Produções
+<span class="w-9 h-9 bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-[#B78A56] transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- process -->
+<section class="px-6 lg:px-12 py-24 bg-white" id="process">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-4 uppercase tracking-[.3em]">/ Abordagem /</p>
+<h2 class="section-title text-4xl md:text-6xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+<span class="block">
+<span class="section-reveal-line">
+<span class="section-reveal-word">Do briefing</span>
+<span class="section-reveal-word">à</span>
+</span>
+</span>
+<span class="block text-[#B78A56]">
+<span class="section-reveal-line">
+<span class="section-reveal-word">despedida</span>
+<span class="section-reveal-word">final</span>
+<span class="section-reveal-word">do convidado</span>
+</span>
+</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+<div class="fade-section">
+<article class="bg-[#FFFCF7] border border-[#E7D8C8] p-8 min-h-[340px] relative overflow-hidden shadow-[0_14px_36px_rgba(36,26,22,.07),0_3px_10px_rgba(36,26,22,.04)] group transition-transform duration-500 hover:-translate-y-1">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/45 to-transparent"></div>
+<div class="absolute -top-6 right-6 text-[7rem] leading-none text-[#E7D8C8]/40 font-extralight pointer-events-none select-none">01</div>
+<div class="relative z-10 flex flex-col h-full">
+<span class="text-[10px] uppercase tracking-[.24em] text-[#B78A56] mb-16">Descoberta</span>
+<div class="mt-auto">
+<h3 class="text-2xl font-light tracking-tight text-[#241A16] mb-4 whitespace-nowrap">Definir o Momento</h3>
+<p class="text-sm text-[#7B6A5F] leading-relaxed font-light">Esclarecemos o propósito, o perfil do convidado, o tom emocional, as restrições e como o sucesso deve se sentir.</p>
+</div>
+</div>
+</article>
+</div>
+<div class="fade-section">
+<article class="bg-[#241A16] text-white border border-[#241A16] p-8 min-h-[340px] relative overflow-hidden shadow-[0_22px_55px_rgba(36,26,22,.18),0_6px_18px_rgba(36,26,22,.10)] group transition-transform duration-500 lg:-translate-y-3 hover:-translate-y-5">
+<div class="absolute inset-0 grid-paper opacity-10"></div>
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/60 to-transparent"></div>
+<div class="absolute -top-6 right-6 text-[7rem] leading-none text-[#B78A56]/20 font-extralight pointer-events-none select-none">02</div>
+<div class="relative z-10 flex flex-col h-full">
+<span class="text-[10px] uppercase tracking-[.24em] text-[#B78A56] mb-16">Direção</span>
+<div class="mt-auto">
+<h3 class="text-2xl font-light tracking-tight text-white mb-4 whitespace-nowrap">Construir o Universo</h3>
+<p class="text-sm text-[#E7D8C8] leading-relaxed font-light">Moldamos o conceito, a lógica do espaço, a linguagem visual, o ritmo do ambiente e o mapa de produção em um único universo de evento coeso.</p>
+</div>
+</div>
+</article>
+</div>
+<div class="fade-section">
+<article class="bg-[#241A16] text-white border border-[#241A16] p-8 min-h-[340px] relative overflow-hidden shadow-[0_22px_55px_rgba(36,26,22,.18),0_6px_18px_rgba(36,26,22,.10)] group transition-transform duration-500 lg:-translate-y-3 hover:-translate-y-5">
+<div class="absolute inset-0 grid-paper opacity-10"></div>
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/60 to-transparent"></div>
+<div class="absolute -top-6 right-6 text-[7rem] leading-none text-[#B78A56]/20 font-extralight pointer-events-none select-none">03</div>
+<div class="relative z-10 flex flex-col h-full">
+<span class="text-[10px] uppercase tracking-[.24em] text-[#B78A56] mb-16">Produção</span>
+<div class="mt-auto">
+<h3 class="text-2xl font-light tracking-tight text-white mb-4 whitespace-nowrap">Comandar o Ambiente</h3>
+<p class="text-sm text-[#E7D8C8] leading-relaxed font-light">Centralizamos fornecedores, equipe, timing, ensaios, roteiro do evento e decisões ao vivo para que a experiência pareça natural.</p>
+</div>
+</div>
+</article>
+</div>
+<div class="fade-section">
+<article class="bg-[#FFFCF7] border border-[#E7D8C8] p-8 min-h-[340px] relative overflow-hidden shadow-[0_14px_36px_rgba(36,26,22,.07),0_3px_10px_rgba(36,26,22,.04)] group transition-transform duration-500 hover:-translate-y-1">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/45 to-transparent"></div>
+<div class="absolute -top-6 right-6 text-[7rem] leading-none text-[#E7D8C8]/40 font-extralight pointer-events-none select-none">04</div>
+<div class="relative z-10 flex flex-col h-full">
+<span class="text-[10px] uppercase tracking-[.24em] text-[#B78A56] mb-16">Pós-evento</span>
+<div class="mt-auto">
+<h3 class="text-2xl font-light tracking-tight text-[#241A16] mb-4 whitespace-nowrap">Encerrar a Memória</h3>
+<p class="text-sm text-[#7B6A5F] leading-relaxed font-light">Gerenciamos a partida dos convidados, os materiais pós-evento, os debriefings e o acompanhamento para que o evento continue além do ambiente.</p>
+</div>
+</div>
+</article>
+</div>
+</div>
+<div class="fade-section text-center">
+<a class="inline-flex items-center gap-4 bg-[#B78A56] text-white px-1 pl-6 py-1 rounded-sm text-xs font-light hover:bg-[#946D40] transition-colors shadow-[0_14px_34px_rgba(36,26,22,.12)] group" href="#contact">
+Começar o Planejamento
+<span class="w-9 h-9 bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-[#B78A56] transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- client-notes -->
+<section class="client-notes-section bg-[#241A16] text-white py-24 relative overflow-hidden">
+<div class="absolute inset-0 grid-paper opacity-10"></div>
+<div class="absolute top-0 right-0 w-[520px] h-[520px] bg-[#B78A56]/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[420px] h-[420px] bg-white/5 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-4">
+<p class="text-[#A99683] text-[10px] font-medium mb-4 uppercase tracking-[.3em]">/ Notas de clientes /</p>
+<h2 class="section-title text-4xl md:text-5xl font-extralight uppercase tracking-tight mb-8 leading-[1.05]">
+<span class="block">
+<span class="section-reveal-line">
+<span class="section-reveal-word">O ambiente</span>
+<span class="section-reveal-word">pareceu</span>
+</span>
+</span>
+<span class="block text-[#B78A56]">
+<span class="section-reveal-line">
+<span class="section-reveal-word">inevitável.</span>
+</span>
+</span>
+</h2>
+<p class="fade-section text-sm text-[#E7D8C8] leading-relaxed mb-8 font-light max-w-sm">
+O melhor retorno não é que um evento parecia bonito. É que toda a experiência pareceu composta, da primeira chegada até a despedida final.
+</p>
+<a class="fade-section inline-flex items-center gap-3 text-xs uppercase tracking-[.18em] text-[#B78A56] hover:text-white transition-colors" href="#projects">
+Ler mais notas
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</a>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<article class="fade-section bg-[#FFFCF7] text-[#241A16] border border-[#E7D8C8] p-8 md:p-10 shadow-[0_22px_55px_rgba(0,0,0,.22),0_6px_18px_rgba(0,0,0,.12)] relative overflow-hidden">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/60 to-transparent"></div>
+<div class="flex items-start justify-between gap-8 mb-8">
+<span class="text-[10px] uppercase tracking-[.26em] text-[#B78A56]">01 / Privado</span>
+<span class="text-[10px] uppercase tracking-[.22em] text-[#A99683]">Lake House Salon</span>
+</div>
+<p class="text-2xl md:text-3xl font-light leading-[1.25] tracking-tight mb-8">“Eles traduziram um briefing complexo em uma noite que pareceu calma, cinematográfica e profundamente pessoal.”</p>
+<p class="text-sm text-[#7B6A5F] leading-relaxed mb-8 font-light max-w-2xl">
+Cada transição foi conduzida antes que percebêssemos. Nossos convidados ainda comentam sobre a revelação, o ritmo e como todo o fim de semana pareceu natural.
+</p>
+<div class="border-t border-[#E7D8C8] pt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+<div>
+<p class="text-sm text-[#241A16] font-medium">Cliente Privado</p>
+<p class="text-xs text-[#7B6A5F] mt-1">Celebração de marco · Como</p>
+</div>
+<span class="text-[10px] uppercase tracking-[.22em] text-[#A99683]">64 convidados · 3 dias</span>
+</div>
+</article>
+<article class="fade-section bg-white/[.045] border border-white/15 p-8 md:p-10 shadow-[0_18px_45px_rgba(0,0,0,.18),inset_0_1px_0_rgba(255,255,255,.06)] relative overflow-hidden">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#B78A56]/45 to-transparent"></div>
+<div class="flex items-start justify-between gap-8 mb-8">
+<span class="text-[10px] uppercase tracking-[.26em] text-[#B78A56]">02 / Marca</span>
+<span class="text-[10px] uppercase tracking-[.22em] text-[#A99683]">Maison Launch</span>
+</div>
+<p class="text-2xl md:text-3xl font-light leading-[1.25] tracking-tight mb-8 text-white">“A produção permaneceu invisível. Esse era o luxo.”</p>
+<p class="text-sm text-[#E7D8C8] leading-relaxed mb-8 font-light max-w-2xl">
+O lançamento tinha pressão, imprensa, talentos, executivos e um cronograma apertado. O ambiente ainda assim pareceu controlado, elegante e vivo.
+</p>
+<div class="border-t border-white/10 pt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+<div>
+<p class="text-sm text-white font-medium">Diretor de Marca</p>
+<p class="text-xs text-[#A99683] mt-1">Lançamento de produto · Paris</p>
+</div>
+<span class="text-[10px] uppercase tracking-[.22em] text-[#A99683]">180 convidados · prévia de imprensa</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- journal -->
+<section class="px-6 lg:px-12 py-24 bg-white" id="journal">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<p class="text-[#7B6A5F] text-[10px] font-medium mb-4 uppercase tracking-[.3em]">/ Notas de campo /</p>
+<h2 class="section-title text-4xl md:text-6xl font-extralight uppercase tracking-tight text-[#241A16] leading-[1.04]">
+<span class="block">
+<span class="section-reveal-line">
+<span class="section-reveal-word">Notas sobre</span>
+<span class="section-reveal-word">como criar</span>
+</span>
+</span>
+<span class="block text-[#B78A56]">
+<span class="section-reveal-line">
+<span class="section-reveal-word">ambientes</span>
+<span class="section-reveal-word">inesquecíveis</span>
+</span>
+</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="fade-section">
+<article class="group bg-[#FFFCF7] border border-[#E7D8C8] p-4 shadow-[0_14px_36px_rgba(36,26,22,.07),0_3px_10px_rgba(36,26,22,.04)] transition-transform duration-500 hover:-translate-y-1">
+<div class="photo-panel note-img-pacing h-72 mb-6 overflow-hidden">
+<span class="absolute top-4 right-4 z-10 text-[10px] bg-[#FFFCF7] px-3 py-1 text-[#7B6A5F] border border-[#E7D8C8]">01 / 03</span>
+</div>
+<div class="px-1 pb-2">
+<div class="flex items-center justify-between gap-4 mb-4">
+<span class="text-[10px] uppercase tracking-[.22em] text-[#B78A56]">Hospitalidade</span>
+<span class="text-[10px] uppercase tracking-[.18em] text-[#A99683]">08 min</span>
+</div>
+<h3 class="text-2xl font-light text-[#241A16] leading-tight group-hover:text-[#B78A56] transition-colors mb-5">Como o ritmo molda a memória de um jantar</h3>
+<p class="text-sm text-[#7B6A5F] leading-relaxed font-light mb-6">
+Os jantares mais memoráveis não são concebidos apenas em torno da mesa. Eles são moldados pela chegada, pelo ritmo, pelo serviço, pelo silêncio e pela despedida final.
+</p>
+<div class="border-t border-[#E7D8C8] pt-4 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F]">Jornada do convidado</span>
+<span class="w-8 h-8 border border-[#E7D8C8] flex items-center justify-center text-[#B78A56] group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="fade-section">
+<article class="group bg-[#241A16] text-white border border-[#241A16] p-4 shadow-[0_22px_55px_rgba(36,26,22,.18),0_6px_18px_rgba(36,26,22,.10)] transition-transform duration-500 md:-translate-y-4 hover:-translate-y-6">
+<div class="photo-panel note-img-launch h-72 mb-6 overflow-hidden">
+<span class="absolute top-4 right-4 z-10 text-[10px] bg-[#FFFCF7] px-3 py-1 text-[#7B6A5F] border border-[#E7D8C8]">02 / 03</span>
+</div>
+<div class="px-1 pb-2">
+<div class="flex items-center justify-between gap-4 mb-4">
+<span class="text-[10px] uppercase tracking-[.22em] text-[#B78A56]">Marca</span>
+<span class="text-[10px] uppercase tracking-[.18em] text-[#A99683]">06 min</span>
+</div>
+<h3 class="text-2xl font-light text-white leading-tight group-hover:text-[#B78A56] transition-colors mb-5">Por que lançamentos de produto precisam de um sistema de revelação mais forte</h3>
+<p class="text-sm text-[#E7D8C8] leading-relaxed font-light mb-6">
+Um lançamento não é apenas um ambiente com um palco. Os momentos mais fortes são coreografados em torno da antecipação, da atenção, do timing e da gravidade social.
+</p>
+<div class="border-t border-white/10 pt-4 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#A99683]">Estratégia de revelação</span>
+<span class="w-8 h-8 border border-white/15 flex items-center justify-center text-[#B78A56] group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+</article>
+</div>
+<div class="fade-section">
+<article class="group bg-[#FFFCF7] border border-[#E7D8C8] p-4 shadow-[0_14px_36px_rgba(36,26,22,.07),0_3px_10px_rgba(36,26,22,.04)] transition-transform duration-500 hover:-translate-y-1">
+<div class="photo-panel note-img-retreat h-72 mb-6 overflow-hidden">
+<span class="absolute top-4 right-4 z-10 text-[10px] bg-[#FFFCF7] px-3 py-1 text-[#7B6A5F] border border-[#E7D8C8]">03 / 03</span>
+</div>
+<div class="px-1 pb-2">
+<div class="flex items-center justify-between gap-4 mb-4">
+<span class="text-[10px] uppercase tracking-[.22em] text-[#B78A56]">Executivo</span>
+<span class="text-[10px] uppercase tracking-[.18em] text-[#A99683]">05 min</span>
+</div>
+<h3 class="text-2xl font-light text-[#241A16] leading-tight group-hover:text-[#B78A56] transition-colors mb-5">Criar retiros que geram conversas melhores</h3>
+<p class="text-sm text-[#7B6A5F] leading-relaxed font-light mb-6">
+Retiros executivos funcionam melhor quando o ambiente reduz o atrito, dá estrutura à reflexão e cria espaço para um diálogo honesto.
+</p>
+<div class="border-t border-[#E7D8C8] pt-4 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[.2em] text-[#7B6A5F]">Design de conversa</span>
+<span class="w-8 h-8 border border-[#E7D8C8] flex items-center justify-center text-[#B78A56] group-hover:bg-[#B78A56] group-hover:text-white transition-colors">
+<iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<!-- footer -->
+<footer class="bg-[#241A16] text-white px-6 lg:px-12 py-14 relative overflow-hidden" id="contact">
+<div class="absolute inset-0 grid-paper opacity-10"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-10 border-b border-white/10">
+<div class="lg:col-span-4">
+<div class="flex items-center gap-2 mb-6">
+<div class="w-9 h-9 bg-[#B78A56] flex items-center justify-center">
+<iconify-icon icon="solar:star-shine-linear"></iconify-icon>
+</div>
+<span class="text-xs uppercase tracking-[.24em]">Echelon Atelier</span>
+</div>
+<p class="text-sm text-[#A99683] leading-relaxed max-w-sm mb-8">
+Planejamento de eventos de alto padrão para clientes privados, marcas, instituições culturais e equipes executivas.
+</p>
+<a class="inline-flex items-center gap-4 bg-[#B78A56] text-white px-1 pl-5 py-1 text-xs font-light hover:bg-[#946D40] transition-colors" href="mailto:studio@echelonatelier.com">
+studio@echelonatelier.com
+<span class="w-8 h-8 bg-white/10 flex items-center justify-center">
+<iconify-icon icon="solar:letter-linear"></iconify-icon>
+</span>
+</a>
+</div>
+<div class="lg:col-span-2">
+<h4 class="text-sm font-light mb-5">Estúdio</h4>
+<ul class="space-y-3 text-xs text-[#A99683]">
+<li>Serviços</li>
+<li>Portfólio</li>
+<li>Processo</li>
+<li>Diário</li>
+</ul>
+</div>
+<div class="lg:col-span-2">
+<h4 class="text-sm font-light mb-5">Eventos</h4>
+<ul class="space-y-3 text-xs text-[#A99683]">
+<li>Celebrações Privadas</li>
+<li>Lançamentos de Marca</li>
+<li>Retiros Executivos</li>
+<li>Galas Culturais</li>
+</ul>
+</div>
+<div class="lg:col-span-4">
+<h4 class="text-sm font-light mb-5">Solicitar disponibilidade</h4>
+<form class="flex bg-white p-1 max-w-md">
+<input class="flex-1 px-4 py-3 text-sm text-[#241A16] outline-none" placeholder="Seu e-mail" type="email"/>
+<button class="bg-[#B78A56] px-5 text-xs uppercase tracking-[.18em] hover:bg-[#946D40] transition-colors">Enviar</button>
+</form>
+<p class="text-xs text-[#A99683] mt-4 leading-relaxed">
+Para consultas, inclua o tipo de evento, a localização, a data preferida e o número de convidados.
+</p>
+</div>
+</div>
+<div class="pt-8 flex flex-col md:flex-row justify-between gap-4 text-[10px] uppercase tracking-[.22em] text-[#A99683]">
+<span>© 2026 Echelon Atelier</span>
+<span>Montreal · Paris · Nova York</span>
+</div>
+</div>
+</footer>
+</main>
+
+<!-- js -->
+<!-- interactions.js: GSAP scroll/reveal animations, fundo de partículas no canvas e copy rotativo do hero -->
+<script src="assets/js/interactions.js"></script>
+</body>
+</html>

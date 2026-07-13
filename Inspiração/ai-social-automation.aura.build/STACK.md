@@ -1,0 +1,8 @@
+- **Tailwind CSS** — utility-first CSS framework loaded via runtime script for all layout, spacing, color, and effects
+- **Lucide** — icon library used for all UI icons (asterisk, sparkles, zap, search, plus, trending-up, etc.)
+- **Inter** — primary sans-serif body font loaded via Google Fonts CSS
+- **Bricolage Grotesque** — display serif font used for headings and price/stat numbers
+- **UnicornStudio** — CDN-loaded WebGL runtime that renders the animated hero background (project AhqzKk9mZE0EnlENMQDi)
+- **IntersectionObserver API** — used to gate scroll-triggered keyframe animations (animate-on-scroll)
+- **CSS keyframe animations** — fadeInUpBlur entry animation, animationIn scroll reveal, and flow stroke-dashoffset animation for the pricing connector
+- **Inline JS module pattern** — IIFEs for the testimonial carousel and plan selector wiring up DOM event handlers

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ANPAQ — Selo Nacional da Cachaça de Alambique</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet"/>
+  
+  <style>
+    /* =======================================================================
+       1. TOKENS BASE (Design System)
+       ======================================================================= */
+    :root {
+      /* Colors Dark/Hero */
+      --anpaq-dark-900: #1A1410;
+      --anpaq-dark-800: #211A14;
+      --anpaq-gold-500: #C9A227;
+      --anpaq-gold-400: #D4A64A;
+      --anpaq-text-light: #F5F1E8;
+      --anpaq-text-light-muted: rgba(245, 241, 232, 0.7);
+
+      /* Colors Light/Educativa */
+      --anpaq-cream-100: #FDFBF7;
+      --anpaq-cream-300: #F5F1E8;
+      --anpaq-cream-400: #EDE7DA;
+      --anpaq-text-dark: #2C241D;
+      --anpaq-text-body: #4A3F35;
+      --anpaq-text-subtle: #A69888;
+      
+      /* Typography */
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+      
+      /* Base Metrics */
+      --border-radius: 4px;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* =======================================================================
+       2. RESET & BASE
+       ======================================================================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--anpaq-dark-900);
+      color: var(--anpaq-text-light);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Grain Texture (Artesanal/Analógico) - Applies to whole page */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 180px;
+    }
+
+    /* =======================================================================
+       3. SECTION 1: HERO
+       ======================================================================= */
+    .hero {
+      position: relative;
+      min-height: 100svh; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 1.5rem 6rem;
+      overflow: hidden;
+      background-color: var(--anpaq-dark-900);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 20, 16, 0.4) 0%,
+        rgba(26, 20, 16, 0.6) 40%,
+        rgba(26, 20, 16, 0.95) 100%
+      );
+    }
+    .hero-glow {
+      position: absolute;
+      top: 40%;
+      left: 30%;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(201, 162, 39, 0.12) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 2;
+      filter: blur(40px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(26, 20, 16, 0.5);
+      border: 1px solid rgba(201, 162, 39, 0.25);
+      border-radius: var(--border-radius);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--anpaq-gold-400);
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background-color: var(--anpaq-gold-500);
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(201, 162, 39, 0.6);
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 10vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--anpaq-text-light);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-subheadline {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 5vw, 1.75rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.3;
+      color: var(--anpaq-gold-400);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-text {
+      font-size: 0.9375rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--anpaq-text-light-muted);
+      margin-bottom: 2.5rem;
+      max-width: 95%;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 1.5rem;
+      border-radius: var(--border-radius);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .btn-primary {
+      background-color: var(--anpaq-gold-500);
+      color: var(--anpaq-dark-900);
+      border: 1px solid var(--anpaq-gold-500);
+      box-shadow: 0 4px 16px rgba(201, 162, 39, 0.15);
+    }
+    .btn-primary:hover, .btn-primary:active {
+      background-color: var(--anpaq-gold-400);
+      border-color: var(--anpaq-gold-400);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201, 162, 39, 0.3);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 10;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .hero-scroll span {
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245, 241, 232, 0.5);
+      transition: color 0.3s ease;
+    }
+    .hero-scroll:hover span {
+      color: var(--anpaq-gold-400);
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--anpaq-gold-500), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+      transform-origin: top;
+    }
+
+    @keyframes scroll-pulse {
+      0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+
+    /* =======================================================================
+       4. SECTION 2: EDUCATIVA (Transição para fundo claro)
+       ======================================================================= */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-educativa {
+      padding: 6rem 0 8rem;
+      background-color: var(--anpaq-cream-300);
+      color: var(--anpaq-text-dark); 
+      position: relative;
+      /* Subtle shadow at the top to enhance transition from dark hero */
+      box-shadow: inset 0 20px 40px rgba(0,0,0,0.06);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 4.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--anpaq-text-subtle);
+      margin-bottom: 0.75rem;
+    }
+
+    .gold-line {
+      width: 48px;
+      height: 2px;
+      background-color: var(--anpaq-gold-500);
+      margin-bottom: 1.5rem;
+      border-radius: 2px;
+    }
+
+    .sec-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 8vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--anpaq-text-dark);
+      margin-bottom: 1.25rem;
+    }
+
+    .sec-subtitle {
+      font-size: 0.9375rem;
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--anpaq-text-body);
+    }
+
+    .features-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Adicionando efeito de hover forte nos cards */
+    .feature-card {
+      background-color: var(--anpaq-cream-100);
+      border: 1px solid var(--anpaq-cream-400);
+      border-radius: var(--border-radius);
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.4s var(--ease-out);
+      cursor: default;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(44, 36, 29, 0.08);
+      border-color: rgba(201, 162, 39, 0.5);
+    }
+
+    /* Ícones com cor forte por padrão e animação no hover do card */
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(201, 162, 39, 0.2);
+      border-radius: var(--border-radius);
+      background-color: var(--anpaq-cream-300);
+      color: var(--anpaq-gold-500); /* Cor dourada forte para garantir que aparece */
+      margin-bottom: 1.5rem;
+      transition: all 0.4s var(--ease-out);
+    }
+    
+    .feature-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .feature-card:hover .feature-icon {
+      background-color: var(--anpaq-gold-500);
+      color: var(--anpaq-dark-900);
+      border-color: var(--anpaq-gold-500);
+      transform: scale(1.1) rotate(5deg); /* Animação clara no ícone */
+      box-shadow: 0 8px 24px rgba(201, 162, 39, 0.25);
+    }
+
+    .feature-text {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--anpaq-text-dark);
+    }
+
+    /* Scroll Indicator Sec 2 */
+    .sec-scroll-indicator {
+      text-align: center;
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sec-scroll-indicator span {
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--anpaq-text-subtle);
+    }
+    .sec-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--anpaq-gold-500), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+      transform-origin: top;
+      opacity: 0.5;
+    }
+
+    /* =======================================================================
+       5. UTILS & ANIMATIONS (Melhoradas)
+       ======================================================================= */
+    /* A animação de reveal agora inclui scale para um efeito de "pop" mais visível */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* =======================================================================
+       6. DESKTOP ADAPTATION (Tablet & Up)
+       ======================================================================= */
+    @media (min-width: 640px) {
+      .features-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .feature-card {
+        flex: 0 0 calc(50% - 0.75rem); /* 2 por linha no tablet */
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding: 4rem 3rem;
+      }
+      .hero-glow {
+        width: 500px;
+        height: 500px;
+        left: 50%;
+        filter: blur(60px);
+      }
+      .hero-content {
+        align-items: center;
+        text-align: center;
+      }
+      .hero-text {
+        font-size: 1.0625rem;
+        max-width: 600px;
+      }
+      .hero-actions {
+        flex-direction: row;
+        justify-content: center;
+        width: auto;
+      }
+      .btn {
+        width: auto;
+        padding: 1rem 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-educativa {
+        padding: 9rem 0 10rem;
+      }
+      .sec-subtitle {
+        font-size: 1.0625rem;
+      }
+      .feature-card {
+        flex: 0 0 calc(33.333% - 1rem); /* 3 por linha no desktop */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================= HERO SECTION (Dobra 1) ======================= -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="assets/img/hero.png" alt="Produção artesanal em alambique de cobre" onerror="this.src='https://images.unsplash.com/photo-1598462947118-200922e96d11?q=80&w=2000&auto=format&fit=crop';">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal" style="transition-delay: 0.1s;">
+        SELO NACIONAL DA CACHAÇA DE ALAMBIQUE — ANPAQ
+      </div>
+      <h1 class="hero-headline reveal" style="transition-delay: 0.2s;">
+        Você sabe o que<br>está bebendo?
+      </h1>
+      <h2 class="hero-subheadline reveal" style="transition-delay: 0.3s;">
+        A verdadeira cachaça de alambique agora tem selo.
+      </h2>
+      <p class="hero-text reveal" style="transition-delay: 0.4s;">
+        Nem toda cachaça é produzida em alambique de cobre e por bateladas. Nem toda preserva a tradição brasileira. Agora você pode saber a diferença.
+      </p>
+      <div class="hero-actions reveal" style="transition-delay: 0.5s;">
+        <a href="#educativa" class="btn btn-primary">
+          Ver como funciona
+          <!-- Fallback inline SVG arrow -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <a href="#educativa" class="hero-scroll reveal" style="transition-delay: 0.8s;">
+      <span>Rolar</span>
+      <div class="hero-scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- ======================= SEÇÃO 2 (Educativa) ======================= -->
+  <section class="section-educativa" id="educativa">
+    <div class="container">
+      
+      <!-- Cabeçalho (Header) -->
+      <div class="section-header">
+        <span class="eyebrow reveal" style="transition-delay: 0.1s;">A verdadeira cachaça de alambique</span>
+        <div class="gold-line reveal" style="transition-delay: 0.2s;"></div>
+        
+        <h2 class="sec-title reveal" style="transition-delay: 0.3s;">
+          Nem toda cachaça é o que parece
+        </h2>
+        
+        <p class="sec-subtitle reveal" style="transition-delay: 0.4s;">
+          Nem toda cachaça é produzida em alambique de cobre e por bateladas. Nem toda cachaça preserva a tradição brasileira. Conheça o que faz a verdadeira diferença.
+        </p>
+      </div>
+
+      <!-- Grid de Características -->
+      <div class="features-grid">
+        
+        <!-- Item 1 -->
+        <div class="feature-card reveal" style="transition-delay: 0.1s;">
+          <div class="feature-icon">
+            <!-- Inline SVG (Garante que sempre apareça) -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a2 2 0 0 0 1.8 2.95h10.96a2 2 0 0 0 1.8-2.95l-5.068-10.127A2 2 0 0 1 14 9.527V2"/>
+              <path d="M8.5 2h7"/>
+              <path d="M14 9h-4"/>
+            </svg>
+          </div>
+          <span class="feature-text">Alambique de cobre</span>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="feature-card reveal" style="transition-delay: 0.2s;">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
+          <span class="feature-text">Destilação em bateladas</span>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="feature-card reveal" style="transition-delay: 0.3s;">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <span class="feature-text">Processo controlado</span>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="feature-card reveal" style="transition-delay: 0.4s;">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+              <line x1="9" y1="3" x2="9" y2="18"/>
+              <line x1="15" y1="6" x2="15" y2="21"/>
+            </svg>
+          </div>
+          <span class="feature-text">Produção com identidade própria regional</span>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="feature-card reveal" style="transition-delay: 0.5s;">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 22h8"/>
+              <path d="M7 10h10"/>
+              <path d="M12 15v7"/>
+              <path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/>
+            </svg>
+          </div>
+          <span class="feature-text">Aromas e sabores preservados</span>
+        </div>
+
+      </div>
+
+      <!-- Sinalização de Continuidade -->
+      <div class="sec-scroll-indicator reveal" style="transition-delay: 0.8s;">
+        <span>Continue Explorando</span>
+        <div class="sec-scroll-line"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================= SCRIPTS ======================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealElements = document.querySelectorAll('.reveal');
+      
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Pequeno delay para a animação não ser engolida pela rolagem rápida
+            setTimeout(() => {
+              entry.target.classList.add('active');
+            }, 50);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15, 
+        rootMargin: '0px 0px -5% 0px' 
+      });
+
+      // Primeiro delay para garantir o render do Hero
+      setTimeout(() => {
+        revealElements.forEach(el => revealObserver.observe(el));
+      }, 50);
+    });
+  </script>
+
+</body>
+</html>

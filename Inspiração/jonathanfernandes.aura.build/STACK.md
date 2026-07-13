@@ -1,0 +1,6 @@
+- **Tailwind CSS** — utility-first CSS framework used for layout, spacing, colors and component styling throughout the page
+- **Three.js** — WebGL 3D library powering the wireframe torus knot and instanced spark particles in the hero background
+- **Lucide** — icon library rendering all UI icons (home, briefcase, user, mail, paintbrush, code-2, layout, arrow-right, quote, plus, arrow-down-right) via `<i data-lucide>` tags
+- **Geist & Geist Mono** — self-hosted Google Fonts (woff2) used as the primary sans-serif and monospace typefaces
+- **HTML Canvas / WebGL** — rendering target for the Three.js hero scene contained inside `#canvas-container`
+- **Aura platform** — host platform that injects a Supabase token firewall and an image-fallback handler into the original page (stripped from the cleaned design system)

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Google Antigravity - Construa de um novo jeito"/>
+<meta name="preview-ready-after-ms" content="5000"/>
+<title>Google Antigravity - Construa de um novo jeito</title>
+<link rel="icon" type="image/x-icon" href="assets/fc6531d7e0f7b029_favicon.ico"/>
+<link rel="icon" type="image/png" href="assets/8f0b95d2d21dbf93_antigravity-logo.png"/>
+<!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- @font-face declarations: Google Sans Flex (body), Google Sans Code, Google Symbols (UI icons via text ligatures) -->
+<link rel="stylesheet" href="assets/css/fonts.css"/>
+<!-- design tokens + global layout/typography/grid system (original Angular global stylesheet) -->
+<link rel="stylesheet" href="assets/7460a2ae024f33e6_styles-7KLEMMT6.css"/>
+<!-- per-component styles extracted from the original inline <style> blocks (header, footer, hero, sections, sliders, particles) -->
+<link rel="stylesheet" href="assets/css/components.css"/>
+<!-- page-level overrides for the standalone design-system build -->
+<link rel="stylesheet" href="assets/css/design-system.css"/>
+</head>
+<body>
+
+<!-- header -->
+<header class="header">
+<div class="grid-container">
+<div class="main-content">
+<a class="logo-link" href="#" aria-label="Google Antigravity">
+<antigravity-logo class="logo"><img src="assets/images/svg/antigravity-logo.svg" alt="Google Antigravity" height="21" width="161"/></antigravity-logo>
+</a>
+<div class="header-actions">
+<nav class="call-to-action--nav nav">
+<div class="nav-item"><app-button variant="nav"><button class="button button-compact button-nav call-to-action--nav dropdown-nav" type="button">Produto<span class="dropdown-icon google-symbols">keyboard_arrow_down</span></button></app-button></div>
+<div class="nav-item"><app-button variant="nav"><button class="button button-compact button-nav call-to-action--nav dropdown-nav" type="button">Casos de uso<span class="dropdown-icon google-symbols">keyboard_arrow_down</span></button></app-button></div>
+<div class="nav-item"><app-button variant="nav"><button class="button button-compact button-nav call-to-action--nav" type="button">Preços</button></app-button></div>
+<div class="nav-item"><app-button variant="nav"><button class="button button-compact button-nav call-to-action--nav" type="button">Blog</button></app-button></div>
+<div class="nav-item"><app-button variant="nav"><button class="button button-compact button-nav call-to-action--nav dropdown-nav" type="button">Recursos<span class="dropdown-icon google-symbols">keyboard_arrow_down</span></button></app-button></div>
+</nav>
+<app-button><button class="button button-compact button-primary call-to-action--nav download-button dropdown-nav" type="button">Baixar<span class="dropdown-icon google-symbols">download</span></button></app-button>
+</div>
+<div class="header-actions-right">
+<app-button><button class="button button-compact button-primary call-to-action--nav menu-toggle google-symbols" type="button" aria-label="Menu">menu</button></app-button>
+</div>
+</div>
+</div>
+</header>
+
+<!-- hero / welcome -->
+<section class="welcome-wrapper">
+<div class="hero-video-wrapper">
+<landing-main-particles-component data-theme="light">
+<div class="main-particles-component-section"><div class="main-particles-container"></div></div>
+</landing-main-particles-component>
+</div>
+<div class="welcome-section">
+<div class="logo-container">
+<antigravity-logo class="logo"><img src="assets/images/svg/antigravity-logo.svg" alt="Google Antigravity" height="30" width="231"/></antigravity-logo>
+</div>
+<div class="header-container">
+<h1 class="landing-main-header"><typed-header class="landing-main"><span class="typed-container landing-main"><span class="typed-content">Decole rumo à plataforma de agentes de próxima geração</span></span></typed-header></h1>
+</div>
+<div class="grid-row welcome-cta">
+<app-button variant="primary"><button class="button button-primary call-to-action" type="button"><mac-icon class="icon"><svg fill="none" height="17" viewBox="0 0 14 17" width="14" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3000_6288)"><path d="M13.3997 5.7953C13.3011 5.8718 11.5603 6.8527 11.5603 9.0338C11.5603 11.5566 13.7754 12.4491 13.8417 12.4712C13.8315 12.5256 13.4898 13.6935 12.6738 14.8835C11.9462 15.9307 11.1863 16.9762 10.0303 16.9762C8.87425 16.9762 8.57675 16.3047 7.24225 16.3047C5.94175 16.3047 5.47935 16.9983 4.42195 16.9983C3.36455 16.9983 2.62675 16.0293 1.77845 14.8393C0.795853 13.4419 0.00195312 11.271 0.00195312 9.2106C0.00195312 5.9058 2.15075 4.1531 4.26555 4.1531C5.38925 4.1531 6.32595 4.8909 7.03145 4.8909C7.70295 4.8909 8.75015 4.1089 10.0286 4.1089C10.5131 4.1089 12.2539 4.1531 13.3997 5.7953ZM9.42165 2.7098C9.95035 2.0825 10.3244 1.2121 10.3244 0.3417C10.3244 0.221 10.3142 0.0986 10.2921 0C9.43185 0.0323 8.40845 0.5729 7.79135 1.2886C7.30685 1.8394 6.85465 2.7098 6.85465 3.5921C6.85465 3.7247 6.87675 3.8573 6.88695 3.8998C6.94135 3.91 7.02975 3.9219 7.11815 3.9219C7.88995 3.9219 8.86065 3.4051 9.42165 2.7098Z" fill="currentColor"></path></g><defs><clipPath id="clip0_3000_6288"><rect fill="currentColor" height="17" width="14"></rect></clipPath></defs></svg></mac-icon>Baixar para MacOS</button></app-button>
+<app-button variant="secondary"><button class="button button-secondary call-to-action" type="button">Explorar casos de uso</button></app-button>
+</div>
+</div>
+</section>
+
+<!-- video -->
+<youtube-video-section>
+<section class="landing-video-section">
+<div class="grid-container">
+<div class="grid-row">
+<div class="grid-col col-md-12">
+<div class="video-wrapper" aria-label="Reproduzir vídeo">
+<div class="video-control-button symbol google-symbols">play_arrow</div>
+<video class="landing-video" height="1080" width="1920" autoplay loop muted playsinline>
+<source src="assets/89f91be83432f80b_hero_video.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</div>
+</div>
+</section>
+</youtube-video-section>
+
+<!-- agent-first -->
+<landing-agent-first>
+<section class="agent-first-section">
+<ul class="icon-list">
+<li class="grid-col"><div class="bouncer symbol google-symbols">merge</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">developer_mode_tv</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">code</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">check_circle</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">spark</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">plus_code</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">terminal</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">deployed_code</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">file_copy</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">search_spark</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">keyboard_tab</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">pen_spark</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">keyboard_return</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">folder</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">keyboard_command_key</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">device_hub</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">spark</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">code_blocks</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">refresh</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">data_object</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">commit</div></li>
+<li class="grid-col"><div class="bouncer symbol google-symbols">dashboard_customize</div></li>
+</ul>
+<div class="grid-container text-container">
+<div class="grid-row">
+<div class="grid-col col-xs-4 col-sm-8 col-md-9">
+<typed-header class="heading-3 agent-first-text"><span class="typed-container agent-first-text heading-3"><span class="typed-content">O Google Antigravity é nossa plataforma de desenvolvimento agêntica, permitindo que qualquer pessoa construa na era agent-first.</span></span></typed-header>
+</div>
+</div>
+</div>
+</section>
+</landing-agent-first>
+
+<!-- feature-explorer -->
+<feature-explorer-new>
+<section class="feature-explorer-section">
+<div class="grid-container">
+<div class="feature-list">
+<div class="feature-item">
+<div class="grid-row">
+<div class="grid-col col-xs-4 col-md-4">
+<div class="feature-copy">
+<span class="heading-4 feature-title">Antigravity 2.0</span>
+<p class="body feature-description">Sua central de comando para gerenciar múltiplos agentes locais em paralelo. Agrupe conversas em Projetos, opere em vários workspaces e automatize tarefas rotineiras com mensagens agendadas.</p>
+</div>
+</div>
+<div class="grid-col col-xs-4 col-md-offset-2 col-md-6">
+<div class="feature-media"><img class="feature-image" height="750" width="736" src="assets/19bfd89363a20ebe_new-chat.png" alt="Antigravity 2.0"/></div>
+</div>
+</div>
+</div>
+<div class="feature-item">
+<div class="grid-row">
+<div class="grid-col col-xs-4 col-md-4">
+<div class="feature-copy">
+<span class="heading-4 feature-title">Antigravity CLI</span>
+<p class="body feature-description">A superfície leve, rápida e terminal-first para trabalhar com os agentes do Antigravity. Execute agentes de programação autônomos, rode comandos shell diretamente e gerencie subagentes em segundo plano direto do seu teclado.</p>
+</div>
+</div>
+<div class="grid-col col-xs-4 col-md-offset-2 col-md-6">
+<div class="feature-media"><img class="feature-image" height="750" width="736" src="assets/500bdb52aefb3088_feature-2.jpg" alt="Antigravity CLI"/></div>
+</div>
+</div>
+</div>
+<div class="feature-item">
+<div class="grid-row">
+<div class="grid-col col-xs-4 col-md-4">
+<div class="feature-copy">
+<span class="heading-4 feature-title">Antigravity SDK</span>
+<p class="body feature-description">Prototipe agentes personalizados aproveitando o harness do Antigravity com o mínimo de código. Scripts simples em Python para iterar em aplicações agênticas, automatizar tarefas de engenharia de software e rodar avaliações sobre o harness de agentes do Antigravity.</p>
+</div>
+</div>
+<div class="grid-col col-xs-4 col-md-offset-2 col-md-6">
+<div class="feature-media"><img class="feature-image" height="750" width="736" src="assets/2577f0c768f80107_feature-3.jpg" alt="Antigravity SDK"/></div>
+</div>
+</div>
+</div>
+<div class="feature-item">
+<div class="grid-row">
+<div class="grid-col col-xs-4 col-md-4">
+<div class="feature-copy">
+<span class="heading-4 feature-title">Antigravity IDE</span>
+<p class="body feature-description">A IDE agêntica completa e cheia de recursos. Inclui o gerenciador de agentes, artefatos e um entendimento profundo do seu código.</p>
+<app-button variant="secondary"><button class="button button-secondary call-to-action" type="button">Explorar Produto</button></app-button>
+</div>
+</div>
+<div class="grid-col col-xs-4 col-md-offset-2 col-md-6">
+<div class="feature-media"><video class="feature-media-item" autoplay loop muted playsinline><source src="assets/46cc11062d4e6cb9_an-ai-ide-core.mp4" type="video/mp4"/></video></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</feature-explorer-new>
+
+<!-- use-cases -->
+<use-cases>
+<section class="landing-use-case-section">
+<div class="grid-container landing-use-case-header">
+<div class="grid-row">
+<div class="grid-col col-sm-6 col-md-6">
+<div class="use-case-header-main"><h2 class="heading-4"><span>Feito para desenvolvedores</span><span>para a era agent-first</span></h2></div>
+</div>
+<div class="grid-col col-md-4 col-md-offset-8">
+<p class="body">O Google Antigravity foi construído para a confiança do usuário, seja você um desenvolvedor profissional trabalhando em uma grande base de código corporativa, um hobbyista fazendo vibe-coding no tempo livre, ou qualquer pessoa entre os dois.</p>
+</div>
+</div>
+</div>
+<div class="landing-use-case-list">
+<div class="grid-container">
+<div class="grid-row">
+<div class="grid-col col-xs-4 col-sm-8 col-md-8">
+<app-slider>
+<div class="slider-container">
+<div class="slider-track" data-use-case-track style="--item-count:3">
+<div class="slide-image">
+<div class="slide-image-wrapper"><img class="list-image" src="assets/3c1bee36d3a5452c_landing-thumbnail-fullstack.jpg" alt="Desenvolvedor full stack"/></div>
+<div class="slide-image-overlay">
+<typed-header class="heading-4"><span class="typed-container heading-4 typed-content"><span class="typed-content">Desenvolvedor full stack</span></span></typed-header>
+<div class="video-control-button symbol google-symbols">play_arrow</div>
+</div>
+</div>
+<div class="slide-image">
+<div class="slide-image-wrapper"><img class="list-image" src="assets/1d21bb0f602ea04f_landing-thumbnail-enterprise.jpg" alt="Desenvolvedor corporativo"/></div>
+<div class="slide-image-overlay">
+<typed-header class="heading-4"><span class="typed-container heading-4 typed-content"><span class="typed-content">Desenvolvedor corporativo</span></span></typed-header>
+<div class="video-control-button symbol google-symbols">play_arrow</div>
+</div>
+</div>
+<div class="slide-image">
+<div class="slide-image-wrapper"><img class="list-image" src="assets/375b19483f8a8c5e_landing-thumbnail-frontend.jpg" alt="Desenvolvedor frontend"/></div>
+<div class="slide-image-overlay">
+<typed-header class="heading-4"><span class="typed-container heading-4 typed-content"><span class="typed-content">Desenvolvedor frontend</span></span></typed-header>
+<div class="video-control-button symbol google-symbols">play_arrow</div>
+</div>
+</div>
+</div>
+</div>
+</app-slider>
+<div class="slider-copy-wrapper">
+<div class="slider-copy is-active">
+<strong class="call-to-action">Desenvolvedor full stack</strong>
+<p class="body">Construa aplicações prontas para produção com confiança, com artefatos cuidadosamente projetados e testes de verificação abrangentes.</p>
+<a class="call-to-action arrow-link" href="#">Ver caso</a>
+</div>
+<div class="slider-copy">
+<strong class="call-to-action">Desenvolvedor corporativo</strong>
+<p class="body">O Google Antigravity capacita a próxima era dos construtores corporativos.</p>
+<a class="call-to-action arrow-link" href="#">Ver caso</a>
+</div>
+<div class="slider-copy">
+<strong class="call-to-action">Desenvolvedor frontend</strong>
+<p class="body">Otimize o desenvolvimento de UX aproveitando agentes browser-in-the-loop para automatizar tarefas repetitivas.</p>
+<a class="call-to-action arrow-link" href="#">Ver caso</a>
+</div>
+<div class="slider-controls">
+<slider-arrow-controls>
+<div class="slider-controls">
+<button class="slider-control-button symbol google-symbols" data-use-case-prev disabled>keyboard_arrow_left</button>
+<button class="slider-control-button symbol google-symbols" data-use-case-next>keyboard_arrow_right</button>
+</div>
+</slider-arrow-controls>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</use-cases>
+
+<!-- try-solutions -->
+<landing-try-solutions>
+<section class="try-solutions-section">
+<div class="grid-container">
+<div class="grid-row">
+<div class="grid-col col-md-12">
+<div class="section-wrapper">
+<div class="solution-section">
+<div class="try-solution-background left">
+<landing-morphing-particles-component data-theme="light" data-color1="#676A72" data-color2="#FF4641" data-color3="#346BF1" data-texture="assets/de8ccb6963577e26_individual.png">
+<div class="morphing-particles-component-section"><div class="morphing-particles-container"></div></div>
+</landing-morphing-particles-component>
+</div>
+<div class="try-solutions-content">
+<p class="try-solution-label small">Disponível sem custo</p>
+<p class="heading-4 header">Para desenvolvedores</p>
+<p class="heading-4 subhead">Alcance novos patamares</p>
+<div class="grid-row solutions-cta">
+<div class="grid-col"><app-button><button class="button button-primary call-to-action" type="button">Baixar</button></app-button></div>
+</div>
+</div>
+</div>
+<div class="solution-section">
+<div class="try-solution-background right">
+<landing-morphing-particles-component data-theme="light" data-color1="#676A72" data-color2="#FF4641" data-color3="#346BF1" data-texture="assets/0cfd6800ffc3ddab_cube.png">
+<div class="morphing-particles-component-section"><div class="morphing-particles-container"></div></div>
+</landing-morphing-particles-component>
+</div>
+<div class="try-solutions-content">
+<p class="try-solution-label small">Já disponível!</p>
+<p class="heading-4 header">Para organizações</p>
+<p class="heading-4 subhead">Eleve o nível de todo o seu time</p>
+<div class="grid-row solutions-cta">
+<div class="grid-col"><app-button><button class="button button-secondary call-to-action" type="button">Saiba mais</button></app-button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</landing-try-solutions>
+
+<!-- latest-blogs -->
+<landing-latest-blogs>
+<section class="landing-latest-blogs">
+<div class="grid-container">
+<div class="grid-row">
+<div class="grid-col col-xs-4 col-sm-8 col-md-12">
+<div class="landing-latest-blogs-header">
+<span class="heading-4">Blogs recentes</span>
+<app-button><button class="button button-secondary call-to-action" type="button">Ver blog</button></app-button>
+</div>
+</div>
+</div>
+</div>
+<div class="landing-latest-blogs-list">
+<div class="grid-container">
+<div class="grid-row">
+<div class="grid-col col-xs-4 col-sm-8 col-md-12">
+<div class="slider-wrapper" style="--item-count:8">
+<div class="slider-inner" data-blog-track style="--item-width:352px">
+<a class="list-item" href="#">
+<div class="list-image-wrapper"><img class="list-image" src="assets/82afee1aa929250f_Google_20IO_20-_20Square.jpg" alt="Google Antigravity no I/O 2026"/></div>
+<div class="list-item-content">
+<p class="heading-6 item-title">Google Antigravity no I/O 2026</p>
+<div class="list-item-metadata"><span class="caption">19 de mai. de 2026</span><span class="caption">Produto</span></div>
+<span class="caption arrow-link">Ler blog</span>
+</div>
+</a>
+<a class="list-item" href="#">
+<div class="list-image-wrapper"><img class="list-image" src="assets/f1ec3ad39560238d_AGY2_20Square.jpg" alt="Apresentando o Google Antigravity 2.0"/></div>
+<div class="list-item-content">
+<p class="heading-6 item-title">Apresentando o Google Antigravity 2.0</p>
+<div class="list-item-metadata"><span class="caption">19 de mai. de 2026</span><span class="caption">Produto</span></div>
+<span class="caption arrow-link">Ler blog</span>
+</div>
+</a>
+<a class="list-item" href="#">
+<div class="list-image-wrapper"><img class="list-image" src="assets/e47e1b03c7720be0_Agent_20Teams_20Square.jpg" alt="O Google Antigravity construiu um SO (e mais)"/></div>
+<div class="list-item-content">
+<p class="heading-6 item-title">O Google Antigravity construiu um SO (e mais)</p>
+<div class="list-item-metadata"><span class="caption">19 de mai. de 2026</span><span class="caption">Produto</span></div>
+<span class="caption arrow-link">Ler blog</span>
+</div>
+</a>
+<a class="list-item" href="#">
+<div class="list-image-wrapper"><img class="list-image" src="assets/7519803e01eb9d07_AGY_20CLI_20Blog_20-_20Square.png" alt="Google Antigravity CLI"/></div>
+<div class="list-item-content">
+<p class="heading-6 item-title">Google Antigravity CLI</p>
+<div class="list-item-metadata"><span class="caption">19 de mai. de 2026</span><span class="caption">Produto</span></div>
+<span class="caption arrow-link">Ler blog</span>
+</div>
+</a>
+<a class="list-item" href="#">
+<div class="list-image-wrapper"><img class="list-image" src="assets/7543370eb4e494ad_AGY_20SDK_20Blog_20-_20Square.png" alt="Google Antigravity SDK"/></div>
+<div class="list-item-content">
+<p class="heading-6 item-title">Google Antigravity SDK</p>
+<div class="list-item-metadata"><span class="caption">19 de mai. de 2026</span><span class="caption">Produto</span></div>
+<span class="caption arrow-link">Ler blog</span>
+</div>
+</a>
+<a class="list-item" href="#">
+<div class="list-image-wrapper"><img class="list-image" src="assets/2902f3f2dd36794e_AGY_20Enterprise_20-_20Square.png" alt="Google Antigravity no Gemini Enterprise"/></div>
+<div class="list-item-content">
+<p class="heading-6 item-title">Google Antigravity no Gemini Enterprise</p>
+<div class="list-item-metadata"><span class="caption">19 de mai. de 2026</span><span class="caption">Empresarial</span></div>
+<span class="caption arrow-link">Ler blog</span>
+</div>
+</a>
+<a class="list-item" href="#">
+<div class="list-image-wrapper"><img class="list-image" src="assets/4c5d40e50ec63b4f_3.5_20Flash_20-_20Square.png" alt="Gemini 3.5 Flash no Google Antigravity"/></div>
+<div class="list-item-content">
+<p class="heading-6 item-title">Gemini 3.5 Flash no Google Antigravity</p>
+<div class="list-item-metadata"><span class="caption">19 de mai. de 2026</span><span class="caption">Produto</span></div>
+<span class="caption arrow-link">Ler blog</span>
+</div>
+</a>
+<a class="list-item" href="#">
+<div class="list-image-wrapper"><img class="list-image" src="assets/e2e0bf8c0ddebdbc_blog-feature-introducing-googl.png" alt="Apresentando o Google Antigravity"/></div>
+<div class="list-item-content">
+<p class="heading-6 item-title">Apresentando o Google Antigravity</p>
+<div class="list-item-metadata"><span class="caption">18 de nov. de 2025</span><span class="caption">Produto</span></div>
+<span class="caption arrow-link">Ler blog</span>
+</div>
+</a>
+</div>
+<slider-arrow-controls>
+<div class="slider-controls">
+<button class="slider-control-button symbol google-symbols" data-blog-prev disabled>keyboard_arrow_left</button>
+<button class="slider-control-button symbol google-symbols" data-blog-next>keyboard_arrow_right</button>
+</div>
+</slider-arrow-controls>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</landing-latest-blogs>
+
+<!-- download -->
+<download-section>
+<section class="download-section-container">
+<div class="grid-container">
+<div class="grid-row">
+<div class="grid-col col-md-12">
+<div class="download-section">
+<div class="download-section-backdrop">
+<landing-main-particles-component data-theme="dark">
+<div class="main-particles-component-section"><div class="main-particles-container"></div></div>
+</landing-main-particles-component>
+</div>
+<div class="download-section-content">
+<div class="header">
+<typed-header class="heading-3"><span class="typed-container heading-3"><span class="typed-content">Baixe o Google Antigravity para MacOS</span></span></typed-header>
+</div>
+<div class="download-section-cta">
+<app-button><button class="button button-primary-inverse call-to-action" type="button">Baixar para Apple Silicon</button></app-button>
+<app-button><button class="button button-secondary-inverse call-to-action" type="button">Baixar para Intel</button></app-button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</download-section>
+
+<!-- footer -->
+<footer class="footer">
+<div class="footer-main-content">
+<div class="grid-container">
+<div class="grid-row footer-inner">
+<div class="grid-col col-xs-4 col-sm-8 col-md-4"><p class="footer-title heading-5">Decole rumo ao alto</p></div>
+<div class="grid-col col-xs-4 col-sm-4 col-md-3 col-md-offset-2">
+<div class="footer-nav-section">
+<a class="call-to-action call-to-action--nav" href="#">Baixar</a>
+<a class="call-to-action call-to-action--nav" href="#">Produto</a>
+<a class="call-to-action call-to-action--nav" href="#">Documentação</a>
+<a class="call-to-action call-to-action--nav" href="#">Lançamentos</a>
+<a class="call-to-action call-to-action--nav" href="#">Imprensa</a>
+<a class="call-to-action call-to-action--nav" href="#">Releases</a>
+</div>
+</div>
+<div class="grid-col col-xs-4 col-sm-4 col-md-3">
+<div class="footer-nav-section">
+<a class="call-to-action call-to-action--nav" href="#">Blog</a>
+<a class="call-to-action call-to-action--nav" href="#">Preços</a>
+<a class="call-to-action call-to-action--nav" href="#">Casos de uso</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-img-container">
+<div class="grid-container">
+<app-antigravity-footer>
+<div id="antigravity-footer-wrapper"><img class="footer-antigravity" src="assets/images/svg/antigravity-wordmark.svg" alt="Antigravity"/></div>
+</app-antigravity-footer>
+</div>
+</div>
+<div class="footer-google-links">
+<div class="grid-container">
+<div class="grid-row">
+<div class="grid-col col-xs-4 col-md-3">
+<a class="footer-google-logo" href="#" aria-label="Google">
+<google-logo><svg fill="none" height="25" viewBox="0 0 75 24" width="75" xmlns="http://www.w3.org/2000/svg"><path d="M52.0273 6.62988C53.4638 6.62988 54.6046 7.26571 55.1973 7.96973H55.2891V6.99219H57.7979V17.7559C57.7978 22.1827 55.175 23.9999 52.0732 24C49.1544 24 47.3984 22.047 46.7363 20.458L49.0391 19.5039C49.4499 20.4799 50.454 21.6377 52.0732 21.6377C54.0568 21.6376 55.2889 20.4128 55.2891 18.1191V17.2559H55.1973C54.6046 17.9829 53.4638 18.6182 52.0273 18.6182C49.017 18.618 46.2578 16.0074 46.2578 12.6465C46.2578 9.26356 49.017 6.63009 52.0273 6.62988ZM25.5879 6.63086C28.8576 6.63086 31.5225 9.15091 31.5225 12.625C31.5222 16.0758 28.8574 18.6191 25.5879 18.6191C22.3194 18.6191 19.6545 16.0758 19.6543 12.625C19.6543 9.15092 22.3192 6.63088 25.5879 6.63086ZM38.8906 6.63086C42.1603 6.63086 44.8252 9.15091 44.8252 12.625C44.825 16.0758 42.1601 18.6191 38.8906 18.6191C35.6211 18.6191 32.9573 16.0758 32.957 12.625C32.957 9.15092 35.621 6.63088 38.8906 6.63086ZM69.5723 6.62988C72.6961 6.62988 74.2252 9.10425 74.7266 10.4443L75 11.126L66.9492 14.4404C67.566 15.6435 68.5231 16.2568 69.8691 16.2568C71.214 16.2568 72.149 15.5985 72.833 14.5996L74.8867 15.9619C74.2257 16.9389 72.6283 18.6191 69.8691 18.6191C66.4489 18.6191 63.9778 15.9849 63.9775 12.625C63.9775 9.06005 66.4705 6.63008 69.5723 6.62988ZM9.4873 0C12.3391 0 14.3686 1.11239 15.8975 2.56543L14.0957 4.35938C13.0008 3.33735 11.5174 2.54297 9.4873 2.54297C5.72455 2.54311 2.78223 5.56356 2.78223 9.30957C2.7824 13.0554 5.72466 16.0751 9.4873 16.0752C11.9283 16.0752 13.319 15.0989 14.209 14.2129C14.938 13.487 15.4178 12.4423 15.5996 11.0127H9.4873V8.46875H18.0859C18.1773 8.92276 18.2236 9.46858 18.2236 10.0586C18.2236 11.9666 17.6982 14.3279 16.0107 16.0078C14.3684 17.7107 12.2696 18.6182 9.4873 18.6182C4.33341 18.618 0.000188594 14.4415 0 9.30957C0 4.17853 4.33329 0.000143406 9.4873 0ZM62.4326 18.2549H59.7871V0.635742H62.4326V18.2549ZM25.5879 8.99121C23.7969 8.99123 22.252 10.468 22.252 12.625C22.2522 14.7588 23.797 16.2578 25.5879 16.2578C27.3798 16.2578 28.9246 14.7588 28.9248 12.625C28.9248 10.4679 27.3799 8.99121 25.5879 8.99121ZM38.8906 8.99121C37.0996 8.99123 35.5537 10.468 35.5537 12.625C35.5539 14.7588 37.0997 16.2578 38.8906 16.2578C40.6825 16.2578 42.2273 14.7588 42.2275 12.625C42.2275 10.4679 40.6827 8.99121 38.8906 8.99121ZM52.2559 8.99023C50.4317 8.99023 48.9024 10.5355 48.9023 12.6465C48.9023 14.7355 50.4317 16.2568 52.2559 16.2568C54.0569 16.2568 55.4707 14.7355 55.4707 12.6465C55.4707 10.5355 54.0569 8.99031 52.2559 8.99023ZM69.6641 8.94531C68.3181 8.94531 66.4484 10.1264 66.5156 12.4424L71.8994 10.2178C71.6021 9.46876 70.7128 8.94532 69.6641 8.94531Z" fill="currentColor"></path></svg></google-logo>
+</a>
+</div>
+<div class="grid-col col-xs-4 col-md-6 col-md-offset-3">
+<nav class="footer-google-nav">
+<a class="call-to-action call-to-action--nav" href="#">Sobre o Google</a>
+<a class="call-to-action call-to-action--nav" href="#">Produtos do Google</a>
+<a class="call-to-action call-to-action--nav" href="#">Privacidade</a>
+<a class="call-to-action call-to-action--nav" href="#">Termos</a>
+<a class="call-to-action--nav" href="#">Gerenciar cookies</a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- js -->
+<!-- particle WebGL scenes (main + morphing), ported from the original Angular bundle; ES module, imports three.js r180 from assets/js/vendor; wires to the <canvas> placeholders -->
+<script type="module" src="assets/js/particles.js"></script>
+<!-- header scroll state, sliders (use-cases + blogs), video hover cursor -->
+<script src="assets/js/interactions.js"></script>
+</body>
+</html>

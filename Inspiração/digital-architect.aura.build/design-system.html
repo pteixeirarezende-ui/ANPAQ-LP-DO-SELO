@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfólio - Designer de Produto</title>
+<!-- fonts -->
+<link href="assets/css2_19fd9cc6b396.css" rel="stylesheet"/>
+<!-- css -->
+<!-- animations.css: reveal/parallax/marquee/carousel keyframes and base typography for the entire page -->
+<link rel="stylesheet" href="assets/css/animations.css"/>
+<!-- head-only js -->
+<!-- Tailwind CSS runtime: provides all utility classes used throughout the page -->
+<script src="assets/resource_3fa48481346f.js"></script>
+<!-- Iconify Icon web component runtime: renders <iconify-icon> elements (Solar + Simple Icons sets) -->
+<script src="assets/iconify-icon_d39ffc6e4c56.js"></script>
+</head>
+<body class="antialiased min-h-screen selection:bg-stone-800 selection:text-white pb-10">
+<!-- main-container -->
+<div class="max-w-[1400px] mx-auto border-x border-stone-300 relative bg-[#EAEAE5]">
+<!-- vertical-grid-guides -->
+<div class="absolute inset-0 pointer-events-none grid grid-cols-1 md:grid-cols-12 gap-0 z-0 h-full w-full">
+<div class="hidden md:block md:col-span-3 border-r border-stone-300/40 h-full"></div>
+<div class="hidden md:block md:col-span-6 border-r border-stone-300/40 h-full"></div>
+<div class="hidden md:block md:col-span-3 h-full"></div>
+</div>
+<!-- header-nav -->
+<header class="relative z-50 border-b border-stone-300 sticky top-0 bg-[#EAEAE5] nav-load">
+<div class="flex justify-between items-center px-4 md:px-6 py-5">
+<div class="flex items-center gap-12">
+<a class="text-xs font-medium tracking-widest uppercase hover:text-stone-500 transition-colors" href="#">Trabalhos</a>
+<a class="text-xs font-medium tracking-widest uppercase hidden md:block hover:text-stone-500 transition-colors" href="#">Artigos</a>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 group cursor-pointer">
+<iconify-icon class="text-xl group-hover:rotate-180 transition-transform duration-700" icon="solar:atom-linear"></iconify-icon>
+<span class="font-bold tracking-tighter text-lg">ALEX.DESIGN</span>
+</div>
+<div class="flex items-center gap-12">
+<a class="text-xs font-medium tracking-widest uppercase hidden md:block hover:text-stone-500 transition-colors" href="#">Sobre</a>
+<a class="text-xs font-medium tracking-widest uppercase hover:text-stone-500 transition-colors" href="#">Contato</a>
+</div>
+</div>
+</header>
+<!-- hero -->
+<section class="relative z-10 grid grid-cols-1 md:grid-cols-12 border-b border-stone-300 min-h-[900px]">
+<div class="col-span-1 md:col-span-9 border-b md:border-b-0 md:border-r border-stone-300 relative group overflow-hidden bg-stone-200">
+<div class="w-full h-full relative" id="hero-carousel">
+<div class="carousel-slide active">
+<img class="w-full h-full object-cover grayscale contrast-125 parallax-img" data-speed="0.05" src="assets/c7fa69dd-d7fb-48f2-a866-ef3663_f6b789593f38.webp"/>
+</div>
+<div class="carousel-slide">
+<img class="w-full h-full object-cover grayscale contrast-125 parallax-img" data-speed="0.05" src="assets/6c710de5-9712-4c8e-a7db-59ac54_b647957b5aa5.webp"/>
+</div>
+<div class="carousel-slide">
+<img class="w-full h-full object-cover grayscale contrast-125 parallax-img" data-speed="0.05" src="assets/62cc53b7-3355-4618-b7fa-3283f6_a6d3415bc434.webp"/>
+</div>
+</div>
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-stone-900/40 pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-white mix-blend-difference z-20">
+<h1 class="text-6xl md:text-8xl font-semibold tracking-tighter leading-none mb-2" id="hero-title">
+<span class="text-reveal-wrapper"><span class="text-reveal-content delay-200">Arquiteto</span></span>
+<span class="text-reveal-wrapper"><span class="text-reveal-content delay-300">Digital</span></span>
+</h1>
+<div class="mt-6 flex items-center gap-4 reveal delay-500 hero-badge">
+<span class="px-3 py-1 border border-white/40 rounded-full text-xs font-mono uppercase backdrop-blur-md">UI/UX</span>
+<span class="px-3 py-1 border border-white/40 rounded-full text-xs font-mono uppercase backdrop-blur-md">Interação</span>
+</div>
+</div>
+</div>
+<div class="col-span-1 md:col-span-3 grid grid-rows-3 h-full min-h-[400px]">
+<div class="row-span-1 border-b border-stone-300 p-8 flex flex-col justify-between reveal delay-500 hero-stat group hover:bg-white transition-colors">
+<iconify-icon class="text-3xl text-stone-400 group-hover:text-stone-800 transition-colors" icon="solar:layers-minimalistic-linear"></iconify-icon>
+<div>
+<h2 class="text-5xl font-medium tracking-tighter">42</h2>
+<span class="text-xs font-mono text-stone-500 mt-1 block">PROJETOS ENTREGUES</span>
+</div>
+</div>
+<div class="row-span-1 border-b border-stone-300 p-8 flex flex-col justify-between reveal delay-700 hero-stat group hover:bg-white transition-colors">
+<iconify-icon class="text-3xl text-stone-400 group-hover:text-stone-800 transition-colors" icon="solar:clock-circle-linear"></iconify-icon>
+<div>
+<h2 class="text-5xl font-medium tracking-tighter">6+</h2>
+<span class="text-xs font-mono text-stone-500 mt-1 block">ANOS DE EXPERIÊNCIA</span>
+</div>
+</div>
+<div class="row-span-1 p-8 flex flex-col justify-between reveal delay-700 hero-stat group hover:bg-white transition-colors relative overflow-hidden">
+<iconify-icon class="text-3xl text-stone-400 group-hover:text-stone-800 transition-colors" icon="solar:cup-star-linear"></iconify-icon>
+<div>
+<h2 class="text-5xl font-medium tracking-tighter">12</h2>
+<span class="text-xs font-mono text-stone-500 mt-1 block">PRÊMIOS DA INDÚSTRIA</span>
+</div>
+<div class="absolute top-4 right-4 animate-spin-slow">
+<iconify-icon class="text-stone-200 text-6xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" icon="solar:star-fall-linear"></iconify-icon>
+</div>
+</div>
+</div>
+</section>
+<!-- marquee-divider -->
+<div class="border-b border-stone-300 overflow-hidden py-6 bg-stone-100/50">
+<div class="marquee-container">
+<div class="marquee-content">
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">Disponível no 4º trimestre de 2024</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">•</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">Sediado em São Francisco</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">•</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">Especializado em Design Systems</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">•</span>
+</div>
+<div class="marquee-content">
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">Disponível no 4º trimestre de 2024</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">•</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">Sediado em São Francisco</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">•</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">Especializado em Design Systems</span>
+<span class="text-sm font-mono uppercase tracking-widest text-stone-500 mx-8">•</span>
+</div>
+</div>
+</div>
+<!-- typography-banner -->
+<section class="relative z-10 py-32 border-b border-stone-300 overflow-hidden">
+<div class="flex flex-col items-center gap-2 reveal">
+<div class="flex items-center gap-4 md:gap-8">
+<h1 class="text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter text-stone-900">
+<span class="text-reveal-wrapper"><span class="text-reveal-content text-stone-900">Centrado</span></span>
+</h1>
+<div class="w-12 h-12 md:w-20 md:h-20 border border-stone-800 rounded-full flex items-center justify-center mt-2 md:mt-4 bg-transparent hover:bg-stone-900 hover:text-white transition-all duration-500">
+<iconify-icon class="text-2xl md:text-4xl" icon="solar:arrow-down-linear"></iconify-icon>
+</div>
+<h1 class="text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter text-stone-900">
+<span class="text-reveal-wrapper"><span class="text-reveal-content delay-100 text-stone-900">no Usuário</span></span>
+</h1>
+</div>
+<h1 class="text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter text-stone-400">
+<span class="text-reveal-wrapper"><span class="text-reveal-content delay-200">Design</span></span>
+</h1>
+</div>
+<div class="absolute top-1/2 left-0 w-full h-px bg-stone-300 -z-10"></div>
+<div class="absolute top-10 right-[10%] opacity-20 parallax-element" data-speed="-0.02">
+<iconify-icon class="text-9xl" icon="solar:record-circle-linear"></iconify-icon>
+</div>
+</section>
+<!-- intro-bio -->
+<section class="relative z-10 grid grid-cols-1 md:grid-cols-12 border-b border-stone-300">
+<div class="col-span-1 md:col-span-4 p-8 md:p-12 flex flex-col justify-between min-h-[400px] border-b md:border-b-0 md:border-r border-stone-300 reveal">
+<div class="flex flex-col gap-8">
+<iconify-icon class="text-5xl text-stone-800" icon="solar:scanner-linear"></iconify-icon>
+<div>
+<h3 class="text-sm font-bold uppercase tracking-widest text-stone-900 mb-6">Competências Principais</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between border-b border-stone-300 pb-2">
+<span class="text-sm text-stone-600">Estratégia de Produto</span>
+<iconify-icon class="text-stone-400 text-lg" icon="solar:check-circle-linear"></iconify-icon>
+</div>
+<div class="flex items-center justify-between border-b border-stone-300 pb-2">
+<span class="text-sm text-stone-600">Design Systems</span>
+<iconify-icon class="text-stone-400 text-lg" icon="solar:check-circle-linear"></iconify-icon>
+</div>
+<div class="flex items-center justify-between border-b border-stone-300 pb-2">
+<span class="text-sm text-stone-600">Prototipagem</span>
+<iconify-icon class="text-stone-400 text-lg" icon="solar:check-circle-linear"></iconify-icon>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-1 md:col-span-8 p-8 md:p-12 md:pr-24 flex flex-col justify-center reveal delay-100">
+<h2 class="text-3xl md:text-5xl font-medium tracking-tight leading-tight text-stone-900 mb-8">Eu crio experiências digitais que equilibram sensibilidade estética com clareza funcional. <span class="text-stone-400">Meu trabalho é fundamentado em pesquisa com usuários, guiado por dados e refinado com precisão pixel-perfect.</span></h2>
+<div class="flex gap-6 items-center">
+<button class="px-6 py-3 bg-stone-900 text-white rounded-md text-sm font-medium hover:bg-stone-700 transition-all flex items-center gap-2 group">Baixar Currículo<iconify-icon class="text-lg group-hover:translate-y-1 transition-transform" icon="solar:file-download-linear"></iconify-icon></button>
+<a class="text-sm font-medium text-stone-600 hover:text-stone-900 border-b border-stone-400 hover:border-stone-900 pb-0.5 transition-colors" href="#work">Ver Portfólio</a>
+</div>
+</div>
+</section>
+<!-- selected-projects -->
+<section class="relative z-10 py-12" id="work">
+<div class="px-4 md:px-6 mb-12 flex justify-between items-end reveal">
+<div>
+<span class="text-xs font-mono uppercase text-stone-500 mb-2 block">01 / Trabalhos Selecionados</span>
+<h3 class="text-4xl font-medium tracking-tight">Estudos de Caso</h3>
+</div>
+<iconify-icon class="text-3xl text-stone-400" icon="solar:arrow-right-down-linear"></iconify-icon>
+</div>
+<div class="group border-y border-stone-300 bg-[#EAEAE5] hover:bg-white transition-colors duration-500 cursor-pointer overflow-hidden">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 min-h-[250px]">
+<div class="col-span-1 md:col-span-5 p-8 md:p-12 border-r border-stone-300/0 md:border-stone-300 reveal flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-4">
+<span class="text-xs font-mono text-stone-500">01</span>
+<div class="h-px w-8 bg-stone-300"></div>
+<span class="text-xs font-bold uppercase tracking-wider text-stone-900">Fintech</span>
+</div>
+<h4 class="text-4xl md:text-5xl font-medium tracking-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">Nova Finance</h4>
+<p class="text-stone-500 text-sm leading-relaxed max-w-sm">Redesign do fluxo de investimento para usuários da Geração Z, resultando em um aumento de 40% na conversão por meio de gamificação.</p>
+</div>
+<div class="col-span-7 hidden md:block relative overflow-hidden">
+<div class="absolute inset-0 bg-stone-100 flex items-center justify-center p-8">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" src="assets/4b7d31e6-5b45-47eb-9853-96bbb9_bf1aa5f9d2cf.webp"/>
+</div>
+</div>
+</div>
+</div>
+<div class="group border-b border-stone-300 bg-[#EAEAE5] hover:bg-white transition-colors duration-500 cursor-pointer overflow-hidden">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 min-h-[250px]">
+<div class="col-span-1 md:col-span-5 p-8 md:p-12 border-r border-stone-300/0 md:border-stone-300 reveal flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-4">
+<span class="text-xs font-mono text-stone-500">02</span>
+<div class="h-px w-8 bg-stone-300"></div>
+<span class="text-xs font-bold uppercase tracking-wider text-stone-900">Plataforma SaaS</span>
+</div>
+<h4 class="text-4xl md:text-5xl font-medium tracking-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">Orbit Systems</h4>
+<p class="text-stone-500 text-sm leading-relaxed max-w-sm">Criação de uma biblioteca de componentes unificada e design system para um dashboard de analytics multi-tenant.</p>
+</div>
+<div class="col-span-7 hidden md:block relative overflow-hidden">
+<div class="absolute inset-0 bg-stone-100 flex items-center justify-center p-8">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" src="assets/5ea5c0e9-3047-467a-9eaf-e49f65_6a6f021d85c6.webp"/>
+</div>
+</div>
+</div>
+</div>
+<div class="group border-b border-stone-300 bg-[#EAEAE5] hover:bg-white transition-colors duration-500 cursor-pointer overflow-hidden">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 min-h-[250px]">
+<div class="col-span-1 md:col-span-5 p-8 md:p-12 border-r border-stone-300/0 md:border-stone-300 reveal flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-4">
+<span class="text-xs font-mono text-stone-500">03</span>
+<div class="h-px w-8 bg-stone-300"></div>
+<span class="text-xs font-bold uppercase tracking-wider text-stone-900">E-Commerce</span>
+</div>
+<h4 class="text-4xl md:text-5xl font-medium tracking-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">Canvas Supply</h4>
+<p class="text-stone-500 text-sm leading-relaxed max-w-sm">Design minimalista de loja virtual com foco em storytelling de marca e fotografia de produto imersiva.</p>
+</div>
+<div class="col-span-7 hidden md:block relative overflow-hidden">
+<div class="absolute inset-0 bg-stone-100 flex items-center justify-center p-8">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" src="assets/ddab06d9-9060-42a5-9052-32121a_7062a2506669.webp"/>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-12 reveal">
+<a class="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-widest border border-stone-900 rounded-full px-8 py-3 hover:bg-stone-900 hover:text-white transition-all" href="#">Ver Todos os Projetos<iconify-icon class="text-lg" icon="solar:arrow-right-linear"></iconify-icon></a>
+</div>
+</section>
+<!-- writing-section -->
+<section class="relative z-10 grid grid-cols-1 md:grid-cols-12 border-t border-stone-300 mt-24">
+<div class="col-span-1 md:col-span-4 p-8 md:p-12 border-b md:border-b-0 md:border-r border-stone-300 flex flex-col justify-between min-h-[300px] reveal bg-stone-200">
+<div>
+<span class="text-xs font-mono uppercase text-stone-500 mb-2 block">02 / Diário</span>
+<h2 class="text-5xl font-medium tracking-tight">Artigos</h2>
+</div>
+<div class="flex items-end justify-between">
+<iconify-icon class="text-5xl text-stone-800" icon="solar:pen-new-square-linear"></iconify-icon>
+<span class="text-xs font-mono text-stone-500">[ARQUIVO]</span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-8 grid grid-cols-1 md:grid-cols-2">
+<div class="p-8 md:p-12 border-b md:border-b-0 md:border-r border-stone-300 flex items-center reveal delay-100">
+<p class="text-lg leading-relaxed text-stone-800">Reflexões sobre a interseção entre design, tecnologia e psicologia humana. Explorando como podemos construir ferramentas melhores para o pensamento.</p>
+</div>
+<div class="p-8 md:p-12 flex flex-col justify-center gap-6 reveal delay-200 bg-white">
+<a class="group flex items-start justify-between border-b border-stone-200 pb-4" href="#">
+<div>
+<span class="text-xs text-stone-400 mb-1 block">12 de Out, 2024</span>
+<h4 class="text-lg font-medium group-hover:text-stone-600 transition-colors">A Morte do Menu Hambúrguer</h4>
+</div>
+<iconify-icon class="text-stone-300 text-xl group-hover:text-stone-900 transition-all" icon="solar:arrow-right-up-linear"></iconify-icon>
+</a>
+<a class="group flex items-start justify-between border-b border-stone-200 pb-4" href="#">
+<div>
+<span class="text-xs text-stone-400 mb-1 block">28 de Set, 2024</span>
+<h4 class="text-lg font-medium group-hover:text-stone-600 transition-colors">Microinterações em 2024</h4>
+</div>
+<iconify-icon class="text-stone-300 text-xl group-hover:text-stone-900 transition-all" icon="solar:arrow-right-up-linear"></iconify-icon>
+</a>
+</div>
+</div>
+</section>
+<!-- image-grid-parallax -->
+<section class="relative z-10 grid grid-cols-2 md:grid-cols-4 border-b border-stone-300 h-[300px] overflow-hidden">
+<img class="w-full h-[120%] object-cover grayscale opacity-80 border-r border-stone-300 parallax-img" data-speed="0.05" src="assets/ede50f82-0ad0-4579-a4ae-3a9428_fd09ad4bf2a1.jpg"/>
+<img class="w-full h-[120%] object-cover grayscale opacity-80 border-r border-stone-300 parallax-img" data-speed="0.08" src="assets/e9d001f3-ebe3-45c2-b556-b53a55_6b8718ffa723.jpg"/>
+<img class="w-full h-[120%] object-cover grayscale opacity-80 border-r border-stone-300 parallax-img" data-speed="0.03" src="assets/87e5e02b-a5b6-43ff-b9a4-5e299f_665111a88a86.jpg"/>
+<img class="w-full h-[120%] object-cover grayscale opacity-80 parallax-img" data-speed="0.1" src="assets/2700a02e-2471-497e-8ca2-3196fc_50242a508302.webp"/>
+</section>
+<!-- client-list -->
+<section class="relative z-10 border-b border-stone-300 py-24 bg-stone-100">
+<div class="text-center mb-12">
+<span class="text-xs font-mono uppercase text-stone-400 tracking-widest">A confiança de equipes em</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-20 px-8 justify-items-center items-center opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="reveal">
+<iconify-icon class="text-stone-900" height="36" icon="simple-icons:airbnb"></iconify-icon>
+</div>
+<div class="reveal delay-100">
+<iconify-icon class="text-stone-900" height="36" icon="simple-icons:spotify"></iconify-icon>
+</div>
+<div class="reveal delay-200">
+<iconify-icon class="text-stone-900" height="36" icon="simple-icons:notion"></iconify-icon>
+</div>
+<div class="reveal delay-300">
+<iconify-icon class="text-stone-900" height="36" icon="simple-icons:linear"></iconify-icon>
+</div>
+</div>
+</section>
+<!-- footer -->
+<footer class="relative z-10 bg-stone-900 text-stone-200 pt-24 pb-12">
+<div class="px-6 md:px-12 mb-24 text-center">
+<div class="reveal">
+<h2 class="text-5xl md:text-7xl font-medium tracking-tighter mb-8 text-white">Vamos criar algo<br/>extraordinário juntos.</h2>
+<a class="inline-block border border-stone-700 rounded-full px-8 py-4 text-lg hover:bg-white hover:text-stone-900 transition-all duration-300" href="mailto:hello@alex.design">Iniciar um Projeto</a>
+</div>
+</div>
+<div class="border-t border-stone-800 w-full mb-12"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 px-6 md:px-12 gap-12 md:gap-0">
+<div class="col-span-1 md:col-span-3">
+<div class="flex items-center gap-2 mb-6">
+<iconify-icon class="text-xl" icon="solar:atom-linear"></iconify-icon>
+<span class="font-bold tracking-tight text-lg">ALEX.DESIGN</span>
+</div>
+<p class="text-stone-500 text-sm leading-relaxed max-w-[200px]">Designer de produto focado em sistemas digitais e microinterações. Sediado em São Francisco.</p>
+</div>
+<div class="col-span-1 md:col-span-3">
+<h4 class="text-xs font-mono uppercase text-stone-500 mb-6">Mapa do Site</h4>
+<ul class="space-y-3 text-sm font-medium">
+<li><a class="hover:text-white transition-colors" href="#">Trabalhos</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Serviços</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Sobre</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Artigos</a></li>
+</ul>
+</div>
+<div class="col-span-1 md:col-span-3">
+<h4 class="text-xs font-mono uppercase text-stone-500 mb-6">Redes Sociais</h4>
+<ul class="space-y-3 text-sm font-medium">
+<li><a class="hover:text-white transition-colors flex items-center gap-2" href="#">Twitter <iconify-icon class="text-xs text-stone-600" icon="solar:arrow-right-up-linear"></iconify-icon></a></li>
+<li><a class="hover:text-white transition-colors flex items-center gap-2" href="#">LinkedIn <iconify-icon class="text-xs text-stone-600" icon="solar:arrow-right-up-linear"></iconify-icon></a></li>
+<li><a class="hover:text-white transition-colors flex items-center gap-2" href="#">Instagram <iconify-icon class="text-xs text-stone-600" icon="solar:arrow-right-up-linear"></iconify-icon></a></li>
+<li><a class="hover:text-white transition-colors flex items-center gap-2" href="#">Dribbble <iconify-icon class="text-xs text-stone-600" icon="solar:arrow-right-up-linear"></iconify-icon></a></li>
+</ul>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col justify-between h-full">
+<div class="text-right hidden md:block">
+<iconify-icon class="text-4xl text-stone-800" icon="solar:globe-linear"></iconify-icon>
+</div>
+<div class="text-left md:text-right mt-4 md:mt-0">
+<span class="text-xs text-stone-600">© 2024 Alex Design Ltda.</span>
+<span class="text-xs text-stone-600">Todos os Direitos Reservados.</span>
+</div>
+</div>
+</div>
+<div class="mt-24 text-center opacity-10 pointer-events-none select-none overflow-hidden">
+<span class="text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter whitespace-nowrap">ALEX.DESIGN</span>
+</div>
+</footer>
+</div>
+<!-- js -->
+<!-- interactions.js: hero load animations, scroll-triggered reveals, hero carousel auto-rotate, parallax scroll handler -->
+<script src="assets/js/interactions.js"></script>
+<!-- img-fallback.js: swaps broken <img> sources to a Supabase fallback URL pool -->
+<script data-img-fallback-handler="" src="assets/js/img-fallback.js"></script>
+</body>
+</html>

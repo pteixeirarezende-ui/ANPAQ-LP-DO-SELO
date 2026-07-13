@@ -1,0 +1,7 @@
+- **Tailwind CSS** — utility-first CSS runtime (loaded as `resource_3fa48481346f.es`) powering all layout, spacing, color and responsive classes
+- **Three.js** — WebGL engine used to render the fixed-canvas monolith group (icosahedron, dodecahedron, octahedron, torus rings), instanced particles, instanced debris and dynamic lighting
+- **GSAP** — animation engine driving the hero entry, gallery reveals, testimonial/pricing stagger and contact form fade
+- **GSAP ScrollTrigger** — plugin coupling GSAP timelines to scroll position for the horizontal pinned process section and section-entry triggers
+- **Iconify (iconify-icon web component)** — renders every `<iconify-icon>` (Solar icon set: compass, ruler, code, star, check-circle, close-circle, arrow-right, gallery, link, letter, share)
+- **Google Fonts (Inter, Space Grotesk)** — typography served locally as `woff2` files plus the bundled `css2_*.css` `@font-face` declarations
+- **Aura Supabase Firewall** — inline security shim that masks Supabase auth tokens in storage and blocks sensitive Supabase requests over fetch/XHR/WebSocket/sendBeacon

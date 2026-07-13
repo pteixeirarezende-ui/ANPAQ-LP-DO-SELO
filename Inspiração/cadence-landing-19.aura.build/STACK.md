@@ -1,0 +1,8 @@
+- **HTML5** — semantic markup foundation for the landing page
+- **CSS3 (custom)** — full hand-written design system (custom properties, gradients, glows, masks, conic-gradient borders, scroll-pinned 3D card stack, marquee animations, responsive breakpoints)
+- **Vanilla JavaScript** — page interactions, mobile nav, billing toggle, IntersectionObserver-driven scroll reveals, scroll-pinned How-It-Works controller, ambient widget animations
+- **WebGL (raw GLSL)** — full-screen aurora/plasma fragment shader rendered into the hero canvas with mouse-reactive simplex noise (fbm)
+- **Tailwind CSS v3.4.17 (CDN runtime)** — utility-class runtime included via CDN script for optional utility styling
+- **Lucide** — icon library used throughout the interface (zap, play-circle, monitor-play, layout-dashboard, bar-chart-2, target, users-2, radio, settings, check, star, rocket, calendar, twitter, linkedin, github, youtube)
+- **Google Fonts** — Inter (body) and Outfit (headings) families loaded via fonts.googleapis.com
+- **SVG** — inline SVG for donut chart, gauge ring, line/area chart with stroke-dasharray draw-on animation

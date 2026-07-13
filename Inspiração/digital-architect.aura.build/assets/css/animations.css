@@ -1,0 +1,45 @@
+body { font-family: 'Inter', sans-serif; background-color: #EAEAE5; color: #1C1C1C; overflow-x: hidden; }
+/* Base Reveal Animation (Scroll triggered) */
+.reveal { opacity: 0; transform: translateY(2rem); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+/* Masked Text Reveal (For Hero Title) */
+.text-reveal-wrapper { overflow: hidden; display: inline-block; vertical-align: bottom; }
+.text-reveal-content {
+transform: translateY(110%);
+opacity: 0;
+transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
+display: block;
+}
+.reveal-active .text-reveal-content { transform: translateY(0); opacity: 1; }
+/* Stagger Delays */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-500 { transition-delay: 0.5s; }
+.delay-700 { transition-delay: 0.7s; }
+/* Carousel Fade & Ken Burns */
+.carousel-slide { position: absolute; inset: 0; transition: opacity 1.5s ease-in-out; opacity: 0; overflow: hidden; }
+.carousel-slide.active { opacity: 1; }
+.carousel-slide img { transform: scale(1); transition: transform 10s ease-out; }
+.carousel-slide.active img { transform: scale(1.1); }
+/* Marquee Animation */
+@keyframes marquee {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.animate-marquee { display: inline-block; padding-left: 100%; animation: marquee 30s linear infinite; }
+/* Add a clone to the HTML for seamless loop or use padding method */
+.marquee-container { display: flex; overflow: hidden; user-select: none; }
+.marquee-content { flex-shrink: 0; display: flex; justify-content: space-around; min-width: 100%; animation: scroll 40s linear infinite; }
+@keyframes scroll {
+from { transform: translateX(0); }
+to { transform: translateX(-100%); }
+}
+/* Nav Load Animation */
+.nav-load { opacity: 0; transform: translateY(-10px); transition: all 0.8s ease-out; }
+.nav-load.loaded { opacity: 1; transform: translateY(0); }
+/* Icon Alignment Fix */
+iconify-icon { display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; }
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.parallax-element { will-change: transform; }

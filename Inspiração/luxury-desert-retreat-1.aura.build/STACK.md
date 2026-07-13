@@ -1,0 +1,7 @@
+- **Cormorant Garamond (Google Fonts)** — display serif used for hero title, section titles, suite/treatment names and the transition quote
+- **Inter (Google Fonts)** — body sans-serif for paragraphs, nav, labels and CTAs
+- **Iconify (iconify-icon web component)** — renders Lucide icons (`map-pin`, `droplets`, `hand`, `sun`, `clock`) inside the hero, treatments and excursions sections
+- **Lucide icon set** — icon source consumed via Iconify (`lucide:*` icon names)
+- **Custom CSS** — design tokens (sand/terracotta/gold/night palette), grid layouts, bento, hammam-card glow, hero conic-gradient border, scroll/twinkle/border-spin keyframes, `@property --border-angle`, and responsive breakpoints
+- **Vanilla JavaScript** — nav scroll state and dark-mode switch over night sections, mobile hamburger overlay, IntersectionObserver-based scroll reveal, stats counter, hero parallax, and procedural twinkling-star generation for the day-to-night transition section
+- **SVG noise texture (data-URI)** — fixed full-screen film grain rendered via `body::before` for a subtle hand-crafted feel

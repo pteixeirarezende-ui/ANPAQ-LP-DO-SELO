@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ANPAQ — Seção 2</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet"/>
+  
+  <!-- Iconify for icons -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <style>
+    /* =======================================================================
+       1. TOKENS BASE (Tema Claro - Cream)
+       ======================================================================= */
+    :root {
+      --anpaq-cream-100: #FDFBF7;
+      --anpaq-cream-300: #F5F1E8;
+      --anpaq-cream-400: #EDE7DA;
+      
+      --anpaq-gold-500: #C9A227;
+      --anpaq-gold-400: #D4A64A;
+      
+      --anpaq-text-dark: #2C241D;
+      --anpaq-text-body: #4A3F35;
+      --anpaq-text-subtle: #A69888;
+      
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --border-radius: 4px;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-body);
+      background-color: var(--anpaq-cream-300); /* Fundo claro da transição */
+      color: var(--anpaq-text-dark);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container base */
+    .container {
+      width: 100%;
+      max-width: 1120px; /* Levemente contido para melhor leitura no desktop */
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* =======================================================================
+       2. SEÇÃO EDUCATIVA (Mobile First)
+       ======================================================================= */
+    .section-educativa {
+      padding: 5rem 0; /* Espaçamento padrão mobile */
+      background-color: var(--anpaq-cream-300);
+      position: relative;
+    }
+
+    /* Header da Seção */
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.6875rem; /* ~11px */
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--anpaq-text-subtle);
+      margin-bottom: 0.75rem;
+    }
+
+    .gold-line {
+      width: 48px;
+      height: 1px;
+      background-color: var(--anpaq-gold-500);
+      margin-bottom: 1.5rem;
+    }
+
+    .title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 8vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--anpaq-text-dark);
+      margin-bottom: 1.25rem;
+    }
+
+    .subtitle {
+      font-size: 0.9375rem; /* 15px mobile */
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--anpaq-text-body);
+    }
+
+    /* Grid de Features (Cards) */
+    .features-grid {
+      display: flex;
+      flex-direction: column; /* Stack total no mobile */
+      gap: 1.25rem;
+    }
+
+    /* Feature Card */
+    .feature-card {
+      background-color: var(--anpaq-cream-100);
+      border: 1px solid var(--anpaq-cream-400);
+      border-radius: var(--border-radius);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px); /* Hover sutil de elevação */
+      box-shadow: 0 12px 32px rgba(44, 36, 29, 0.06);
+      border-color: rgba(201, 162, 39, 0.4);
+    }
+
+    /* Icon Box */
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--anpaq-cream-400);
+      border-radius: var(--border-radius);
+      background-color: var(--anpaq-cream-300);
+      color: var(--anpaq-text-subtle);
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+    }
+
+    .feature-card:hover .feature-icon {
+      color: var(--anpaq-gold-500); /* Destaque no hover */
+      border-color: var(--anpaq-gold-400);
+    }
+
+    .feature-text {
+      font-size: 0.9375rem; /* 15px */
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--anpaq-text-dark);
+    }
+
+    /* Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =======================================================================
+       3. RESPONSIVO (Tablet & Desktop)
+       ======================================================================= */
+    @media (min-width: 640px) {
+      .features-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .feature-card {
+        flex: 0 0 calc(50% - 0.625rem); /* 2 por linha no tablet */
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-educativa {
+        padding: 8rem 0; /* Respiro maior no desktop */
+      }
+      .subtitle {
+        font-size: 1.0625rem; /* 17px desktop */
+      }
+      .feature-card {
+        flex: 0 0 calc(33.333% - 0.85rem); /* 3 por linha no desktop, centralizando a sobra na 2ª linha */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================= SEÇÃO 2 ======================= -->
+  <section class="section-educativa" id="educativa">
+    <div class="container">
+      
+      <!-- Cabeçalho (Header) -->
+      <div class="section-header">
+        <span class="eyebrow reveal" style="transition-delay: 0.1s;">A verdadeira cachaça de alambique</span>
+        <div class="gold-line reveal" style="transition-delay: 0.2s;"></div>
+        
+        <h2 class="title reveal" style="transition-delay: 0.3s;">
+          Nem toda cachaça é o que parece
+        </h2>
+        
+        <p class="subtitle reveal" style="transition-delay: 0.4s;">
+          Nem toda cachaça é produzida em alambique de cobre e por bateladas. Nem toda cachaça preserva a tradição brasileira. Conheça o que faz a verdadeira diferença.
+        </p>
+      </div>
+
+      <!-- Grid de Características -->
+      <div class="features-grid">
+        
+        <!-- Item 1 -->
+        <div class="feature-card reveal" style="transition-delay: 0.5s;">
+          <div class="feature-icon">
+            <iconify-icon icon="solar:flask-linear"></iconify-icon>
+          </div>
+          <span class="feature-text">Alambique de cobre</span>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="feature-card reveal" style="transition-delay: 0.6s;">
+          <div class="feature-icon">
+            <iconify-icon icon="solar:settings-linear"></iconify-icon>
+          </div>
+          <span class="feature-text">Destilação em bateladas</span>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="feature-card reveal" style="transition-delay: 0.7s;">
+          <div class="feature-icon">
+            <iconify-icon icon="solar:verified-check-linear"></iconify-icon>
+          </div>
+          <span class="feature-text">Processo controlado</span>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="feature-card reveal" style="transition-delay: 0.8s;">
+          <div class="feature-icon">
+            <iconify-icon icon="solar:map-linear"></iconify-icon>
+          </div>
+          <span class="feature-text">Produção com identidade própria regional</span>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="feature-card reveal" style="transition-delay: 0.9s;">
+          <div class="feature-icon">
+            <iconify-icon icon="solar:wineglass-linear"></iconify-icon>
+          </div>
+          <span class="feature-text">Aromas e sabores preservados</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Script das animações de Reveal (Intersection Observer) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealElements = document.querySelectorAll('.reveal');
+      
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Remove o observer depois de animar (garante que só acontece uma vez e economiza recurso)
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1, /* Revela quando 10% do elemento aparece */
+        rootMargin: '0px 0px -50px 0px' /* Gatilho levemente acima do limite da tela */
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    });
+  </script>
+
+</body>
+</html>
