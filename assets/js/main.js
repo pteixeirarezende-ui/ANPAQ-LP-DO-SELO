@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-      const revealElements = document.querySelectorAll('.reveal');
+      const revealElements = document.querySelectorAll('.reveal, .reveal-pop');
       
       const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
