@@ -831,10 +831,6 @@ body::before {
   max-width: 100%;
   height: auto;
   display: block;
-  /* Palliative fix for low-res WhatsApp image */
-  filter: contrast(1.08) saturate(1.1);
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
 }
 
 .selo-callouts {
