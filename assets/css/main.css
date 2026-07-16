@@ -184,9 +184,9 @@ body::before {
   margin-bottom: 2rem;
 }
 
-.hero-selo-line {
+.hero-selo-line1,
+.hero-selo-line2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 8.5vw, 4.25rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -207,6 +207,14 @@ body::before {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: shimmer 4s ease-in-out infinite;
+}
+
+.hero-selo-line1 {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+}
+
+.hero-selo-line2 {
+  font-size: clamp(1.25rem, 5.5vw, 2.5rem);
 }
 
 .hero-logo {
