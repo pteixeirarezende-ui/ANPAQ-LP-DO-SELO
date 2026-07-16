@@ -703,10 +703,20 @@ body::before {
 
 .garantias-list {
   list-style: none;
-  margin: 2.5rem 0 3rem;
+  margin: 2.5rem auto 3rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .garantias-list {
+    margin: 2.5rem 0 3rem;
+    max-width: none;
+  }
 }
 
 .garantias-list li {
