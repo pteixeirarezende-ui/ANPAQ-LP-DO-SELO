@@ -1,6 +1,0 @@
-/* Base typography — applies the Inter font globally with smoothing */
-body {
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}

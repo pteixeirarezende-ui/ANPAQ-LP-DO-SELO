@@ -1,6 +1,0 @@
-- **Tailwind CSS 3.4.17** — framework CSS utility-first usado para todo o layout, espaçamento, cores e estados de hover (utilitários pré-gerados em `assets/css/tailwind.css`)
-- **iconify-icon** — web component que renderiza os ícones do conjunto `solar` usados em navegação, botões, cards e rodapé
-- **GSAP** — biblioteca de animação que conduz as revelações de texto (`reveal-word`, `section-reveal-word`) e os fades das seções
-- **GSAP ScrollTrigger** — plugin do GSAP que dispara as animações de revelação conforme as seções entram na viewport
-- **Inter** — família tipográfica (Google Fonts) usada em toda a interface
-- **Canvas 2D API** — fundo decorativo de partículas douradas animado via `requestAnimationFrame` no `#bg-canvas`

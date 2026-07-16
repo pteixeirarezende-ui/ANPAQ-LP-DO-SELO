@@ -1,9 +1,0 @@
-- **Tailwind CSS** — utility-first CSS framework loaded via the bundled `resource_3fa48481346f.js` runtime; powers all layout, color, and typography classes
-- **Iconify Icon (web component)** — runtime in `iconify-icon_d39ffc6e4c56.js`; renders every `<iconify-icon>` element using the Solar and Simple Icons icon sets
-- **Solar Icons (Iconify set)** — line-style icon set used for UI iconography (atom, scanner, arrows, check-circle, file-download, pen-new-square, globe, etc.)
-- **Simple Icons (Iconify set)** — brand logo icons used in the client list (Airbnb, Spotify, Notion, Linear)
-- **Inter (Google Fonts)** — primary sans-serif typeface, served via the local `css2_19fd9cc6b396.css` stylesheet and bundled woff2 files
-- **Custom CSS** — `assets/css/animations.css` defines the reveal/text-reveal/marquee/carousel keyframes and base typography
-- **Vanilla JavaScript** — `assets/js/interactions.js` orchestrates the hero load animations, IntersectionObserver scroll reveals, hero image carousel, and scroll-driven parallax
-- **IntersectionObserver API** — used to trigger reveal animations when sections enter the viewport
-- **Image fallback shim** — `assets/js/img-fallback.js` swaps broken `<img>` sources to a Supabase storage fallback pool

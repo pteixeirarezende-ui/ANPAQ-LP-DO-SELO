@@ -1,9 +1,0 @@
-- **Tailwind CSS 3.4.17** — utility-first CSS framework loaded via the Play CDN runtime that powers virtually every layout, color, spacing, and effect class in the markup
-- **Iconify Web Component (iconify-icon 3.0.0)** — renders the `<iconify-icon icon="solar:...">` tags throughout the page using the Solar icon set
-- **Inter (Google Fonts)** — primary sans-serif typeface used for all body copy, headings, and UI labels
-- **Custom CSS variables and utilities** — site-specific tokens (`--color-bg`, `--color-accent`), grid patterns (`bg-grid-pattern`), dotted textures (`dotted-texture`, `dotted-texture-dense`), gradient borders (`border-gradient`, `border-gradient-purple`, `border-gradient-green`), and the `status-pulse` keyframe animation for the live status indicator
-- **Tailwind keyframe utilities** — `animate-[spin_*s_linear_infinite]` arbitrary-duration spins and `animate-pulse` for orbital rings, dashed circles, and live status dots
-- **CSS 3D transforms** — `perspective`, `transform-style: preserve-3d`, `rotateX`/`rotateZ`/`translateZ` used in the cloud posture management 3D server illustration
-- **Radial and linear gradients** — `radial-gradient`, `linear-gradient`, and `repeating-linear-gradient` used for hero glows, section backdrops, and 45° pinstripe textures
-- **Backdrop filters** — `backdrop-blur-sm/md/xl` for the glassy header, pricing cards, and SOC panel surfaces
-- **UnicornStudio embed** — `data-us-project` placeholder for the WebGL/animated hero background scene (runtime not bundled in the static extraction)

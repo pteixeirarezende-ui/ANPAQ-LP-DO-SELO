@@ -1,8 +1,0 @@
-- **Tailwind CSS** (runtime CDN v3.4.17) — framework CSS utility-first usado para layout e estilização das seções header, segurança, depoimentos, footer e dos botões em pílula.
-- **CSS personalizado** — folha de estilo própria com variáveis de tema, componentes (botões, cards, painel neural, timeline, accordion de preços) e media queries responsivas.
-- **HTML5 Canvas 2D** — renderização do globo de nós/arcos animado do hero (`hero-globe`).
-- **Three.js** (r128, via cdnjs) — onda de partículas em WebGL com shaders customizados ao fundo da seção de depoimentos.
-- **JavaScript puro (Vanilla JS)** — todas as interações: scroll-reveal via IntersectionObserver, header com efeito de scroll, cards 3D gravity-fold, painel neural com slider/toggle, pipeline com linha curva animada por scroll, slider "deslize para executar", pilha de depoimentos arrastável e menu mobile.
-- **Google Fonts** — fontes Outfit (display) e Inter (corpo), carregadas via folha de estilo `css2`.
-- **Google Analytics 4** (gtag.js) — script de medição/configuração de analytics (ID G-2M6V79H761).
-- **SVG inline** — ícones de filamento, segurança, estrelas, aspas e redes sociais desenhados como SVG com `currentColor`/`fill="currentColor"`.
