@@ -811,16 +811,6 @@ body::before {
   width: 100%;
 }
 
-.selo-zoom-hint {
-  display: none;
-  font-size: 0.6875rem;
-  color: var(--anpaq-text-subtle);
-  margin-top: 0.5rem;
-  text-align: center;
-}
-@media (max-width: 400px) {
-  .selo-zoom-hint { display: block; }
-}
 
 .selo-img {
   width: 100%;
