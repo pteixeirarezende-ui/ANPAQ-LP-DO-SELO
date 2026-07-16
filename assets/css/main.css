@@ -304,10 +304,28 @@
     }
 
     .sec-subtitle {
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--anpaq-text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .sec-body-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
       font-size: 0.9375rem;
       font-weight: 300;
-      line-height: 1.65;
+      line-height: 1.5;
       color: var(--anpaq-text-body);
+    }
+
+    .sec-transition {
+      margin-top: 0.5rem;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--anpaq-gold-500);
     }
 
     .features-grid {
