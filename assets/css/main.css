@@ -545,9 +545,36 @@
 
     .selo-image-wrapper {
       width: 100%;
-      max-width: 280px;
+      min-width: 320px;
+      max-width: 100%;
+      overflow-x: auto;
       margin-bottom: 2rem;
       animation: float-seal 6s ease-in-out infinite;
+      text-align: center;
+    }
+
+    .selo-overline {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--anpaq-gold-500);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .selo-zoom-hint {
+      display: none;
+      font-size: 0.6875rem;
+      color: var(--anpaq-text-subtle);
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+    @media (max-width: 360px) {
+      .selo-zoom-hint { display: block; }
     }
 
     .selo-img {
@@ -616,10 +643,7 @@
         padding: 4rem;
       }
       .selo-callouts {
-        position: absolute;
-        bottom: -2rem;
-        right: -2rem;
-        width: 320px;
+        margin-top: 2rem;
         box-shadow: 0 16px 40px rgba(16,13,10,0.5);
       }
     }
