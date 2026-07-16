@@ -650,15 +650,15 @@ body::before {
 .selo-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
 }
 
-/* Bloco de título escalonado — hierarquia 1 > 2 > logo */
+/* Bloco de título — hierarquia 1 > 2 > logo */
 .selo-title-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.25rem;
   margin-bottom: 1.5rem;
 }
@@ -670,7 +670,7 @@ body::before {
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--anpaq-text-light);
-  text-align: left;
+  text-align: center;
 }
 
 .selo-title-line2 {
@@ -681,8 +681,6 @@ body::before {
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--anpaq-gold-400);
-  /* Efeito escada: recuo à direita */
-  margin-left: clamp(1rem, 4vw, 3rem);
 }
 
 /* Logo ANPAQ — terceiro na hierarquia, tamanho discreto */
@@ -690,8 +688,17 @@ body::before {
   max-width: 110px;
   height: auto;
   margin-top: 0.75rem;
-  margin-left: clamp(1rem, 4vw, 3rem); /* alinhada com a linha 2 */
   opacity: 0.8;
+}
+
+@media (min-width: 1024px) {
+  .selo-content, .selo-title-block {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .selo-title-line1 {
+    text-align: left;
+  }
 }
 
 .garantias-list {
