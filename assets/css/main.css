@@ -39,6 +39,13 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    img, video {
+      max-width: 100%;
+      height: auto;
     }
 
     /* Grain Texture (Artesanal/Analógico) - Applies to whole page */
