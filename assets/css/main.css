@@ -779,7 +779,36 @@
       font-weight: 400;
       font-style: italic;
       color: var(--anpaq-text-dark);
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .footer-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9375rem;
+      color: var(--anpaq-text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-link:hover {
+      color: var(--anpaq-gold-500);
+    }
+
+    .footer-link svg {
+      width: 20px;
+      height: 20px;
+      color: var(--anpaq-gold-500);
     }
 
     .footer-legal {
