@@ -654,6 +654,46 @@ body::before {
   text-align: left;
 }
 
+/* Bloco de título escalonado — hierarquia 1 > 2 > logo */
+.selo-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.selo-title-line1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 9vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--anpaq-text-light);
+  text-align: left;
+}
+
+.selo-title-line2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--anpaq-gold-400);
+  /* Efeito escada: recuo à direita */
+  margin-left: clamp(1rem, 4vw, 3rem);
+}
+
+/* Logo ANPAQ — terceiro na hierarquia, tamanho discreto */
+.selo-logo-anpaq {
+  max-width: 110px;
+  height: auto;
+  margin-top: 0.75rem;
+  margin-left: clamp(1rem, 4vw, 3rem); /* alinhada com a linha 2 */
+  opacity: 0.8;
+}
+
 .garantias-list {
   list-style: none;
   margin: 2.5rem 0 3rem;

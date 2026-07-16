@@ -162,11 +162,14 @@
     <div class="container selo-container">
       
       <div class="selo-content">
-        <span class="hero-badge reveal" style="transition-delay: 0.1s;">SELO NACIONAL DA CACHAÇA DE ALAMBIQUE — ANPAQ</span>
-        <h2 class="hero-headline reveal" style="transition-delay: 0.2s; margin-bottom: 0.5rem;">
-          A sua garantia de uma verdadeira cachaça de alambique
-        </h2>
-        <p class="hero-subheadline reveal" style="transition-delay: 0.3s; color: var(--anpaq-text-light-muted);">
+        <!-- Bloco de título escalonado - hierarquia: linha 1 > linha 2 > logo -->
+        <div class="selo-title-block reveal" style="transition-delay: 0.1s;">
+          <p class="selo-title-line1">SELO NACIONAL</p>
+          <p class="selo-title-line2">da Cachaça de Alambique</p>
+          <!-- Logo ANPAQ — terceiro elemento na hierarquia, tamanho menor -->
+          <img src="assets/img/logo-anpaq.png" alt="Logo ANPAQ" class="selo-logo-anpaq" style="filter: brightness(0) invert(1);" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'34\'><rect width=\'100\' height=\'34\' fill=\'none\' stroke=\'%23D4A64A\' stroke-width=\'1\'/><text x=\'50%\' y=\'50%\' fill=\'%23D4A64A\' font-family=\'sans-serif\' font-size=\'10\' text-anchor=\'middle\' dominant-baseline=\'middle\'>LOGO ANPAQ</text></svg>'">
+        </div>
+        <p class="hero-subheadline reveal" style="transition-delay: 0.2s; color: var(--anpaq-text-light-muted);">
           Pertencimento + Confiança + Origem + Autenticidade e Transparência
         </p>
         
@@ -210,8 +213,8 @@
         </ul>
 
         <div class="hero-actions reveal" style="transition-delay: 0.7s;">
-          <a href="#exemplo" onclick="event.preventDefault(); window.scrollBy({top: window.innerHeight * 0.8, behavior: 'smooth'});" class="btn btn-primary">
-            Ver um exemplo real
+          <a href="#" onclick="event.preventDefault();" class="btn btn-outline" style="color: var(--anpaq-text-light); border-color: rgba(245,241,232,0.25);">
+            Assim funciona a garantia
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
@@ -221,7 +224,7 @@
       </div>
 
       <div class="selo-visual reveal" style="transition-delay: 0.3s;">
-        <span class="selo-overline">Confira sempre o nosso selo =</span>
+        <span class="selo-overline">Confirme sempre o nosso Selo de origem nos produtos</span>
         
         <div class="selo-image-wrapper">
           <img src="assets/img/selo-oficial-anpaq-infografico.jpg" alt="Selo Oficial ANPAQ" class="selo-img" style="border-radius: var(--border-radius); border: 1px solid rgba(201, 162, 39, 0.15);" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'320\' height=\'400\'><rect width=\'320\' height=\'400\' fill=\'%23211A14\'/><text x=\'50%\' y=\'50%\' fill=\'%23D4A64A\' font-family=\'sans-serif\' font-size=\'18\' text-anchor=\'middle\'>(Selo Oficial do Infográfico)</text></svg>'">
@@ -235,7 +238,7 @@
             <li>Origem e processo</li>
             <li>Autenticidade da bebida</li>
             <li>Validação digital</li>
-            <li>Código Serial e QRCode único exclusivo por produtor</li>
+            <li>Código Serial e QrCode únicos por produtor</li>
           </ul>
         </div>
       </div>
