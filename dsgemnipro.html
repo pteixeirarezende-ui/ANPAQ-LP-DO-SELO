@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANPAQ - Base Design System</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* Specific styles for the design system showcase page */
+    .ds-section { padding: var(--space-16) 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .theme-dark .ds-section { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .ds-title { font-size: 2.5rem; margin-bottom: var(--space-8); position: relative; display: inline-block; }
+    .ds-title::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 60px; height: 2px; background: var(--color-accent-gold); }
+    
+    /* Color Swatches */
+    .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-6); }
+    .swatch { border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: var(--transition-base); }
+    .swatch:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .swatch-color { height: 120px; width: 100%; }
+    .swatch-info { padding: var(--space-4); background: #fff; }
+    .swatch-name { font-weight: 600; font-size: 0.875rem; margin-bottom: 4px; color: #2C241D; }
+    .swatch-hex { font-family: monospace; font-size: 0.75rem; color: #8c7e73; }
+    
+    /* Typography Showcase */
+    .type-sample { margin-bottom: var(--space-8); padding: var(--space-6); border-radius: 8px; background: rgba(0,0,0,0.02); }
+    .theme-dark .type-sample { background: rgba(255,255,255,0.02); }
+    
+    .flex-gap { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+    
+    /* Reveal Animation Classes */
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">ANPAQ</a>
+      <div class="flex-gap">
+        <a href="#colors" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem; border: none;">Cores</a>
+        <a href="#typography" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem; border: none;">Tipografia</a>
+        <a href="#components" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.75rem; border: none;">Componentes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <img src="assets/img/hero.png" alt="Cachaça Hero Image" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
+      <p class="hero-subtitle">Selo Nacional da Cachaça de Alambique</p>
+      <h1 class="hero-title">Tradição &amp; Excelência</h1>
+      <div class="line-divider"></div>
+      <a href="#colors" class="btn btn-primary">Explorar Design System</a>
+    </div>
+  </header>
+
+  <!-- Design System Showcase -->
+  <main>
+    <!-- Colors -->
+    <section id="colors" class="section ds-section theme-light">
+      <div class="container reveal">
+        <h2 class="ds-title">Paleta de Cores</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-8); max-width: 600px;">Cores inspiradas na essência da cachaça de alambique, com tons terrosos, dourados e off-whites quentes, transmitindo luxo, calor e tradição.</p>
+        
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-bg-dark);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Background Dark</div>
+              <div class="swatch-hex">#1A1410</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-bg-surface-dark);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Surface Dark</div>
+              <div class="swatch-hex">#211A14</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-accent-gold);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Accent Gold</div>
+              <div class="swatch-hex">#C9A227</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-bg-light);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Background Light</div>
+              <div class="swatch-hex">#F5F1E8</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-bg-surface); border: 1px solid rgba(0,0,0,0.05);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Surface Light</div>
+              <div class="swatch-hex">#FDFBF7</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background-color: var(--color-text-dark);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Text Dark</div>
+              <div class="swatch-hex">#2C241D</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section id="typography" class="section ds-section theme-light" style="background-color: var(--color-bg-surface);">
+      <div class="container reveal">
+        <h2 class="ds-title">Tipografia</h2>
+        
+        <div class="grid-2">
+          <div class="type-sample">
+            <p class="text-muted font-sans" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Títulos (Display)</p>
+            <h3 style="font-family: 'Playfair Display'; font-size: 3rem; margin-bottom: 8px;">Playfair Display</h3>
+            <p style="font-family: 'Playfair Display'; font-style: italic; font-size: 1.5rem; color: var(--color-accent-gold);">A alma do alambique brasileiro.</p>
+          </div>
+          
+          <div class="type-sample">
+            <p class="text-muted font-sans" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Corpo de Texto (Body)</p>
+            <h3 style="font-family: 'Inter'; font-weight: 500; font-size: 2rem; margin-bottom: 8px;">Inter Sans-Serif</h3>
+            <p style="font-family: 'Inter'; font-weight: 300;">Uma tipografia limpa e moderna para equilibrar a tradição da serifada, garantindo excelente legibilidade em textos longos e interfaces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Dark Theme -->
+    <section id="components" class="section ds-section theme-dark">
+      <div class="container reveal">
+        <h2 class="ds-title">Componentes (Modo Escuro)</h2>
+        
+        <div style="margin-bottom: var(--space-12);">
+          <h3 class="font-sans" style="font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: var(--space-6); color: var(--color-text-muted-dark);">Botões</h3>
+          <div class="flex-gap">
+            <button class="btn btn-primary">Botão Primário</button>
+            <button class="btn btn-outline">Botão Contorno</button>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-sans" style="font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: var(--space-6); color: var(--color-text-muted-dark);">Cards</h3>
+          <div class="grid-3">
+            <div class="card">
+              <img src="assets/img/barrel.png" alt="Barril de Carvalho" class="card-img">
+              <div class="card-content">
+                <h4 class="card-title">Envelhecimento</h4>
+                <p class="text-muted" style="font-size: 0.875rem;">O segredo das cachaças premium repousa na calma e na madeira dos barris de carvalho europeu e americano.</p>
+                <a href="#" class="text-gold" style="display: inline-block; margin-top: var(--space-4); text-decoration: none; font-size: 0.875rem; font-weight: 500;">Ler Mais →</a>
+              </div>
+            </div>
+            
+            <div class="card">
+              <img src="assets/img/hero.png" alt="Degustação" class="card-img" style="filter: grayscale(20%);">
+              <div class="card-content">
+                <h4 class="card-title">Degustação</h4>
+                <p class="text-muted" style="font-size: 0.875rem;">Uma experiência sensorial única, onde notas de baunilha, especiarias e melaço se encontram em harmonia.</p>
+                <a href="#" class="text-gold" style="display: inline-block; margin-top: var(--space-4); text-decoration: none; font-size: 0.875rem; font-weight: 500;">Ler Mais →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="theme-dark" style="padding: var(--space-12) 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-family: var(--font-heading); color: var(--color-accent-gold); margin-bottom: var(--space-4);">ANPAQ</h2>
+      <p class="text-muted" style="font-size: 0.875rem;">Selo Nacional da Cachaça de Alambique</p>
+      <p class="text-muted" style="font-size: 0.75rem; margin-top: var(--space-8);">&copy; 2026 ANPAQ. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts for interactivity -->
+  <script>
+    // Navbar scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Simple scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      const elementVisible = 100;
+      
+      reveals.forEach((reveal) => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+          reveal.classList.add('active');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', revealOnScroll);
+    // Trigger once on load
+    revealOnScroll();
+  </script>
+</body>
+</html>

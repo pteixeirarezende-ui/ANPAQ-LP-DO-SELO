@@ -442,25 +442,49 @@ body::before {
 }
 
 .features-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  counter-reset: feature-counter;
 }
 
 /* Card hover with richer animations */
 .feature-card {
   background-color: var(--anpaq-cream-100);
-  border: 1px solid var(--anpaq-cream-400);
+  border: 1px solid rgba(201, 162, 39, 0.15);
+  border-top: 3px solid var(--anpaq-gold-400);
   border-radius: var(--border-radius);
-  padding: 2.5rem 2rem;
+  padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   transition: all 0.5s var(--ease-smooth);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(44,36,29,0.04);
+  box-shadow: 0 4px 24px rgba(44,36,29,0.03);
+  z-index: 1;
+}
+
+/* Number watermark */
+.feature-card::after {
+  counter-increment: feature-counter;
+  content: "0" counter(feature-counter);
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(201, 162, 39, 0.05);
+  z-index: -1;
+  transition: all 0.5s var(--ease-smooth);
+}
+
+.feature-card:hover::after {
+  color: rgba(201, 162, 39, 0.12);
+  transform: scale(1.05);
 }
 
 /* Subtle gold sheen on hover */
@@ -468,9 +492,10 @@ body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(201, 162, 39, 0.06) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.06) 0%, transparent 80%);
   opacity: 0;
   transition: opacity 0.5s ease;
+  z-index: -1;
 }
 .feature-card:hover::before {
   opacity: 1;
@@ -478,43 +503,74 @@ body::before {
 
 .feature-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(44, 36, 29, 0.1), 0 0 0 1px rgba(201, 162, 39, 0.3);
-  border-color: rgba(201, 162, 39, 0.4);
+  box-shadow: 0 20px 48px rgba(44, 36, 29, 0.08), 0 0 0 1px rgba(201, 162, 39, 0.3);
+  border-top-color: var(--anpaq-gold-500);
 }
 
 /* Ícones dourados com animação */
 .feature-icon {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(201, 162, 39, 0.2);
-  border-radius: var(--border-radius);
+  border-radius: 50%;
   background-color: var(--anpaq-cream-300);
   color: var(--anpaq-gold-500);
-  margin-bottom: 1.5rem;
-  transition: all 0.4s var(--ease-out);
+  margin-bottom: 2rem;
+  transition: all 0.5s var(--ease-bounce);
+  position: relative;
+}
+
+.feature-icon::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.5s var(--ease-bounce);
 }
 
 .feature-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  z-index: 2;
 }
 
 .feature-card:hover .feature-icon {
   background-color: var(--anpaq-gold-500);
-  color: var(--anpaq-dark-900);
-  border-color: var(--anpaq-gold-500);
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.25);
+  color: var(--anpaq-cream-100);
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(201, 162, 39, 0.3);
 }
 
-.feature-text {
-  font-size: 0.9375rem;
-  font-weight: 500;
-  line-height: 1.4;
+.feature-card:hover .feature-icon::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feature-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--anpaq-text-dark);
+  line-height: 1.3;
+}
+
+.feature-desc {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--anpaq-text-muted);
 }
 
 /* Scroll Indicator Sec 2 */
